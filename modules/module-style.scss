@@ -1,0 +1,27 @@
+@import "./module/button-module";
+
+html {
+  font-size: 10px;
+  background-color: #E5E5E5;
+}
+
+.container {
+  width: 390px;
+  margin: 10% auto 0;
+  text-align: center;
+}
+
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  text-align: left;
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 1.5rem;
+}
+

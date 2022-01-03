@@ -1,0 +1,92 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+}
+
+[class$=button] {
+  border: none;
+  border-radius: 30px;
+  color: #767676;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+}
+
+.l-button,
+.ml-button,
+.m-button,
+.ms-button,
+.s-button {
+  background-color: #FFABA2;
+  color: #fff;
+}
+
+.l-button:active,
+.ml-button:active,
+.m-button:active,
+.ms-button:active,
+.s-button:active {
+  background-color: #FFD2CC;
+}
+
+.l-disabled-button,
+.m-disabled-button,
+.ms-disabled-button {
+  background-color: #FFD2CC;
+  color: #fff;
+}
+
+[class^="l-"] {
+  font-size: 1.4rem;
+  height: 4.4rem;
+  width: 82.56%;
+}
+
+[class^="ml-"] {
+  font-size: 1.4rem;
+  height: 4.4rem;
+  width: 30.76%;
+}
+
+[class^="m-"] {
+  font-size: 1.4rem;
+  height: 3.4rem;
+  width: 30.76%;
+}
+
+[class^="ms-"] {
+  font-size: 1.4rem;
+  height: 3.2rem;
+  width: 23%;
+}
+
+[class^="s-"] {
+  font-size: 1.2rem;
+  height: 2.8rem;
+  width: 14.4%;
+}
+
+html {
+  font-size: 10px;
+  background-color: #E5E5E5;
+}
+
+.container {
+  width: 390px;
+  margin: 10% auto 0;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  text-align: left;
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 1.5rem;
+}
+/*# sourceMappingURL=module-style.css.map */
