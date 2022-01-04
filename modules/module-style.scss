@@ -1,6 +1,7 @@
 @import "./module/button-module";
 @import "./module/nav-module";
 @import "./module/user-module";
+@import "./module/post-module";
 
 html {
   font-size: 10px;
@@ -9,8 +10,9 @@ html {
 
 .container {
   width: 390px;
-  margin: 10% auto 0;
+  margin: 10% auto;
   text-align: center;
+  border: 1px solid $gray-color;
 }
 
 .module-title {
@@ -24,4 +26,14 @@ h3 {
   font-size: 1.3rem;
   font-weight: 600;
   margin: 1.5rem;
+}
+
+.category {
+  ul {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 1rem;
+  }
 }
