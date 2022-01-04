@@ -1,10 +1,5 @@
 @import "../../src/style/common/variables";
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-}
-
 // 공통속성
 [class$=button] {
   border: none;

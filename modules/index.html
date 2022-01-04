@@ -13,7 +13,7 @@
   <header class="container">
     <!-- 바로가기 start -->
     <section class="category">
-      <h2>모듈 바로가기</h2>
+      <h2 class="module-title">모듈 바로가기</h2>
       <nav>
         <ul>
           <li><a href="#buttonModule">button-module</a></li>
@@ -30,7 +30,7 @@
     <!-- button-module start -->
     <section id="buttonModule">
       <article class="large-btn-wrap">
-        <h2>Large</h2>
+        <h2 class="module-title">Large</h2>
         <h3>l-button : </h3>
         <button type="button" class="l-button">다음</button>
 
@@ -40,7 +40,7 @@
         <p>322 x 44</p>
       </article>
       <article class="medium-large-btn-wrap">
-        <h2>Mideum Large</h2>
+        <h2 class="module-title">Mideum Large</h2>
         <h3>ml-button : </h3>
         <button type="button" class="ml-button">검색하기</button>
         <button type="button" class="ml-button">이전 페이지</button>
@@ -49,7 +49,7 @@
       </article>
 
       <article class="medium-btn-wrap">
-        <h2>Mideum</h2>
+        <h2 class="module-title">Mideum</h2>
         <h3>m-button :</h3>
         <button type="button" class="m-button">팔로우</button>
         
@@ -63,7 +63,7 @@
       </article>
 
       <article class="medium-small-btn-wrap">
-        <h2>Mideum Small</h2>
+        <h2 class="module-title">Mideum Small</h2>
         <h3>ms-button :</h3>
         <button type="button" class="ms-button">저장</button>
         
@@ -74,7 +74,7 @@
       </article>
       
       <article class="small-btn-wrap">
-        <h2>Small</h2>
+        <h2 class="module-title">Small</h2>
         <h3>s-button :</h3>
         <button type="button" class="s-button">팔로우</button>
         
@@ -89,48 +89,51 @@
     <!-- nav-module start -->
     <!-- nav-module start -->
     <section id="navModule">
+      <h2 class="module-title">Top Nav</h2>
       <h3>top-basic-nav :</h3>
       <header class="top-basic-nav">
-        <button type="button" class="prev-btn">이전 버튼</button>
-        <button type="button" class="more-btn">더보기 버튼</button>
+        <button type="button" class="prev-btn"></button>
+        <button type="button" class="more-btn"></button>
       </header>
 
       <h3>top-search-nav :</h3>
       <header class="top-search-nav">
-        <button type="button" class="prev-btn">이전 버튼</button>
-        <input type="search" class="search-input">
+        <button type="button" class="prev-btn"></button>
+        <input type="search" class="search-input" placeholder="계정 검색">
       </header>
 
       <h3>top-main-nav :</h3>
       <header class="top-main-nav">
         <h2 class="top-nav-text">감귤마켓 피드</h2>
-        <button type="button" class="search-btn">검색 버튼</button>
+        <button type="button" class="search-btn"></button>
       </header>
 
       <h3>top-upload-nav :</h3>
       <header class="top-upload-nav">
-        <button type="button" class="prev-btn">이전 버튼</button>
+        <button type="button" class="prev-btn"></button>
         <button type="button" class="ms-disabled-button">저장</button>
       </header>
 
       <h3>top-chat-nav :</h3>
       <header class="top-chat-nav">
         <div class="wrap">
-          <button type="button" class="prev-btn">이전 버튼</button>
+          <button type="button" class="prev-btn"></button>
           <h2 class="top-nav-text">애월읍 위니브 감귤농장</h2>
         </div>
-        <button type="button" class="more-btn">더보기 버튼</button>
+        <button type="button" class="more-btn"></button>
       </header>
 
+      <h2 class="module-title">Bottom tab</h2>
       <h3>tab-menu :</h3>
       <footer class="tab-menu">
         <ul class="tab-wrap">
-          <li><a href="#none" class="home-tab">홈</a></li>
-          <li><a href="#none" class="chat-tab">채팅</a></li>
-          <li><a href="#none" class="post-tab">게시물 작성</a></li>
-          <li><a href="#none" class="profile-tab">프로필</a></li>
+          <li><a href="#none" class="home-tab"></a></li>
+          <li><a href="#none" class="chat-tab"></a></li>
+          <li><a href="#none" class="post-tab"></a></li>
+          <li><a href="#none" class="profile-tab"></a></li>
         </ul>
       </footer>
+      <p>해당 tab에 <strong style="font-weight: 800;">on</strong> class를 붙이면 색이 바뀝니다</p>
 
       <h3>comment : </h3>
       <footer class="comment">
@@ -142,7 +145,6 @@
             class="comment-input"
             type="text"
             placeholder="댓글 입력하기..."
-            required
           >
           <button type="submit" class="comment-submit-btn">게시</button>
         </form>
@@ -211,7 +213,7 @@
           <p class="user-info">
             <strong class="market-name">애월읍 위니브 감귤농장</strong>
             <span class="user-name">@ weniv_Mandarin</span>
-            <button type="button" class="more-btn">더보기 버튼</button>
+            <button type="button" class="more-btn"></button>
           </p>
           <p class="post-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati beatae ipsam quaerat aperiam, dolor sapiente alias nihil dignissimos asperiores ex ipsa esse cum distinctio nostrum illum voluptatem ratione, earum ad?</p>
           <img src="../src/img/post-img-example.png" alt="포스트 사진" class="post-img"> 
@@ -236,7 +238,7 @@
           <p class="user-info">
             <strong class="market-name">애월읍 위니브 감귤농장</strong>
             <span class="user-name">@ weniv_Mandarin</span>
-            <button type="button" class="more-btn">더보기 버튼</button>
+            <button type="button" class="more-btn"></button>
           </p>
           <p class="post-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati beatae ipsam quaerat aperiam, dolor sapiente alias nihil dignissimos asperiores ex ipsa esse cum distinctio nostrum illum voluptatem ratione, earum ad?</p>
           <button 
