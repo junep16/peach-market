@@ -26,6 +26,7 @@
 .ms-disabled-button {
   background-color: $disable-color;
   color: #fff;
+  pointer-events: none;
 }
 
 
