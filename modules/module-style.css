@@ -1,9 +1,4 @@
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 0;
-}
-
+@charset "UTF-8";
 [class$=button] {
   border: none;
   border-radius: 30px;
@@ -66,6 +61,285 @@
   width: 14.4%;
 }
 
+.prev-btn {
+  background: url(../../src/img/icon/icon-arrow-left.png);
+  width: 22px;
+  height: 22px;
+}
+
+.more-btn {
+  background-image: url(../../src/img/icon/icon-more-vertical.png);
+  width: 24px;
+  height: 24px;
+}
+
+.search-btn {
+  background-image: url(../../src/img/icon/icon-search.png);
+  width: 24px;
+  height: 24px;
+}
+
+[class^="top-"] {
+  background-color: #fff;
+}
+
+.top-basic-nav,
+.top-upload-nav,
+.top-chat-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.2rem 1.2rem 1.2rem 1.6rem;
+}
+
+.top-search-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.2rem 1.9rem .8rem;
+}
+
+.top-search-nav .search-input {
+  font-size: 1.4rem;
+  width: 316px;
+  border-radius: 15px;
+  border: none;
+  background-color: #F2F2F2;
+  padding: .7rem 0 .7rem 1.6rem;
+}
+
+.top-search-nav .search-input:focus {
+  outline: none;
+}
+
+.top-main-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.2rem 1.6rem;
+}
+
+.top-main-nav .top-nav-text {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.top-chat-nav .wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.top-chat-nav .wrap .top-nav-text {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-left: 1rem;
+}
+
+.tab-menu {
+  background-color: #fff;
+  padding: 0 .6rem;
+}
+
+.tab-menu .tab-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tab-menu .tab-wrap li {
+  width: 8.4rem;
+  height: 6rem;
+  padding: 1.2rem 3rem .6rem;
+}
+
+.tab-menu .tab-wrap li [class$="tab"] {
+  position: relative;
+  display: block;
+  background-size: cover;
+  font-size: 1rem;
+  width: 24px;
+  height: 24px;
+}
+
+.tab-menu .tab-wrap li [class$="tab"]::after {
+  position: absolute;
+  color: #767676;
+  bottom: -14px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 54px;
+}
+
+.tab-menu .tab-wrap li [class$="tab"]:hover::after {
+  color: #FFABA2;
+}
+
+.tab-menu .tab-wrap li .home-tab {
+  background-image: url(../../src/img/icon/icon-home.svg);
+}
+
+.tab-menu .tab-wrap li .home-tab:hover {
+  background-image: url(../../src/img/icon/icon-home-fill.svg);
+}
+
+.tab-menu .tab-wrap li .home-tab::after {
+  content: "홈";
+}
+
+.tab-menu .tab-wrap li .home-tab.on {
+  background-image: url(../../src/img/icon/icon-home-fill.svg);
+}
+
+.tab-menu .tab-wrap li .home-tab.on::after {
+  color: #FFABA2;
+}
+
+.tab-menu .tab-wrap li .chat-tab {
+  background-image: url(../../src/img/icon/icon-message-circle.svg);
+}
+
+.tab-menu .tab-wrap li .chat-tab:hover {
+  background-image: url(../../src/img/icon/icon-message-circle-fill.svg);
+}
+
+.tab-menu .tab-wrap li .chat-tab::after {
+  content: "채팅";
+}
+
+.tab-menu .tab-wrap li .chat-tab.on {
+  background-image: url(../../src/img/icon/icon-message-circle-fill.svg);
+}
+
+.tab-menu .tab-wrap li .chat-tab.on::after {
+  color: #FFABA2;
+}
+
+.tab-menu .tab-wrap li .post-tab {
+  background-image: url(../../src/img/icon/icon-edit.svg);
+}
+
+.tab-menu .tab-wrap li .post-tab:hover {
+  background-image: url(../../src/img/icon/icon-edit.svg);
+}
+
+.tab-menu .tab-wrap li .post-tab::after {
+  content: "게시물 작성";
+}
+
+.tab-menu .tab-wrap li .post-tab.on {
+  background-image: url(../../src/img/icon/icon-edit.svg);
+}
+
+.tab-menu .tab-wrap li .post-tab.on::after {
+  color: #FFABA2;
+}
+
+.tab-menu .tab-wrap li .profile-tab {
+  background-image: url(../../src/img/icon/icon-user.svg);
+}
+
+.tab-menu .tab-wrap li .profile-tab:hover {
+  background-image: url(../../src/img/icon/icon-user-fill.svg);
+}
+
+.tab-menu .tab-wrap li .profile-tab::after {
+  content: "프로필";
+}
+
+.tab-menu .tab-wrap li .profile-tab.on {
+  background-image: url(../../src/img/icon/icon-user-fill.svg);
+}
+
+.tab-menu .tab-wrap li .profile-tab.on::after {
+  color: #FFABA2;
+}
+
+.comment {
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.3rem 2rem 1.2rem 1.6rem;
+}
+
+.comment form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.comment .comment-input {
+  width: 90%;
+  font-size: 1.4rem;
+  border: none;
+  padding: 1rem 1.8rem;
+}
+
+.comment .comment-input:focus {
+  outline: none;
+}
+
+.comment .comment-input::-webkit-input-placeholder {
+  color: #C4C4C4;
+}
+
+.comment .comment-input:-ms-input-placeholder {
+  color: #C4C4C4;
+}
+
+.comment .comment-input::-ms-input-placeholder {
+  color: #C4C4C4;
+}
+
+.comment .comment-input::placeholder {
+  color: #C4C4C4;
+}
+
+.comment .comment-submit-btn {
+  color: #C4C4C4;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+}
+
 html {
   font-size: 10px;
   background-color: #E5E5E5;
@@ -77,7 +351,7 @@ html {
   text-align: center;
 }
 
-h2 {
+.module-title {
   font-size: 2rem;
   font-weight: 700;
   margin-top: 2rem;
@@ -88,5 +362,22 @@ h3 {
   font-size: 1.3rem;
   font-weight: 600;
   margin: 1.5rem;
+}
+
+button {
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.text-hide {
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
 }
 /*# sourceMappingURL=module-style.css.map */

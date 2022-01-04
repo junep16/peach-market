@@ -1,0 +1,162 @@
+// button image
+.prev-btn {
+  background: url(../../src/img/icon/icon-arrow-left.png);
+  width: 22px;
+  height: 22px;
+}
+
+.more-btn {
+  background-image: url(../../src/img/icon/icon-more-vertical.png);
+  width: 24px;
+  height: 24px;
+}
+
+.search-btn {
+  background-image: url(../../src/img/icon/icon-search.png);
+  width: 24px;
+  height: 24px;
+}
+
+[class^="top-"] {
+  background-color: #fff;
+}
+
+.top-basic-nav,
+.top-upload-nav,
+.top-chat-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.2rem 1.2rem 1.6rem;
+}
+
+.top-search-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.9rem .8rem;
+  .search-input {
+    font-size: 1.4rem;
+    width: 316px;
+    border-radius: 15px;
+    border: none;
+    background-color: $white-gray-color;
+    padding: .7rem 0 .7rem 1.6rem;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.top-main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.6rem;
+  .top-nav-text {
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+}
+
+.top-chat-nav {
+  .wrap {
+    display: flex;
+    align-items: center;
+    .top-nav-text {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-left: 1rem;
+    }
+  }
+}
+
+.tab-menu {
+  background-color: #fff;
+  padding: 0 .6rem;
+  .tab-wrap {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    li {
+      width: 8.4rem;
+      height: 6rem;
+      padding: 1.2rem 3rem .6rem;
+      // tab 공통 속성 적용
+      [class$="tab"] {
+        position: relative;
+        display: block;
+        background-size: cover;
+        font-size: 1rem;
+        width: 24px;
+        height: 24px;
+        &::after {
+          position: absolute;
+          color: $gray-color;
+          bottom: -14px; left: 50%;
+          transform: translateX(-50%);
+          width: 54px;
+        }
+        &:hover::after { color: $base-color; }
+      }
+      // tab 개별 속성
+      .home-tab {
+        background-image: url(../../src/img/icon/icon-home.svg);
+        &:hover { background-image: url(../../src/img/icon/icon-home-fill.svg);}
+        &::after { content: "홈"; }
+        &.on {
+          background-image: url(../../src/img/icon/icon-home-fill.svg);
+          &::after { color: $base-color; }
+        }
+      }
+      .chat-tab {
+        background-image: url(../../src/img/icon/icon-message-circle.svg);
+        &:hover { background-image: url(../../src/img/icon/icon-message-circle-fill.svg);}
+        &::after { content: "채팅"; }
+        &.on {
+          background-image: url(../../src/img/icon/icon-message-circle-fill.svg);
+          &::after { color: $base-color; }
+        }
+      }
+      .post-tab {
+        background-image: url(../../src/img/icon/icon-edit.svg);
+        &:hover { background-image: url(../../src/img/icon/icon-edit.svg);}
+        &::after { content: "게시물 작성"; }
+        &.on {
+          background-image: url(../../src/img/icon/icon-edit.svg);
+          &::after { color: $base-color; }
+        }
+      }
+      .profile-tab {
+        background-image: url(../../src/img/icon/icon-user.svg);
+        &:hover { background-image: url(../../src/img/icon/icon-user-fill.svg);}
+        &::after { content: "프로필"; }
+        &.on {
+          background-image: url(../../src/img/icon/icon-user-fill.svg);
+          &::after { color: $base-color; }
+        }
+      }
+    }
+  }
+}
+
+.comment {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 1.3rem 2rem 1.2rem 1.6rem;
+  form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .comment-input {
+    width: 90%;
+    font-size: 1.4rem;
+    border: none;
+    padding: 1rem 1.8rem;
+    &:focus { outline: none; }
+    &::placeholder { color: $light-gray-color; }
+  }
+  .comment-submit-btn { color: $light-gray-color; }
+}
