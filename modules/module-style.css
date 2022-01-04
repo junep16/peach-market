@@ -63,19 +63,19 @@
 }
 
 .prev-btn {
-  background: url(../../src/img/icon/icon-arrow-left.png);
+  background: url(../../src/icon/icon-arrow-left.png);
   width: 22px;
   height: 22px;
 }
 
 .more-btn {
-  background-image: url(../../src/img/icon/icon-more-vertical.png);
+  background-image: url(../../src/icon/icon-more-vertical.png);
   width: 24px;
   height: 24px;
 }
 
 .search-btn {
-  background-image: url(../../src/img/icon/icon-search.png);
+  background-image: url(../../src/icon/icon-search.png);
   width: 24px;
   height: 24px;
 }
@@ -204,11 +204,11 @@
 }
 
 .tab-menu .tab-wrap li .home-tab {
-  background-image: url(../../src/img/icon/icon-home.svg);
+  background-image: url(../../src/icon/icon-home.svg);
 }
 
 .tab-menu .tab-wrap li .home-tab:hover {
-  background-image: url(../../src/img/icon/icon-home-fill.svg);
+  background-image: url(../../src/icon/icon-home-fill.svg);
 }
 
 .tab-menu .tab-wrap li .home-tab::after {
@@ -216,7 +216,7 @@
 }
 
 .tab-menu .tab-wrap li .home-tab.on {
-  background-image: url(../../src/img/icon/icon-home-fill.svg);
+  background-image: url(../../src/icon/icon-home-fill.svg);
 }
 
 .tab-menu .tab-wrap li .home-tab.on::after {
@@ -224,11 +224,11 @@
 }
 
 .tab-menu .tab-wrap li .chat-tab {
-  background-image: url(../../src/img/icon/icon-message-circle.svg);
+  background-image: url(../../src/icon/icon-message-circle.svg);
 }
 
 .tab-menu .tab-wrap li .chat-tab:hover {
-  background-image: url(../../src/img/icon/icon-message-circle-fill.svg);
+  background-image: url(../../src/icon/icon-message-circle-fill.svg);
 }
 
 .tab-menu .tab-wrap li .chat-tab::after {
@@ -236,7 +236,7 @@
 }
 
 .tab-menu .tab-wrap li .chat-tab.on {
-  background-image: url(../../src/img/icon/icon-message-circle-fill.svg);
+  background-image: url(../../src/icon/icon-message-circle-fill.svg);
 }
 
 .tab-menu .tab-wrap li .chat-tab.on::after {
@@ -244,11 +244,11 @@
 }
 
 .tab-menu .tab-wrap li .post-tab {
-  background-image: url(../../src/img/icon/icon-edit.svg);
+  background-image: url(../../src/icon/icon-edit.svg);
 }
 
 .tab-menu .tab-wrap li .post-tab:hover {
-  background-image: url(../../src/img/icon/icon-edit-fill.svg);
+  background-image: url(../../src/icon/icon-edit-fill.svg);
 }
 
 .tab-menu .tab-wrap li .post-tab::after {
@@ -256,7 +256,7 @@
 }
 
 .tab-menu .tab-wrap li .post-tab.on {
-  background-image: url(../../src/img/icon/icon-edit-fill.svg);
+  background-image: url(../../src/icon/icon-edit-fill.svg);
 }
 
 .tab-menu .tab-wrap li .post-tab.on::after {
@@ -264,11 +264,11 @@
 }
 
 .tab-menu .tab-wrap li .profile-tab {
-  background-image: url(../../src/img/icon/icon-user.svg);
+  background-image: url(../../src/icon/icon-user.svg);
 }
 
 .tab-menu .tab-wrap li .profile-tab:hover {
-  background-image: url(../../src/img/icon/icon-user-fill.svg);
+  background-image: url(../../src/icon/icon-user-fill.svg);
 }
 
 .tab-menu .tab-wrap li .profile-tab::after {
@@ -276,7 +276,7 @@
 }
 
 .tab-menu .tab-wrap li .profile-tab.on {
-  background-image: url(../../src/img/icon/icon-user-fill.svg);
+  background-image: url(../../src/icon/icon-user-fill.svg);
 }
 
 .tab-menu .tab-wrap li .profile-tab.on::after {

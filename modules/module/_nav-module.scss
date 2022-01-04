@@ -1,18 +1,18 @@
 // button image
 .prev-btn {
-  background: url(../../src/img/icon/icon-arrow-left.png);
+  background: url(../../src/icon/icon-arrow-left.png);
   width: 22px;
   height: 22px;
 }
 
 .more-btn {
-  background-image: url(../../src/img/icon/icon-more-vertical.png);
+  background-image: url(../../src/icon/icon-more-vertical.png);
   width: 24px;
   height: 24px;
 }
 
 .search-btn {
-  background-image: url(../../src/img/icon/icon-search.png);
+  background-image: url(../../src/icon/icon-search.png);
   width: 24px;
   height: 24px;
 }
@@ -101,38 +101,38 @@
       }
       // tab 개별 속성
       .home-tab {
-        background-image: url(../../src/img/icon/icon-home.svg);
-        &:hover { background-image: url(../../src/img/icon/icon-home-fill.svg);}
+        background-image: url(../../src/icon/icon-home.svg);
+        &:hover { background-image: url(../../src/icon/icon-home-fill.svg);}
         &::after { content: "홈"; }
         &.on {
-          background-image: url(../../src/img/icon/icon-home-fill.svg);
+          background-image: url(../../src/icon/icon-home-fill.svg);
           &::after { color: $base-color; }
         }
       }
       .chat-tab {
-        background-image: url(../../src/img/icon/icon-message-circle.svg);
-        &:hover { background-image: url(../../src/img/icon/icon-message-circle-fill.svg);}
+        background-image: url(../../src/icon/icon-message-circle.svg);
+        &:hover { background-image: url(../../src/icon/icon-message-circle-fill.svg);}
         &::after { content: "채팅"; }
         &.on {
-          background-image: url(../../src/img/icon/icon-message-circle-fill.svg);
+          background-image: url(../../src/icon/icon-message-circle-fill.svg);
           &::after { color: $base-color; }
         }
       }
       .post-tab {
-        background-image: url(../../src/img/icon/icon-edit.svg);
-        &:hover { background-image: url(../../src/img/icon/icon-edit-fill.svg);}
+        background-image: url(../../src/icon/icon-edit.svg);
+        &:hover { background-image: url(../../src/icon/icon-edit-fill.svg);}
         &::after { content: "게시물 작성"; }
         &.on {
-          background-image: url(../../src/img/icon/icon-edit-fill.svg);
+          background-image: url(../../src/icon/icon-edit-fill.svg);
           &::after { color: $base-color; }
         }
       }
       .profile-tab {
-        background-image: url(../../src/img/icon/icon-user.svg);
-        &:hover { background-image: url(../../src/img/icon/icon-user-fill.svg);}
+        background-image: url(../../src/icon/icon-user.svg);
+        &:hover { background-image: url(../../src/icon/icon-user-fill.svg);}
         &::after { content: "프로필"; }
         &.on {
-          background-image: url(../../src/img/icon/icon-user-fill.svg);
+          background-image: url(../../src/icon/icon-user-fill.svg);
           &::after { color: $base-color; }
         }
       }
