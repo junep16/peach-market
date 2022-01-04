@@ -1,0 +1,52 @@
+.user-search {
+  background-color: #FFF;
+  display: flex;
+  .avatar-img {
+    margin-right: 1.2rem;
+  }
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: space-around;
+    .market-name {
+      font-size: 1.4rem;
+      font-weight: 500;
+      em { color: $base-color; }
+    }
+    .user-name {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: $gray-color;
+    }
+  }
+}
+
+.user-follow {
+  background-color: #FFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .avatar-img {
+    margin-right: 1.2rem;
+  }
+  .wrap {
+    display: flex;
+    .user-info {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      justify-content: space-around;
+      .market-name {
+        font-size: 1.4rem;
+        font-weight: 500;
+        em { color: $base-color; }
+      }
+      .user-name {
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: $gray-color;
+      }
+    }
+  }
+}
