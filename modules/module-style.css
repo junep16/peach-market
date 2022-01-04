@@ -29,6 +29,7 @@
 .ms-disabled-button {
   background-color: #FFD2CC;
   color: #fff;
+  pointer-events: none;
 }
 
 [class^="l-"] {
@@ -247,7 +248,7 @@
 }
 
 .tab-menu .tab-wrap li .post-tab:hover {
-  background-image: url(../../src/img/icon/icon-edit.svg);
+  background-image: url(../../src/img/icon/icon-edit-fill.svg);
 }
 
 .tab-menu .tab-wrap li .post-tab::after {
@@ -255,7 +256,7 @@
 }
 
 .tab-menu .tab-wrap li .post-tab.on {
-  background-image: url(../../src/img/icon/icon-edit.svg);
+  background-image: url(../../src/img/icon/icon-edit-fill.svg);
 }
 
 .tab-menu .tab-wrap li .post-tab.on::after {
@@ -334,10 +335,94 @@
   color: #C4C4C4;
 }
 
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 0;
+.user-search {
+  background-color: #FFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.user-search .avatar-img {
+  margin-right: 1.2rem;
+}
+
+.user-search .user-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: left;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.user-search .user-info .market-name {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.user-search .user-info .market-name em {
+  color: #FFABA2;
+}
+
+.user-search .user-info .user-name {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #767676;
+}
+
+.user-follow {
+  background-color: #FFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user-follow .avatar-img {
+  margin-right: 1.2rem;
+}
+
+.user-follow .wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.user-follow .wrap .user-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: left;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.user-follow .wrap .user-info .market-name {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.user-follow .wrap .user-info .market-name em {
+  color: #FFABA2;
+}
+
+.user-follow .wrap .user-info .user-name {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #767676;
 }
 
 html {
@@ -362,22 +447,5 @@ h3 {
   font-size: 1.3rem;
   font-weight: 600;
   margin: 1.5rem;
-}
-
-button {
-  border: none;
-  background-color: #fff;
-  cursor: pointer;
-}
-
-.text-hide {
-  overflow: hidden;
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
 }
 /*# sourceMappingURL=module-style.css.map */
