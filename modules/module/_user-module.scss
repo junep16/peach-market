@@ -1,23 +1,27 @@
 .user-search {
-  background-color: #FFF;
-  display: flex;
-  .avatar-img {
-    margin-right: 1.2rem;
-  }
-  .user-info {
+  a {
+    background-color: #FFF;
     display: flex;
-    flex-direction: column;
-    text-align: left;
-    justify-content: space-around;
-    .market-name {
-      font-size: 1.4rem;
-      font-weight: 500;
-      em { color: $base-color; }
+    color: #000;
+    &:active { color: $base-color; }
+    .avatar-img {
+      margin-right: 1.2rem;
     }
-    .user-name {
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: $gray-color;
+    .user-info {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      justify-content: space-around;
+      .market-name {
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: inherit;
+      }
+      .user-name {
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: $gray-color;
+      }
     }
   }
 }
@@ -27,25 +31,28 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  .avatar-img {
-    margin-right: 1.2rem;
-  }
-  .wrap {
-    display: flex;
-    .user-info {
+  a {
+    color: #000;
+    &:active { color: $base-color; }
+    .avatar-img {
+      margin-right: 1.2rem;
+    }
+    .wrap {
       display: flex;
-      flex-direction: column;
-      text-align: left;
-      justify-content: space-around;
-      .market-name {
-        font-size: 1.4rem;
-        font-weight: 500;
-        em { color: $base-color; }
-      }
-      .user-name {
-        font-size: 1.2rem;
-        font-weight: 400;
-        color: $gray-color;
+      .user-info {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        justify-content: space-around;
+        .market-name {
+          font-size: 1.4rem;
+          font-weight: 500;
+        }
+        .user-name {
+          font-size: 1.2rem;
+          font-weight: 400;
+          color: $gray-color;
+        }
       }
     }
   }
