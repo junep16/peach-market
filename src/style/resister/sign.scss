@@ -1,0 +1,44 @@
+@import "../common/variables";
+@import "../../../modules/module/button-module";
+
+html {
+  font-size: 10px;
+  color: $gray-color;
+}
+.container {
+  max-width: 39rem;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 24px 34px;
+  text-align: center;
+  h1 {
+    font-size: 2.4rem;
+    color: #111; 
+    margin-bottom: 40px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    label {
+      font-size: 1.2rem;
+      text-align: left;
+    }
+    input {
+      font-size: 1.4rem;
+      border: none;
+      border-bottom: 1px solid #c4c4c4;
+      height: 48px;
+      margin-bottom: 16px;
+      &::placeholder {
+        color: #dbdbdb;
+      }
+    }
+    button {
+      margin: 14px 0 20px 0;
+      height: 48px;
+    }
+  }
+  a {
+    font-size: 1.2rem;
+  }
+}
