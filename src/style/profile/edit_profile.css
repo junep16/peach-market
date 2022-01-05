@@ -364,6 +364,7 @@ form {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 10%;
 }
 
 .profile-image-wrapper {
@@ -406,6 +407,7 @@ form {
 .input-wrapper label {
   font-size: 1.2rem;
   color: #767676;
+  margin-top: 8%;
 }
 
 .input-wrapper input {
