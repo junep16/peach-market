@@ -1,0 +1,84 @@
+@import "../common/fonts";
+@import "../common/variables";
+@import "../../../modules/module/nav-module";
+@import "../../../modules/module/button-module";
+
+main {
+  width: 100%;
+  height: 100vh;  
+} 
+
+form {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  padding: 0 10%; 
+  p {
+    font-size: 1.2rem;
+    color: $gray-color;
+    line-height: 2;
+  }
+}
+.product-image-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 322px;
+  height: 204px;   
+  background-color: $white-gray-color; 
+  border-radius: 10px;
+  overflow: hidden;
+  .product-image {
+    width: 100%;
+    height: 100%; 
+  }
+  .image-upload-button {
+    border-style: none;
+    .product-upload {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      width: 36px;
+      height: 36px;
+    }
+  }
+}
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; 
+  width: 100%;
+  box-sizing: border-box; 
+
+  label {
+    font-size: 1.2rem;
+    color: $gray-color;
+    margin-top: 8%;
+  }
+  input {
+    width: 100%;
+    height: 3rem;
+    font-size: 1.4rem;
+    border-style: none;
+    border-bottom: 1px solid $light-gray-color;
+  }
+  input::placeholder {
+    color: $light-gray-color;
+  }
+  .input-id.error {
+    border-bottom: 1px solid red;
+  }
+  .input-id.error::after {
+    content: "*영문, 숫자, 밑줄 및 마침표만 사용할 수 있습니다.";
+    height: 10px;
+    width: 100px; 
+    position: absolute;
+    top: 10;
+    font-size: 1rem;
+  }
+}
+ 
+
+

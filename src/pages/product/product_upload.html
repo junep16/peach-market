@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style/reset.css">
+    <link rel="stylesheet" href="/src/style/product/product_upload.css">
+    <title>PEACH MARKET | PRODUCT UPLOAD</title>
+</head>
+<body>
+  <header class="top-upload-nav">
+    <button type="button" class="prev-btn"></button>
+    <button type="button" class="ms-disabled-button">저장</button>
+  </header>
+  <main>
+    <form>
+      <h1 class="text-hide">상품 등록</h1>
+      <p>이미지 등록</p>
+    <div>
+      <div class="product-image-wrap">
+        <img class="product-image" src="" alt="상품 이미지">
+        <button class="image-upload-button" type="button">
+          <img class="product-upload" src="/src/img/img-button.png" alt="이미지 업로드">
+        </button>
+      </div>
+    </div> 
+    <div class="input-wrapper">
+      <label for="product-name">상품명</label>
+      <input type="text" id="product-name" placeholder="2~15자 이내여야 합니다.">
+      <label for="product-price">가격</label>
+      <input type="text" id="product-price" class ="input-id error" placeholder="숫자만 입력 가능합니다.">
+      <label for="product-link">판매 링크</label>
+      <input type="text" id="product-link" placeholder="URL을 입력해 주세요.">
+    </div> 
+    </form>
+  </main>
+</body>
+</html>

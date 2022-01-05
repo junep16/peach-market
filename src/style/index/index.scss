@@ -1,0 +1,72 @@
+@import "../../../src/style/common/variables";
+@import "../../../src/style/common/fonts";
+@import "../../../modules/module/nav-module";  
+@import "../../../modules/module/button-module";   
+@import "../../../modules/module/post-module"; 
+
+header {
+  z-index: 20;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+main {
+  width: 100%;
+  border-top: 1px solid $white-gray-color;
+  border-bottom: 1px solid $white-gray-color;
+  padding: 0 3%; 
+  box-sizing: border-box;
+}
+.user-main.on { 
+  display: block;
+  width: 100%; 
+  padding: 15% 0 30% 0;
+}
+.user-main {
+  display: none;
+}
+
+.home-post {
+  margin-top: 8%;
+}
+
+footer {
+  z-index: 20;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.modal { 
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  padding-top: 60%;
+
+  .modal-content {
+  background-color: #FFF; 
+  text-align: center;
+  .follow-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    img {
+      width: 12rem; 
+      height: 12rem;
+    }
+    p {
+      font-size: 1.4rem;
+      color: $gray-color; 
+      margin-bottom: 2rem;
+    }
+  }
+}
+}

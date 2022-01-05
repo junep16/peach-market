@@ -1,16 +1,89 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
-  <link rel="stylesheet" href="reset.css">
-  <style>
-    
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/style/reset.css">  
+    <link rel="stylesheet" href="/src/style/index/index.css">
+    <title>PEACH MARKET | HOME </title>
 </head>
 <body>
-  
+  <header class="top-main-nav">
+    <h2 class="top-nav-text">감귤마켓 피드</h2>
+    <button type="button" class="search-btn"></button>
+  </header>
+<main>
+  <section class="user-main on">
+    <article class="home-post">
+      <img src="../src/img/avatar.png" alt="프로필 사진" class="avatar-img">
+      <div class="content-wrap">
+        <p class="user-info">
+          <a href="#none">
+            <strong class="market-name">애월읍 위니브 감귤농장</strong>
+            <span class="user-name">@ weniv_Mandarin</span>
+          </a>
+          <button type="button" class="more-btn"></button>
+        </p>
+        <p class="post-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati beatae ipsam quaerat aperiam, dolor sapiente alias nihil dignissimos asperiores ex ipsa esse cum distinctio nostrum illum voluptatem ratione, earum ad?</p>
+        <img src="../src/img/post-img-example.png" alt="포스트 사진" class="post-img"> 
+        <button 
+          type="button"
+          class="heart-btn"
+          data-count="58"
+        >58</button>
+        <button
+          type="button"
+          class="comment-btn"
+          data-count="12"
+        >12</button>
+        <span class="upload-date">2020년 10월 21일</span>
+      </div>
+    </article>
+    <article class="home-post">
+      <img src="../src/img/avatar.png" alt="프로필 사진" class="avatar-img">
+      <div class="content-wrap">
+        <p class="user-info">
+          <a href="#none">
+            <strong class="market-name">애월읍 위니브 감귤농장</strong>
+            <span class="user-name">@ weniv_Mandarin</span>
+          </a>
+          <button type="button" class="more-btn"></button>
+        </p>
+        <p class="post-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati beatae ipsam quaerat aperiam, dolor sapiente alias nihil dignissimos asperiores ex ipsa esse cum distinctio nostrum illum voluptatem ratione, earum ad?</p>
+        <img src="../src/img/post-img-example.png" alt="포스트 사진" class="post-img"> 
+        <button 
+          type="button"
+          class="heart-btn"
+          data-count="58"
+        >58</button>
+        <button
+          type="button"
+          class="comment-btn"
+          data-count="12"
+        >12</button>
+        <span class="upload-date">2020년 10월 21일</span>
+      </div>
+    </article>
+  </section>
+  <!-- 로그인 전 모달 -->
+    <div class="modal">
+      <article class="modal-content">
+        <div class="follow-wrapper">
+           <img src="/src/img/logo_gray.png" alt="피치마켓 회색 로고">
+           <p>유저를 검색해 팔로우 해보세요!</p>
+           <button type="button" class="ml-button">검색하기</button>
+        </div>
+      </article>
+    </div>
+</main>
+  <footer class="tab-menu">
+    <ul class="tab-wrap">
+      <li><a href="#none" class="home-tab"></a></li>
+      <li><a href="#none" class="chat-tab"></a></li>
+      <li><a href="#none" class="post-tab"></a></li>
+      <li><a href="#none" class="profile-tab"></a></li>
+    </ul>
+  </footer>
 </body>
 </html>
