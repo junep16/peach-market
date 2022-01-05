@@ -525,11 +525,6 @@
   color: #FFABA2;
 }
 
-.container {
-  width: 390px;
-  border: 1px solid black;
-}
-
 .search-user-cont {
   height: 712px;
   overflow-y: scroll;
