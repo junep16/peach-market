@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/style/reset.css">  
-    <link rel="stylesheet" href="/src/style/index.css">
+    <link rel="stylesheet" href="/src/style/index/index.css">
     <title>PEACH MARKET | HOME </title>
 </head>
 <body>
@@ -14,7 +14,7 @@
     <button type="button" class="search-btn"></button>
   </header>
 <main>
-  <section>
+  <section class="user-main on">
     <article class="home-post">
       <img src="../src/img/avatar.png" alt="프로필 사진" class="avatar-img">
       <div class="content-wrap">
@@ -66,6 +66,16 @@
       </div>
     </article>
   </section>
+  <!-- 로그인 전 모달 -->
+    <div class="modal">
+      <article class="modal-content">
+        <div class="follow-wrapper">
+           <img src="/src/img/logo_gray.png" alt="피치마켓 회색 로고">
+           <p>유저를 검색해 팔로우 해보세요!</p>
+           <button type="button" class="ml-button">검색하기</button>
+        </div>
+      </article>
+    </div>
 </main>
   <footer class="tab-menu">
     <ul class="tab-wrap">
