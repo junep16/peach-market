@@ -1,0 +1,81 @@
+html {
+  font-size: 10px;
+  color: #767676;
+}
+
+a {
+  color: #767676;
+}
+
+.container {
+  background-color: #ffaba2;
+  max-width: 39rem;
+  margin: 0 auto;
+}
+
+.container .logoWhite {
+  display: block;
+  margin: 0 auto;
+  padding: 177px 0;
+  width: 16rem;
+}
+
+.container .loginList {
+  padding: 5rem 3.4rem;
+  background-color: #fff;
+  border-radius: 2rem 2rem 0 0;
+}
+
+.container .loginList li {
+  text-align: center;
+}
+
+.container .loginList li button {
+  width: 100%;
+  height: 4.4rem;
+  padding: 1.3rem 1.5rem;
+  border-radius: 3rem;
+  display: inline-block;
+  color: #767676;
+  background-color: #fff;
+  font-size: 1.4rem;
+  overflow: hidden;
+}
+
+.container .loginList li button img {
+  float: left;
+  position: relative;
+  bottom: 0.1rem;
+  height: 20px;
+}
+
+.container .loginList li .kakaoBtn {
+  border: 0.1rem solid #f2c94c;
+  margin-bottom: 1rem;
+}
+
+.container .loginList li .googleBtn {
+  border: 0.1rem solid #767676;
+  margin-bottom: 1rem;
+}
+
+.container .loginList li .facebookBtn {
+  border: 0.1rem solid #2d9cdb;
+  margin-bottom: 2rem;
+}
+
+.container .loginList li a {
+  padding: 0 20px;
+}
+
+.container .loginList li a:first-child::after {
+  content: "";
+  display: inline-block;
+  width: 0.1rem;
+  height: 1rem;
+  position: relative;
+  top: 2px;
+  left: 20px;
+  background-color: #c4c4c4;
+}
+/*# sourceMappingURL=login.css.map */

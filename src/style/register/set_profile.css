@@ -1,13 +1,9 @@
 @import url("./sign.css");
-
-/* common */
-button {
-  cursor: pointer;
-}
 .container .selectProfile p {
   font-size: 1.4rem;
   margin-bottom: 30px;
 }
+
 .container .selectProfile button {
   background-color: inherit;
   width: 110px;
@@ -16,7 +12,10 @@ button {
   margin-bottom: 30px;
   border-radius: 50%;
   border: 1px solid #dbdbdb;
+  background: url(../../img/avatar50.png);
+  background-size: contain;
 }
+
 .container .selectProfile button img {
   display: inline-block;
   position: relative;
@@ -25,3 +24,4 @@ button {
   width: 36px;
   height: 36px;
 }
+/*# sourceMappingURL=set_profile.css.map */
