@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../style/reset.css">
-    <link rel="stylesheet" href="/src/style/post/post_upload.css">
-    <title>PEACH MARKET | UPLOAD </title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../style/reset.css">
+  <link rel="stylesheet" href="/src/style/post/post_upload.css">
+  <title>PEACH MARKET | UPLOAD </title>
 </head>
 <body>
-    
+  <header class="top-upload-nav">
+    <button type="button" class="prev-btn"></button>
+    <button type="button" class="ms-button">업로드</button>
+  </header>
+  <main>
+    <article class="post-text">
+      <img src="/src/img/avatar.png" alt="프로필 사진" class="avatar-img">
+      <form action="" method="post">
+        <label for="postInput" class="text-hide">댓글 입력창</label>
+        <textarea 
+          placeholder="게시글 입력하기..."
+          class="post-input" 
+          id="postInput"
+          minlength="1"
+          maxlength="500"
+          ></textarea>
+          <button class="buton-image-upload" type="button">
+            <img src="/src/img/upload-file.png" alt="이미지 업로드 버튼">
+          </button>
+      </form>
+    </article>
+    <article class="post-image">
+      
+
+    </article>
+  </main>
 </body>
 </html>
