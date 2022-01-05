@@ -75,6 +75,7 @@ form p {
 .input-wrapper label {
   font-size: 1.2rem;
   color: #767676;
+  margin-top: 16px;
 }
 
 .input-wrapper input {
@@ -107,7 +108,10 @@ form p {
 
 .input-wrapper .input-id.error::after {
   content: "*영문, 숫자, 밑줄 및 마침표만 사용할 수 있습니다.";
-  display: block;
+  height: 10px;
+  width: 100px;
+  position: absolute;
+  top: 10;
   font-size: 1rem;
 }
 /*# sourceMappingURL=product_upload.css.map */
