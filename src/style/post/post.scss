@@ -12,7 +12,7 @@ header {
 }
   
 main {
-  width: 100%; 
+  width: 100%;  
   border-top: 1px solid $white-gray-color;
   border-bottom: 1px solid $white-gray-color;
   padding: 0 3%; 
@@ -30,7 +30,53 @@ footer {
   margin-top: 20%;
 }
 
-.comment-container {
-  width: 100%;
+.comments {
+  margin-bottom: 25%;
+}
+
+
+.comment-card {  
+  margin: 5% 0 5% 0;
+  .comment-info{
+    display: flex;
+    align-items: center;  
+    .image-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $white-gray-color;
+      width: 36px;
+      height: 36px;
+      border-radius: 36px;  
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    p { 
+      width: 80%;
+      margin: 6px 0 0 10px; 
+      font-size: 1.4rem; 
+      span {
+        color: $light-gray-color;
+        font-size: 1rem; 
+        margin-left: 2.54%;
+      }
+    } 
+    .button-more {
+      background-image: url(/src/icon/icon-more-vertical.png);
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+    }
+  }
+  .comment-detail {
+    box-sizing: border-box;
+    padding: 0 4% 0 13%; 
+    font-size: 1.4rem;
+    line-height: 1.5;
+    margin-top: 2%;
+  } 
 }
 
