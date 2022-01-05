@@ -1,6 +1,6 @@
 @import "../common/fonts";
 @import "../common/variables";
-// @import "/modules/module/nav-module";
+
 html {
   font-size: 10px;
 }
@@ -11,24 +11,36 @@ main {
 } 
 
 form {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  padding:  0 10%; 
+  p {
+    font-size: 1.2rem;
+    color: $gray-color;
+    line-height: 2;
+  }
+}
+.product-image-wrap {
+  position: relative;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.profile-image-wrapper {
-  position: relative;
-  .profile-image {
-    width: 11rem; 
-    height: 11rem; 
+  width: 100%;  
+  background-color: red;
+  background-color: $light-gray-color; 
+  border-radius: 10px;
+  overflow: hidden;
+  .product-image {
+    width: 100%;
+    height: 100%;
   }
-  .profile-upload {
+  .product-upload {
     position: absolute;
-    top: 7.3rem;
-    right: 0.2rem;
-    width: 3.6rem;
-    height: 3.6rem;
+    bottom: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
   }
 }
 .input-wrapper {
@@ -37,9 +49,8 @@ form {
   justify-content: center;
   align-items: flex-start; 
   width: 100%;
-  box-sizing: border-box;
-  padding: 3rem 3.4rem;
-  
+  box-sizing: border-box; 
+
   label {
     font-size: 1.2rem;
     color: $gray-color;
@@ -63,3 +74,5 @@ form {
     font-size: 1rem;
   }
 }
+
+
