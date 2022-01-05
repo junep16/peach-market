@@ -1,9 +1,10 @@
+@import "../../src/style/common/variables";
+
 .home-post,
 .home-post-onlytext {
   background-color: #fff;
   display: flex;
   justify-content: space-between;
-  text-align: left;
 }
 
 .avatar-img {
@@ -38,6 +39,7 @@
   }
   .post-content {
     font-size: 1.4rem;
+    line-height: 17px;
     margin-bottom: 1.6rem;
   }
   .post-img {
@@ -62,12 +64,12 @@
     }
   }
   .heart-btn{
-    &::before { background-image: url(../../src/icon/icon-heart.svg); }
-    &.on::before { background-image: url(../../src/icon/icon-heart-active.svg); }
+    &::before { background-image: url(/../../src/icon/icon-heart.svg); }
+    &.on::before { background-image: url(/../../src/icon/icon-heart-active.svg); }
   }
   .comment-btn{
-    &::before { background-image: url(../../src/icon/icon-message-circle.svg); }
-    &.on::before { background-image: url(../../src/icon/icon-message-circle-fill.svg); }
+    &::before { background-image: url(/../../src/icon/icon-message-circle.svg); }
+    &.on::before { background-image: url(/../../src/icon/icon-message-circle-fill.svg); }
   }
   button + button {
     margin-left: 1.8rem;
@@ -83,7 +85,6 @@
 .product {
   background-color: #fff;
   width: fit-content;
-  text-align: left;
   a {
     color: #000;
     &:active {
