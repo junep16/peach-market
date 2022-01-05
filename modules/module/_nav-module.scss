@@ -1,18 +1,20 @@
+@import "../../src/style/common/variables";
+
 // button image
 .prev-btn {
-  background: url(../../src/icon/icon-arrow-left.png);
+  background: url(/../../src/icon/icon-arrow-left.png);
   width: 22px;
   height: 22px;
 }
 
 .more-btn {
-  background-image: url(../../src/icon/icon-more-vertical.png);
+  background-image: url(/../../src/icon/icon-more-vertical.png);
   width: 24px;
   height: 24px;
 }
 
 .search-btn {
-  background-image: url(../../src/icon/icon-search.png);
+  background-image: url(/../../src/icon/icon-search.png);
   width: 24px;
   height: 24px;
 }
@@ -27,6 +29,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid $line-color;
   padding: 1.2rem 1.2rem 1.2rem 1.6rem;
 }
 
@@ -34,10 +37,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid $line-color;
   padding: 1.2rem 1.9rem .8rem;
+  .prev-btn { margin-right: 20px; }
   .search-input {
     font-size: 1.4rem;
-    width: 316px;
+    width: 100%;
     border-radius: 15px;
     border: none;
     background-color: $white-gray-color;
@@ -52,6 +57,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid $line-color;
   padding: 1.2rem 1.6rem;
   .top-nav-text {
     font-size: 1.8rem;
@@ -73,6 +79,7 @@
 
 .tab-menu {
   background-color: #fff;
+  border-top: 1px solid $line-color;
   padding: 0 .6rem;
   .tab-wrap {
     display: flex;
@@ -81,7 +88,7 @@
     li {
       width: 8.4rem;
       height: 6rem;
-      padding: 1.2rem 3rem .6rem;
+      padding: 12px 30px 6px;
       // tab 공통 속성 적용
       [class$="tab"] {
         position: relative;
@@ -90,6 +97,7 @@
         font-size: 1rem;
         width: 24px;
         height: 24px;
+        text-align: center;
         &::after {
           position: absolute;
           color: $gray-color;
@@ -101,38 +109,38 @@
       }
       // tab 개별 속성
       .home-tab {
-        background-image: url(../../src/icon/icon-home.svg);
-        &:hover { background-image: url(../../src/icon/icon-home-fill.svg);}
+        background-image: url(/../../src/icon/icon-home.svg);
+        &:hover { background-image: url(/../../src/icon/icon-home-fill.svg);}
         &::after { content: "홈"; }
         &.on {
-          background-image: url(../../src/icon/icon-home-fill.svg);
+          background-image: url(/../../src/icon/icon-home-fill.svg);
           &::after { color: $base-color; }
         }
       }
       .chat-tab {
-        background-image: url(../../src/icon/icon-message-circle.svg);
-        &:hover { background-image: url(../../src/icon/icon-message-circle-fill.svg);}
+        background-image: url(/../../src/icon/icon-message-circle.svg);
+        &:hover { background-image: url(/../../src/icon/icon-message-circle-fill.svg);}
         &::after { content: "채팅"; }
         &.on {
-          background-image: url(../../src/icon/icon-message-circle-fill.svg);
+          background-image: url(/../../src/icon/icon-message-circle-fill.svg);
           &::after { color: $base-color; }
         }
       }
       .post-tab {
-        background-image: url(../../src/icon/icon-edit.svg);
-        &:hover { background-image: url(../../src/icon/icon-edit-fill.svg);}
+        background-image: url(/../../src/icon/icon-edit.svg);
+        &:hover { background-image: url(/../../src/icon/icon-edit-fill.svg);}
         &::after { content: "게시물 작성"; }
         &.on {
-          background-image: url(../../src/icon/icon-edit-fill.svg);
+          background-image: url(/../../src/icon/icon-edit-fill.svg);
           &::after { color: $base-color; }
         }
       }
       .profile-tab {
-        background-image: url(../../src/icon/icon-user.svg);
-        &:hover { background-image: url(../../src/icon/icon-user-fill.svg);}
+        background-image: url(/../../src/icon/icon-user.svg);
+        &:hover { background-image: url(/../../src/icon/icon-user-fill.svg);}
         &::after { content: "프로필"; }
         &.on {
-          background-image: url(../../src/icon/icon-user-fill.svg);
+          background-image: url(/../../src/icon/icon-user-fill.svg);
           &::after { color: $base-color; }
         }
       }
@@ -144,6 +152,7 @@
   background-color: #fff;
   display: flex;
   align-items: center;
+  border-top: 1px solid $line-color;
   padding: 1.3rem 2rem 1.2rem 1.6rem;
   form {
     display: flex;

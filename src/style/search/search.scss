@@ -1,0 +1,17 @@
+@import "../../../modules/module/nav-module";
+@import "../../../modules/module/user-module";
+@import "../../../modules/module/post-module";
+
+.container {
+  width: 390px;
+  border: 1px solid black;
+}
+
+.search-user-cont {
+  height: 712px;
+  overflow-y: scroll;
+  padding: 20px 16px;
+  li + li {
+    margin-top: 16px;
+  }
+}
