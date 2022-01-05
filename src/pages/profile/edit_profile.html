@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../style/reset.css">
-    <link rel="stylesheet" href="/src/style/profile/my_profile.css">
+    <link rel="stylesheet" href="/src/style/profile/edit_profile.css">
     <title>PEACH MARKET | EDIT PROFILE</title>
 </head>
 <body>
@@ -13,21 +13,30 @@
     <button type="button" class="prev-btn"></button>
     <button type="button" class="ms-disabled-button">저장</button>
   </header>
-  <main>
+  <main> 
     <form>
       <div class="profile-image-wrapper">
-        <img src="/src/img/avatar.png" alt="디폴트 유저 프로필">
-        <img src="/src/img/upload-file.png" alt="이미지 업로드">
+        <img class="profile-image" src="/src/img/basic-profile-img-.png" alt="디폴트 유저 프로필">
+        <img class="profile-upload" src="/src/img/upload-file.png" alt="이미지 업로드">
       </div>
       <div class="input-wrapper">
-        <label for="">사용자 이름</label>
-        <input type="text" placeholder="2~10자 이내여야 합니다.">
-        <label for="">계정 ID</label>
-        <input type="text" placeholder="영문, 숫자, 특수문자(.),(_)만 사용 가능합니다.">
-        <label for="">소개</label>
-        <input type="text" placeholder="자신과 판매할 상품에 대해 소개해 주세요!">
+        <label for="user-name">사용자 이름</label>
+        <input type="text" id="user-name" placeholder="2~10자 이내여야 합니다.">
+        <label for="user-id">계정 ID</label>
+        <input type="text" id="user-id" class ="input-id error" placeholder="영문, 숫자, 특수문자(.),(_)만 사용 가능합니다.">
+        <label for="user-introduction">소개</label>
+        <input type="text" id="user-introduction" placeholder="자신과 판매할 상품에 대해 소개해 주세요!">
       </div>
+      <button type="button" class="l-button">감귤마켓 시작하기</button>
     </form>
   </main>
+  <footer class="tab-menu">
+    <ul class="tab-wrap">
+      <li><a href="#none" class="home-tab"></a></li>
+      <li><a href="#none" class="chat-tab"></a></li>
+      <li><a href="#none" class="post-tab"></a></li>
+      <li><a href="#none" class="profile-tab"></a></li>
+    </ul>
+  </footer>
 </body>
 </html>
