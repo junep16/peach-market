@@ -1,11 +1,24 @@
 @import "../style/common/_variables";
 @import "../style/common/_fonts";
-@import "../../modules/module-style.scss";  
+@import "../../modules/module/nav-module";  
+@import "../../modules/module/post-module";   
 
 main {
     width: 100%;
-    background: #FFF; 
-    height: 100vh;
+
+    background: #FFF;  
     border-top: 1px solid $white-gray-color;
     border-bottom: 1px solid $white-gray-color;
+    padding: 0 3%; 
+    box-sizing: border-box;
   }
+
+.home-post {
+  margin-top: 8%;
+}
+
+footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
