@@ -1,67 +1,4 @@
 @charset "UTF-8";
-[class$=button] {
-  border: none;
-  border-radius: 30px;
-  color: #767676;
-  -webkit-transition: .2s linear;
-  transition: .2s linear;
-}
-
-.l-button,
-.ml-button,
-.m-button,
-.ms-button,
-.s-button {
-  background-color: #FFABA2;
-  color: #fff;
-}
-
-.l-button:active,
-.ml-button:active,
-.m-button:active,
-.ms-button:active,
-.s-button:active {
-  background-color: #FFD2CC;
-}
-
-.l-disabled-button,
-.m-disabled-button,
-.ms-disabled-button {
-  background-color: #FFD2CC;
-  color: #fff;
-  pointer-events: none;
-}
-
-[class^="l-"] {
-  font-size: 1.4rem;
-  height: 4.4rem;
-  width: 82.56%;
-}
-
-[class^="ml-"] {
-  font-size: 1.4rem;
-  height: 4.4rem;
-  width: 30.76%;
-}
-
-[class^="m-"] {
-  font-size: 1.4rem;
-  height: 3.4rem;
-  width: 30.76%;
-}
-
-[class^="ms-"] {
-  font-size: 1.4rem;
-  height: 3.2rem;
-  width: 23%;
-}
-
-[class^="s-"] {
-  font-size: 1.2rem;
-  height: 2.8rem;
-  width: 14.4%;
-}
-
 .prev-btn {
   background: url(/../../src/icon/icon-arrow-left.png);
   width: 22px;
@@ -588,38 +525,18 @@
   color: #FFABA2;
 }
 
-html {
-  background-color: #E5E5E5;
-}
-
 .container {
   width: 390px;
-  margin: 10% auto;
-  border: 1px solid #767676;
+  border: 1px solid black;
 }
 
-.module-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-top: 2rem;
-  text-align: left;
+.search-user-cont {
+  height: 712px;
+  overflow-y: scroll;
+  padding: 20px 16px;
 }
 
-h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin: 1.5rem;
+.search-user-cont li + li {
+  margin-top: 16px;
 }
-
-.category ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin: 1rem;
-}
-/*# sourceMappingURL=module-style.css.map */
+/*# sourceMappingURL=search.css.map */
