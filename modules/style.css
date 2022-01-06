@@ -481,7 +481,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-top: .4rem;
+  margin: 4px 0 16px;
 }
 
 .content-wrap .user-info a {
@@ -526,38 +526,50 @@
   margin-bottom: 1.5rem;
 }
 
-.content-wrap [class$="btn"] {
+.content-wrap .heart-btn {
   font-size: 12px;
   font-weight: 400px;
   color: #767676;
   margin-bottom: 2rem;
 }
 
-.content-wrap [class$="btn"]::before {
+.content-wrap .heart-btn::before {
   content: "";
   display: inline-block;
+  background-image: url("/../../src/icon/icon-heart.svg");
   background-repeat: no-repeat;
   background-size: contain;
-  width: 15px;
-  height: 15px;
+  width: 16px;
+  height: 16px;
   vertical-align: sub;
   margin-right: .6rem;
 }
 
-.content-wrap .heart-btn::before {
-  background-image: url(/../../src/icon/icon-heart.svg);
+.content-wrap .heart-btn.on::before {
+  background-image: url("/../../src/icon/icon-heart-active.svg");
 }
 
-.content-wrap .heart-btn.on::before {
-  background-image: url(/../../src/icon/icon-heart-active.svg);
+.content-wrap .comment-btn {
+  font-size: 12px;
+  font-weight: 400px;
+  color: #767676;
+  margin-bottom: 2rem;
 }
 
 .content-wrap .comment-btn::before {
-  background-image: url(/../../src/icon/icon-message-circle.svg);
+  content: "";
+  display: inline-block;
+  background-image: url("/../../src/icon/icon-message-circle.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 16px;
+  height: 16px;
+  vertical-align: sub;
+  margin-right: .6rem;
 }
 
 .content-wrap .comment-btn.on::before {
-  background-image: url(/../../src/icon/icon-message-circle-fill.svg);
+  background-image: url("/../../src/icon/icon-message-circle-fill.svg");
 }
 
 .content-wrap button + button {
