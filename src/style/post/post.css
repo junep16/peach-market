@@ -125,9 +125,10 @@
   padding: 12px 30px 6px;
 }
 
-.tab-menu .tab-wrap li [class$="tab"] {
+.tab-menu .tab-wrap li .home-tab {
   position: relative;
   display: block;
+  background-image: url("/../../src/icon/icon-home.svg");
   background-size: cover;
   font-size: 1rem;
   width: 24px;
@@ -135,7 +136,8 @@
   text-align: center;
 }
 
-.tab-menu .tab-wrap li [class$="tab"]::after {
+.tab-menu .tab-wrap li .home-tab::after {
+  content: "홈";
   position: absolute;
   color: #767676;
   bottom: -14px;
@@ -145,87 +147,101 @@
   width: 54px;
 }
 
-.tab-menu .tab-wrap li [class$="tab"]:hover::after {
-  color: #FFABA2;
+.tab-menu .tab-wrap li .home-tab.on, .tab-menu .tab-wrap li .home-tab:hover {
+  background-image: url("/../../src/icon/icon-home-fill.svg");
 }
 
-.tab-menu .tab-wrap li .home-tab {
-  background-image: url(/../../src/icon/icon-home.svg);
-}
-
-.tab-menu .tab-wrap li .home-tab:hover {
-  background-image: url(/../../src/icon/icon-home-fill.svg);
-}
-
-.tab-menu .tab-wrap li .home-tab::after {
-  content: "홈";
-}
-
-.tab-menu .tab-wrap li .home-tab.on {
-  background-image: url(/../../src/icon/icon-home-fill.svg);
-}
-
-.tab-menu .tab-wrap li .home-tab.on::after {
+.tab-menu .tab-wrap li .home-tab.on::after, .tab-menu .tab-wrap li .home-tab:hover::after {
   color: #FFABA2;
 }
 
 .tab-menu .tab-wrap li .chat-tab {
-  background-image: url(/../../src/icon/icon-message-circle.svg);
-}
-
-.tab-menu .tab-wrap li .chat-tab:hover {
-  background-image: url(/../../src/icon/icon-message-circle-fill.svg);
+  position: relative;
+  display: block;
+  background-image: url("/../../src/icon/icon-message-circle.svg");
+  background-size: cover;
+  font-size: 1rem;
+  width: 24px;
+  height: 24px;
+  text-align: center;
 }
 
 .tab-menu .tab-wrap li .chat-tab::after {
   content: "채팅";
+  position: absolute;
+  color: #767676;
+  bottom: -14px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 54px;
 }
 
-.tab-menu .tab-wrap li .chat-tab.on {
-  background-image: url(/../../src/icon/icon-message-circle-fill.svg);
+.tab-menu .tab-wrap li .chat-tab.on, .tab-menu .tab-wrap li .chat-tab:hover {
+  background-image: url("/../../src/icon/icon-message-circle-fill.svg");
 }
 
-.tab-menu .tab-wrap li .chat-tab.on::after {
+.tab-menu .tab-wrap li .chat-tab.on::after, .tab-menu .tab-wrap li .chat-tab:hover::after {
   color: #FFABA2;
 }
 
 .tab-menu .tab-wrap li .post-tab {
-  background-image: url(/../../src/icon/icon-edit.svg);
-}
-
-.tab-menu .tab-wrap li .post-tab:hover {
-  background-image: url(/../../src/icon/icon-edit-fill.svg);
+  position: relative;
+  display: block;
+  background-image: url("/../../src/icon/icon-edit.svg");
+  background-size: cover;
+  font-size: 1rem;
+  width: 24px;
+  height: 24px;
+  text-align: center;
 }
 
 .tab-menu .tab-wrap li .post-tab::after {
   content: "게시물 작성";
+  position: absolute;
+  color: #767676;
+  bottom: -14px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 54px;
 }
 
-.tab-menu .tab-wrap li .post-tab.on {
-  background-image: url(/../../src/icon/icon-edit-fill.svg);
+.tab-menu .tab-wrap li .post-tab.on, .tab-menu .tab-wrap li .post-tab:hover {
+  background-image: url("/../../src/icon/icon-edit-fill.svg");
 }
 
-.tab-menu .tab-wrap li .post-tab.on::after {
+.tab-menu .tab-wrap li .post-tab.on::after, .tab-menu .tab-wrap li .post-tab:hover::after {
   color: #FFABA2;
 }
 
 .tab-menu .tab-wrap li .profile-tab {
-  background-image: url(/../../src/icon/icon-user.svg);
-}
-
-.tab-menu .tab-wrap li .profile-tab:hover {
-  background-image: url(/../../src/icon/icon-user-fill.svg);
+  position: relative;
+  display: block;
+  background-image: url("/../../src/icon/icon-user.svg");
+  background-size: cover;
+  font-size: 1rem;
+  width: 24px;
+  height: 24px;
+  text-align: center;
 }
 
 .tab-menu .tab-wrap li .profile-tab::after {
   content: "프로필";
+  position: absolute;
+  color: #767676;
+  bottom: -14px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 54px;
 }
 
-.tab-menu .tab-wrap li .profile-tab.on {
-  background-image: url(/../../src/icon/icon-user-fill.svg);
+.tab-menu .tab-wrap li .profile-tab.on, .tab-menu .tab-wrap li .profile-tab:hover {
+  background-image: url("/../../src/icon/icon-user-fill.svg");
 }
 
-.tab-menu .tab-wrap li .profile-tab.on::after {
+.tab-menu .tab-wrap li .profile-tab.on::after, .tab-menu .tab-wrap li .profile-tab:hover::after {
   color: #FFABA2;
 }
 

@@ -1,0 +1,27 @@
+@mixin tab-menu-module($base-img-path, $active-img-path, $content) {
+  position: relative;
+  display: block;
+  background-image: url($base-img-path);
+  background-size: cover;
+  font-size: 1rem;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  &::after {
+    content: $content;
+    position: absolute;
+    color: $gray-color;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 54px;
+  }
+  &.on,
+  &:hover {
+    background-image: url($active-img-path);
+  }
+  &.on::after,
+  &:hover::after {
+    color: $base-color;
+  }
+}
