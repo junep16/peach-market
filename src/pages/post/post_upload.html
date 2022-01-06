@@ -24,17 +24,33 @@
           id="postInput"
           minlength="1"
           maxlength="500"
-          ></textarea>
-          <button class="buton-image-upload" type="button">
-            <img src="/src/img/upload-file.png" alt="이미지 업로드 버튼">
-          </button>
+          ></textarea> 
+            <label class="button-image-upload" for="button-image-upload">
+              이미지업로드
+              <input 
+                class=""
+                type="file"
+                name="image-upload"
+                
+                >
+            </label> 
       </form>
     </article>
-    <article class="post-image">
-      <div>
-        <img src="/src/img/post-img-example.png" alt="업로드한 이미지">
+    <article class="post-image-window">
+      <div class="post-image-container">
+        <div class="image-wrapper">
+          <img src="/src/img/post-img-example.png" alt="업로드한 이미지">
+          <button class="image-delete" type="button">
+            <img src="../../icon/icon-delete.svg" alt="이미지 제거">
+          </button>
+        </div>
+        <div class="image-wrapper">
+          <img src="/src/img/post-img-example.png" alt="업로드한 이미지">
+          <button class="image-delete" type="button">
+            <img src="../../icon/icon-delete.svg" alt="이미지 제거">
+          </button>
+        </div>
       </div>
-
     </article>
   </main>
 </body>
