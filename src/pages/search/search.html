@@ -1,40 +1,58 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>peach market - search</title>
-  <link rel="stylesheet" href="../style/reset.css">
-  <link rel="stylesheet" href="../style/search/search.css">
+  <link rel="stylesheet" href="../../style/reset.css">
+  <link rel="stylesheet" href="../../style/search/search.css">
 </head>
+
 <body>
-  <div class="container">
-    <header class="top-search-nav">
-      <button type="button" class="prev-btn"></button>
-      <input type="search" class="search-input" placeholder="계정 검색">
-    </header>
-    <main>
-      <ul class="search-user-cont">
-        <li class="user-search">
-          <a href="#none">
-          <img src="../img/avatar50.png" alt="프로필 사진" class="avatar-img">
+  <header class="top-search-nav">
+    <button type="button" class="prev-btn"></button>
+    <input type="search" class="search-input" placeholder="계정 검색">
+  </header>
+  <main>
+    <ul class="search-user-cont">
+      <li class="user-search">
+        <a href="#none">
+          <img src="../../img/avatar50.png" alt="프로필 사진" class="avatar-img">
           <p class="user-info">
             <strong class="market-name">애월읍 위니브 감귤농장</strong>
             <span class="user-name">@ weniv_Mandarin</span>
           </p>
-          </a>
-        </li>
-      </ul>
-    </main>
-    <footer class="tab-menu">
-      <ul class="tab-wrap">
-        <li><a href="#none" class="home-tab"></a></li>
-        <li><a href="#none" class="chat-tab"></a></li>
-        <li><a href="#none" class="post-tab"></a></li>
-        <li><a href="#none" class="profile-tab"></a></li>
-      </ul>
-    </footer>
-  </div>
+        </a>
+      </li>
+      <li class="user-search">
+        <a href="#none">
+          <img src="../../img/avatar50.png" alt="프로필 사진" class="avatar-img">
+          <p class="user-info">
+            <strong class="market-name">애월읍 위니브 감귤농장</strong>
+            <span class="user-name">@ weniv_Mandarin</span>
+          </p>
+        </a>
+      </li>
+    </ul>
+  </main>
+  <footer class="tab-menu">
+    <ul class="tab-wrap">
+      <li><a href="#none" class="home-tab"></a></li>
+      <li><a href="#none" class="chat-tab on"></a></li>
+      <li><a href="#none" class="post-tab"></a></li>
+      <li><a href="#none" class="profile-tab"></a></li>
+    </ul>
+  </footer>
+  <script src="../../js/fixPosition.js"></script>
+  <script>
+    const navbar = document.querySelector('.top-search-nav');
+    const menuTab = document.querySelector(".tab-menu");
+  
+    fixedFunc(navbar, "top-fixed");
+    fixedFunc(menuTab, "bottom-fixed", false);
+  </script>
 </body>
+
 </html>
