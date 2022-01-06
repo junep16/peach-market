@@ -1,0 +1,50 @@
+// tab module에서 사용
+@mixin tab-menu-module($base-img-path, $active-img-path, $content) {
+  position: relative;
+  display: block;
+  background-image: url($base-img-path);
+  background-size: cover;
+  font-size: 1rem;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  &::after {
+    content: $content;
+    position: absolute;
+    color: $gray-color;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 54px;
+  }
+  &.on,
+  &:hover {
+    background-image: url($active-img-path);
+  }
+  &.on::after,
+  &:hover::after {
+    color: $base-color;
+  }
+}
+
+// post module에서 사용
+@mixin post-icon-module($base-img-path, $active-img-path) {
+  font-size: 12px;
+  font-weight: 400px;
+  color: $gray-color;
+  margin-bottom: 2rem;
+  &::before {
+    content: "";
+    display: inline-block;
+    background-image: url($base-img-path);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 16px;
+    height: 16px;
+    vertical-align: sub;
+    margin-right: .6rem;
+  }
+  &.on::before {
+    background-image: url($active-img-path);
+  }
+}
