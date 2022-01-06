@@ -1,0 +1,47 @@
+@import "../../../modules/module/nav-module";
+
+
+.chat-list-cont {
+  padding: 24px 16px;
+  overflow-y: scroll;
+  height: 712px;
+  .chat-item {
+    display: flex;
+    justify-content: space-between;
+    &.on a::before {  
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      display: block;
+      background-color: $base-color;
+      border-radius: 50%;
+      width: 14px;
+      height: 14px;
+    }
+    a {
+      position: relative;
+      display: flex;
+      align-items: center;
+      color: #000;
+      &:active { color: $base-color; }
+      .avatar-img { margin-right: 12px;}
+      .user-info {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        .market-name { font-size: 1.4rem; }
+        .short-info {
+          font-size: 1.2rem;
+          color: $gray-color;
+        }
+      }
+    }
+    .create-date {
+      color: $line-color;
+      margin-top: 30px;
+    }
+  }
+  li + li {
+    margin-top: 20px;
+  }
+}

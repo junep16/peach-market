@@ -1,4 +1,5 @@
 @import "../../src/style/common/variables";
+@import "./mixin";
 
 .home-post,
 .home-post-onlytext {
@@ -16,7 +17,7 @@
   .user-info {
     display: flex;
     justify-content: space-between;
-    margin-top: .4rem;
+    margin: 4px 0 16px;
     a {
       display: flex;
       flex-direction: column;
@@ -46,30 +47,17 @@
     display: block;
     margin-bottom: 1.5rem;
   }
-  // button 공통 속성
-  [class$="btn"] {
-    font-size: 12px;
-    font-weight: 400px;
-    color: $gray-color;
-    margin-bottom: 2rem;
-    &::before {
-      content: "";
-      display: inline-block;
-      background-repeat: no-repeat;
-      background-size: contain;
-      width: 15px;
-      height: 15px;
-      vertical-align: sub;
-      margin-right: .6rem;
-    }
-  }
   .heart-btn{
-    &::before { background-image: url(/../../src/icon/icon-heart.svg); }
-    &.on::before { background-image: url(/../../src/icon/icon-heart-active.svg); }
+    @include post-icon-module(
+      "/../../src/icon/icon-heart.svg",
+      "/../../src/icon/icon-heart-active.svg"
+    );
   }
   .comment-btn{
-    &::before { background-image: url(/../../src/icon/icon-message-circle.svg); }
-    &.on::before { background-image: url(/../../src/icon/icon-message-circle-fill.svg); }
+    @include post-icon-module(
+      "/../../src/icon/icon-message-circle.svg",
+      "/../../src/icon/icon-message-circle-fill.svg"
+    );
   }
   button + button {
     margin-left: 1.8rem;
