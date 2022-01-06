@@ -1,5 +1,4 @@
 html {
-  font-size: 10px;
   color: #767676;
 }
 
@@ -9,21 +8,33 @@ a {
 
 .container {
   background-color: #ffaba2;
-  max-width: 39rem;
+  width: 100vw;
+  height: calc(100vh - 260px);
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .container .logoWhite {
   display: block;
   margin: 0 auto;
-  padding: 177px 0;
-  width: 16rem;
 }
 
 .container .loginList {
   padding: 5rem 3.4rem;
   background-color: #fff;
   border-radius: 2rem 2rem 0 0;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 }
 
 .container .loginList li {
@@ -78,4 +89,4 @@ a {
   left: 20px;
   background-color: #c4c4c4;
 }
-/*# sourceMappingURL=login.css.map */
+/*# sourceMappingURL=main.css.map */

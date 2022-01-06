@@ -1,7 +1,6 @@
 @import "../common/variables";
 
 html {
-  font-size: 10px;
   color: $gray-color;
 }
 a {
@@ -9,18 +8,24 @@ a {
 }
 .container {
   background-color: #ffaba2;
-  max-width: 39rem;
+  width: 100vw;
+  height: calc(100vh - 260px);
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   .logoWhite {
     display: block;
     margin: 0 auto;
-    padding: 177px 0;
-    width: 16rem;
+    
   }
   .loginList {
     padding: 5rem 3.4rem;
     background-color: #fff;
     border-radius: 2rem 2rem 0 0;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
     li {
       text-align: center;
       button {

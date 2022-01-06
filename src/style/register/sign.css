@@ -62,12 +62,11 @@
 }
 
 html {
-  font-size: 10px;
   color: #767676;
 }
 
 .container {
-  max-width: 39rem;
+  width: 100%;
   height: 100vh;
   margin: 0 auto;
   padding: 24px 34px;
@@ -100,7 +99,6 @@ html {
   border: none;
   border-bottom: 1px solid #c4c4c4;
   height: 48px;
-  margin-bottom: 16px;
 }
 
 .container form input::-webkit-input-placeholder {
@@ -119,12 +117,29 @@ html {
   color: #dbdbdb;
 }
 
+.container form input:focus {
+  border-bottom: 1px solid red;
+}
+
+.container form .password {
+  margin-top: 16px;
+}
+
+.container form .error {
+  font-size: 1.2rem;
+  text-align: start;
+  color: #EB5757;
+  line-height: 1.4rem;
+  margin-top: 5px;
+}
+
 .container form button {
-  margin: 14px 0 20px 0;
+  margin: 30px 0 20px 0;
   height: 48px;
 }
 
 .container a {
   font-size: 1.2rem;
+  color: #767676;
 }
 /*# sourceMappingURL=sign.css.map */
