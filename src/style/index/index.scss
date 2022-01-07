@@ -1,4 +1,3 @@
-@import "../../../src/style/common/variables";
 @import "../../../src/style/common/fonts";
 @import "../../../modules/module/nav-module";  
 @import "../../../modules/module/button-module";   
@@ -12,7 +11,9 @@ header {
 }
 
 main {
+  position: relative;
   width: 100%;
+  height: 100vh;
   border-top: 1px solid $white-gray-color;
   border-bottom: 1px solid $white-gray-color;
   padding: 0 3%; 
@@ -45,12 +46,14 @@ footer {
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
+  height: 800px;
   overflow: auto;
-  box-sizing: border-box;
+  box-sizing: border-box; 
   padding-top: 60%;
+  background: #FFF;
 
   .modal-content {
+  height: 100%;
   background-color: #FFF; 
   text-align: center;
   .follow-wrapper {
@@ -69,4 +72,7 @@ footer {
     }
   }
 }
+}
+.modal.on {
+  display: block;
 }
