@@ -1,0 +1,116 @@
+@import "../../../modules/module/nav-module";
+
+main {
+  background-color: #f2f2f2;
+  .chatting-cont {
+    padding: 20px 16px;
+    li + li { margin-top: 10px}
+    .other-user {
+      display: flex;
+      position: relative;
+      .user-link {
+        margin-right: 12px;
+        height: fit-content;
+      }
+      .sended-text { border-top-left-radius: 0; }
+      .sended-time {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+      }
+    }
+    .my-user {
+      position: relative;
+      display: flex;
+      justify-content: right;
+      .sended-text {
+        background-color: $base-color;
+        border-top-right-radius: 0;
+        color: #fff;
+        border: none;
+      }
+      .sended-time {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+      }
+    }
+    // 말풍선
+    .sended-text {
+      display: block;
+      background-color: #fff;
+      border: 1px solid $light-gray-color;
+      border-radius: 10px;
+      max-width: 240px;
+      font-size: 1.4rem;
+      line-height: 17px;
+      padding: 12px;
+    }
+    // 보낸 이미지
+    .sended-img { border-radius: 5px; }
+  }
+}
+
+
+
+// 하단 메시지 보내기 창
+.chating-text {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid $line-color;
+  padding: 1.3rem 2rem 1.2rem 1.6rem;
+  form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    .chat-img-input {
+      text-indent: -9999px;
+      position: relative;
+      width: 41px;
+      cursor: pointer;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0;
+        background-image: url(../../img/img-button.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 36px;
+        height: 36px;
+      }
+    }
+    .chat-text-input {
+      width: 90%;
+      font-size: 1.4rem;
+      border: none;
+      padding: 1rem 1.8rem;
+      &:focus { outline: none; }
+      &::placeholder { color: $light-gray-color; }
+    }
+    .chat-submit-btn {
+      color: $light-gray-color;
+      font-size: 1.4rem;
+      width: 32px;
+      &.on {
+        color: $base-color;
+      }
+    }
+  }
+}
+
+// fix 클래스
+.top-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+.bottom-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
