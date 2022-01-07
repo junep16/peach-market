@@ -9,7 +9,7 @@
   width: 110px;
   height: 110px;
   padding: 0;
-  margin-bottom: 30px;
+  margin-bottom: 14px;
   border-radius: 50%;
   border: 1px solid #dbdbdb;
   background: url(../../img/avatar50.png);
@@ -23,5 +23,9 @@
   left: 37px;
   width: 36px;
   height: 36px;
+}
+
+.container form label {
+  margin-top: 16px;
 }
 /*# sourceMappingURL=set_profile.css.map */
