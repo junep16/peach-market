@@ -6,6 +6,22 @@ html {
 a {
   color: $gray-color;
 }
+
+.splash {
+  // display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 10;
+  position: absolute;
+  img {
+    width: 160px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
 .container {
   background-color: #ffaba2;
   width: 100vw;

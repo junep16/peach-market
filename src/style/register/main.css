@@ -6,6 +6,26 @@ a {
   color: #767676;
 }
 
+.splash {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 10;
+  position: absolute;
+}
+.splash.disappear {
+  display: none;
+}
+
+.splash img {
+  width: 160px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 .container {
   background-color: #ffaba2;
   width: 100vw;
