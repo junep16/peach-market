@@ -10,43 +10,43 @@
 <body>
   <h1 class="text-hide">피치마켓</h1>
   <header class="nav-main-bottom">
-    <nav>
-      <h2 class="text-hide">상단 네비게이션</h2>
-      <p class="top-nav-text">감귤마켓 피드</p>
-      <button type="button" class="search-btn" alt="찾기 버튼"></button>
+    <nav> 
+      <h2 class="top-nav-text">감귤마켓 피드</h2>
+      <button type="button" class="text-hide" alt="찾기 버튼">
+        <span class="text-hide">검색</span>
+      </button>
     </nav>
   </header>
 <main>
   <h3 class="text-hide">피드 리스트</h3>
-  <ul class="user-main on">
-    <li class="home-post">
-      <img src="/images/avatar.png" alt="프로필 사진" class="avatar-img">
-      <div class="content-wrap">
-        <p class="user-info">
+  <ul class="feed-lists">
+    <li class="feed">
+      <img src="/images/avatar.png" alt="프로필 사진">
+      <article>
+        <div class="feed-user-info">
           <a href="#none">
-            <strong class="market-name">애월읍 위니브 감귤농장</strong>
-            <span class="user-name">@ weniv_Mandarin</span>
+            <strong>애월읍 위니브 감귤농장</strong>
+            <span>@ weniv_Mandarin</span>
           </a>
-          <button type="button" class="more-btn"></button>
-        </p>
-        <p class="post-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati beatae ipsam quaerat aperiam, dolor sapiente alias nihil dignissimos asperiores ex ipsa esse cum distinctio nostrum illum voluptatem ratione, earum ad?</p>
-        <img src="/images/post-img-example.png" alt="숲속의 집 사진" class="post-img"> 
-        <button 
-          type="button"
-          class="heart-btn"
-          data-count="58" 
-        >58</button>
-        <button
-          type="button"
-          class="comment-btn"
-          data-count="12"
-        >12</button>
+          <button type="button" class="more-btn">
+            <span class="text-hide">더보기</span>
+          </button>
+        </div>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati beatae ipsam quaerat aperiam, dolor sapiente alias nihil dignissimos asperiores ex ipsa esse cum distinctio nostrum illum voluptatem ratione, earum ad?</p>
+        <img src="/images/post-img-example.png" alt="피드 이미지"> 
+        <button type="button" class="heart-btn" data-count="58">
+          <span class="text-hide">좋아요</span>
+        </button>
+        <button type="button" class="comment-btn" data-count="12">
+          <span class="text-hide">댓글</span>
+        </button>
         <span class="upload-date">2020년 10월 21일</span>
-      </div>
+      </article>
     </li>
   </ul>
 </main>
   <nav class="nav-bottom">
+    <h4 class="text-hide">하단 네비게이션</h4>
     <ul class="tab-wrap">
       <li><a href="#none" class="home-tab on"></a></li>
       <li><a href="#none" class="chat-tab"></a></li>
@@ -54,13 +54,13 @@
       <li><a href="#none" class="profile-tab"></a></li>
     </ul>
   </nav>
-    <div class="modal">
-      <h4 class="text-hide">유저 팔로우</h4>
-      <div class="follow-wrapper">
-        <img src="/src/img/logo_gray.png" alt="회색 피치마켓 로고">
-        <p>유저를 검색해 팔로우 해보세요!</p>
-        <button type="button" class="ml-button">검색하기</button>
-      </div>
+  <div class="modal">
+    <h4 class="text-hide">유저 팔로우</h4>
+    <div class="follow-wrapper">
+      <img src="/src/img/logo_gray.png" alt="회색 피치마켓 로고">
+      <p>유저를 검색해 팔로우 해보세요!</p>
+      <button type="button" class="ml-button">검색하기</button>
     </div>
+  </div>
 </body>
 </html>
