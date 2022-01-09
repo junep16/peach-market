@@ -16,6 +16,10 @@ main {
 .feed-lists {
   margin-top: 8%;
 }
+.feed-lists.off {
+  display: none;
+}
+
 .feed {  
   display: flex;
   flex-direction: column; 
@@ -34,7 +38,6 @@ main {
       font-size: 1.2rem;
     }
   }
-  
   .feed-content-wrap { 
     display: flex;
     flex-direction: column;
@@ -47,6 +50,25 @@ main {
       line-height: 1.2;
 
     }
+    .feed-button-wrap{
+      .feed-button-heart { 
+        margin: 0;
+        @include post-icon-module(
+          "/icon/icon-heart.svg",
+          "/icon/icon-heart-active.svg"
+        );
+      }
+      .feed-button-comment { 
+        margin: 0;
+        @include post-icon-module(
+          "/icon/icon-message-circle.svg",
+          "/icon/icon-message-circle-fill.svg"
+        );
+      }
+    }
+    .feed-upload-date {
+      font-size: 1rem;
+    }
   }
 }
 
@@ -57,7 +79,7 @@ main {
   bottom: 0;
 }
 
-.follow-modal { 
+.follow-modal {  
   display: none;
   position: fixed;
   z-index: 10;
@@ -69,11 +91,6 @@ main {
   box-sizing: border-box; 
   padding-top: 60%;
   background: #FFF;
-
-  .modal-content {
-  height: 100%;
-  background-color: #FFF; 
-  text-align: center;
   .follow-wrapper {
     display: flex;
     flex-direction: column;
@@ -89,7 +106,6 @@ main {
       margin-bottom: 2rem;
     }
   }
-}
 }
 .modal.on {
   display: block;
