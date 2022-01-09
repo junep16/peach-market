@@ -89,29 +89,29 @@
       padding: 12px 30px 6px;
       .home-tab {
         @include tab-menu-module(
-          "/../../src/icon/icon-home.svg",
-          "/../../src/icon/icon-home-fill.svg",
+          "/icon/icon-home.svg",
+          "/icon/icon-home-fill.svg",
           "홈"
         );
       }
       .chat-tab {
         @include tab-menu-module(
-          "/../../src/icon/icon-message-circle.svg",
-          "/../../src/icon/icon-message-circle-fill.svg",
+          "/icon/icon-message-circle.svg",
+          "/icon/icon-message-circle-fill.svg",
           "채팅"
         );
       }
       .post-tab {
         @include tab-menu-module(
-          "/../../src/icon/icon-edit.svg",
-          "/../../src/icon/icon-edit-fill.svg",
+          "/icon/icon-edit.svg",
+          "/icon/icon-edit-fill.svg",
           "게시물 작성"
         );
       }
       .profile-tab {
         @include tab-menu-module(
-          "/../../src/icon/icon-user.svg",
-          "/../../src/icon/icon-user-fill.svg",
+          "/icon/icon-user.svg",
+          "/icon/icon-user-fill.svg",
           "프로필"
         );
       }

@@ -265,7 +265,7 @@ a {
 .tab-menu .tab-wrap li .home-tab {
   position: relative;
   display: block;
-  background-image: url("/../../src/icon/icon-home.svg");
+  background-image: url("/icon/icon-home.svg");
   background-size: cover;
   font-size: 1rem;
   width: 24px;
@@ -285,7 +285,7 @@ a {
 }
 
 .tab-menu .tab-wrap li .home-tab.on, .tab-menu .tab-wrap li .home-tab:hover {
-  background-image: url("/../../src/icon/icon-home-fill.svg");
+  background-image: url("/icon/icon-home-fill.svg");
 }
 
 .tab-menu .tab-wrap li .home-tab.on::after, .tab-menu .tab-wrap li .home-tab:hover::after {
@@ -295,7 +295,7 @@ a {
 .tab-menu .tab-wrap li .chat-tab {
   position: relative;
   display: block;
-  background-image: url("/../../src/icon/icon-message-circle.svg");
+  background-image: url("/icon/icon-message-circle.svg");
   background-size: cover;
   font-size: 1rem;
   width: 24px;
@@ -315,7 +315,7 @@ a {
 }
 
 .tab-menu .tab-wrap li .chat-tab.on, .tab-menu .tab-wrap li .chat-tab:hover {
-  background-image: url("/../../src/icon/icon-message-circle-fill.svg");
+  background-image: url("/icon/icon-message-circle-fill.svg");
 }
 
 .tab-menu .tab-wrap li .chat-tab.on::after, .tab-menu .tab-wrap li .chat-tab:hover::after {
@@ -325,7 +325,7 @@ a {
 .tab-menu .tab-wrap li .post-tab {
   position: relative;
   display: block;
-  background-image: url("/../../src/icon/icon-edit.svg");
+  background-image: url("/icon/icon-edit.svg");
   background-size: cover;
   font-size: 1rem;
   width: 24px;
@@ -345,7 +345,7 @@ a {
 }
 
 .tab-menu .tab-wrap li .post-tab.on, .tab-menu .tab-wrap li .post-tab:hover {
-  background-image: url("/../../src/icon/icon-edit-fill.svg");
+  background-image: url("/icon/icon-edit-fill.svg");
 }
 
 .tab-menu .tab-wrap li .post-tab.on::after, .tab-menu .tab-wrap li .post-tab:hover::after {
@@ -355,7 +355,7 @@ a {
 .tab-menu .tab-wrap li .profile-tab {
   position: relative;
   display: block;
-  background-image: url("/../../src/icon/icon-user.svg");
+  background-image: url("/icon/icon-user.svg");
   background-size: cover;
   font-size: 1rem;
   width: 24px;
@@ -375,7 +375,7 @@ a {
 }
 
 .tab-menu .tab-wrap li .profile-tab.on, .tab-menu .tab-wrap li .profile-tab:hover {
-  background-image: url("/../../src/icon/icon-user-fill.svg");
+  background-image: url("/icon/icon-user-fill.svg");
 }
 
 .tab-menu .tab-wrap li .profile-tab.on::after, .tab-menu .tab-wrap li .profile-tab:hover::after {
@@ -1044,35 +1044,77 @@ main {
   position: relative;
   width: 100%;
   height: 100vh;
-  border-top: 1px solid #F2F2F2;
-  border-bottom: 1px solid #F2F2F2;
   padding: 0 3%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-.user-main.on {
-  display: block;
-  width: 100%;
-  padding: 15% 0 30% 0;
-}
-
-.user-main {
-  display: none;
-}
-
-.home-post {
+.feed-lists {
   margin-top: 8%;
 }
 
-footer {
+.feed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.feed .feed-user-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.feed .feed-user-info .user-profile-image {
+  margin-right: 3%;
+}
+
+.feed .feed-user-info .feed-user-name {
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.feed .feed-user-info .feed-user-id {
+  font-size: 1.2rem;
+}
+
+.feed .feed-content-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-left: 13%;
+}
+
+.feed .feed-content-wrap p {
+  font-size: 1.4rem;
+  color: #000;
+  margin: 5% 0;
+  line-height: 1.2;
+}
+
+.tab-menu {
   z-index: 20;
   width: 100%;
   position: fixed;
   bottom: 0;
 }
 
-.modal {
+.follow-modal {
   display: none;
   position: fixed;
   z-index: 10;
@@ -1087,13 +1129,13 @@ footer {
   background: #FFF;
 }
 
-.modal .modal-content {
+.follow-modal .modal-content {
   height: 100%;
   background-color: #FFF;
   text-align: center;
 }
 
-.modal .modal-content .follow-wrapper {
+.follow-modal .modal-content .follow-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1109,12 +1151,12 @@ footer {
           align-items: center;
 }
 
-.modal .modal-content .follow-wrapper img {
+.follow-modal .modal-content .follow-wrapper img {
   width: 12rem;
   height: 12rem;
 }
 
-.modal .modal-content .follow-wrapper p {
+.follow-modal .modal-content .follow-wrapper p {
   font-size: 1.4rem;
   color: #767676;
   margin-bottom: 2rem;
