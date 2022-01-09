@@ -18,25 +18,21 @@ main {
     .avatar-img {
       border-radius: 50%;
       width: 42px;
+      margin-right: 12px;
     }
     li + li { margin-top: 10px}
     .other-user {
       display: flex;
-      position: relative;
-      .user-link {
-        margin-right: 12px;
-        height: fit-content;
-      }
       .sended-text { border-top-left-radius: 0; }
       .sended-time {
-        position: absolute;
-        bottom: 0px;
-        right: 0px;
+        @include font-module(1rem, 400);
+        color: $gray-color;
+        margin: auto 0 10px 6px;
       }
     }
     .my-user {
-      position: relative;
       display: flex;
+      flex-direction: row-reverse;
       justify-content: right;
       .sended-text {
         position: relative;
@@ -46,9 +42,9 @@ main {
         border: none;
       }
       .sended-time {
-        position: absolute;
-        bottom: 0px;
-        left: 0px;
+        @include font-module(1rem, 400);
+        color: $gray-color;
+        margin: auto 6px 10px 0;
       }
     }
     // 말풍선
@@ -112,3 +108,38 @@ main {
     }
   }
 }
+
+.modal {
+  @include font-module(1.4rem);
+  position: absolute;
+  bottom: 0;
+  right: 0; left: 0;
+  background-color: #fff;
+  height: 200px;
+  border: 1px solid $light-gray-color;
+  border-radius: 10px;
+  padding: 1.6em 0;
+  .close-modal-btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 4px;
+    border-radius: 10px;
+    background-color: $line-color;
+    &:hover { background-color: $base-color; }
+  }
+  li {
+    margin-top: 3.6em;
+    padding: 1.4em 2.6em;
+    .chat-out-btn {
+      color: #000;
+      &:hover { color: $base-color; }
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
