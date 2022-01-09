@@ -1,18 +1,21 @@
+@charset "utf-8";
+/* navigation module */
+
 // button image
 .prev-btn {
-  background: url(/../../src/icon/icon-arrow-left.png);
+  background-image: url(/icon/icon-arrow-left.png);
   width: 22px;
   height: 22px;
 }
 
 .more-btn {
-  background-image: url(/../../src/icon/icon-more-vertical.png);
+  background-image: url(/icon/icon-more-vertical.png);
   width: 24px;
   height: 24px;
 }
 
 .search-btn {
-  background-image: url(/../../src/icon/icon-search.png);
+  background-image: url(/icon/icon-search.png);
   width: 24px;
   height: 24px;
 }
@@ -38,15 +41,18 @@
   border-bottom: 1px solid $line-color;
   padding: 1.2rem 1.9rem .8rem;
   .prev-btn { margin-right: 20px; }
-  .search-input {
-    font-size: 1.4rem;
+  form {
     width: 100%;
-    border-radius: 15px;
-    border: none;
-    background-color: $white-gray-color;
-    padding: .7rem 0 .7rem 1.6rem;
-    &:focus {
-      outline: none;
+    input {
+      font-size: 1.4rem;
+      width: 100%;
+      border-radius: 15px;
+      border: none;
+      background-color: $white-gray-color;
+      padding: .7rem 0 .7rem 1.6rem;
+      &:focus {
+        outline: none;
+      }
     }
   }
 }
@@ -64,7 +70,7 @@
 }
 
 .top-chat-nav {
-  .wrap {
+  div {
     display: flex;
     align-items: center;
     .top-nav-text {
@@ -78,43 +84,53 @@
 .tab-menu {
   background-color: #fff;
   border-top: 1px solid $line-color;
-  padding: 0 .6rem;
-  .tab-wrap {
+  padding: 12px 6px 6px;
+  ul {
     display: flex;
     justify-content: space-around;
     align-items: center;
     li {
-      width: 8.4rem;
-      height: 6rem;
-      padding: 12px 30px 6px;
-      .home-tab {
-        @include tab-menu-module(
-          "/../../src/icon/icon-home.svg",
-          "/../../src/icon/icon-home-fill.svg",
-          "홈"
+      width: 84px;
+      text-align: center;
+      // 공통 속성
+      a { color: $gray-color; }
+      a.on, a:hover { color: $base-color; }
+      a::before { margin: 0 auto 4px; }
+      // 개별 속성
+      .home-tab::before {
+        @include create_visual_class(
+          "/icon/icon-home.svg",
+          24px, 24px
         );
       }
-      .chat-tab {
-        @include tab-menu-module(
-          "/../../src/icon/icon-message-circle.svg",
-          "/../../src/icon/icon-message-circle-fill.svg",
-          "채팅"
+      .chat-tab::before {
+        @include create_visual_class(
+          "/icon/icon-message-circle.svg",
+          24px, 24px
         );
       }
-      .post-tab {
-        @include tab-menu-module(
-          "/../../src/icon/icon-edit.svg",
-          "/../../src/icon/icon-edit-fill.svg",
-          "게시물 작성"
+      .post-tab::before {
+        @include create_visual_class(
+          "/icon/icon-edit.svg",
+          24px, 24px
         );
       }
-      .profile-tab {
-        @include tab-menu-module(
-          "/../../src/icon/icon-user.svg",
-          "/../../src/icon/icon-user-fill.svg",
-          "프로필"
+      .profile-tab::before {
+        @include create_visual_class(
+          "/icon/icon-user.svg",
+          24px, 24px
         );
       }
+      
+      .home-tab.on::before { background-image: url(/icon/icon-home-fill.svg); }
+      .chat-tab.on::before { background-image: url(/icon/icon-message-circle-fill.svg) }
+      .post-tab.on::before { background-image: url(/icon/icon-edit-fill.svg); }
+      .profile-tab.on::before { background-image: url(/icon/icon-user-fill.svg); }
+      
+      .home-tab:hover::before { background-image: url(/icon/icon-home-fill.svg); }
+      .chat-tab:hover::before { background-image: url(/icon/icon-message-circle-fill.svg) }
+      .post-tab:hover::before { background-image: url(/icon/icon-edit-fill.svg); }
+      .profile-tab:hover::before { background-image: url(/icon/icon-user-fill.svg); }
     }
   }
 }
@@ -129,14 +145,17 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    input {
+      width: 90%;
+      font-size: 1.4rem;
+      border: none;
+      padding: 1rem 1.8rem;
+      &:focus { outline: none; }
+      &::placeholder { color: $light-gray-color; }
+    }
+    button {
+      color: $light-gray-color;
+      font-size: 1.4rem;
+    }
   }
-  .comment-input {
-    width: 90%;
-    font-size: 1.4rem;
-    border: none;
-    padding: 1rem 1.8rem;
-    &:focus { outline: none; }
-    &::placeholder { color: $light-gray-color; }
-  }
-  .comment-submit-btn { color: $light-gray-color; }
 }
