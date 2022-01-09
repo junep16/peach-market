@@ -5,20 +5,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>peach market - chat</title>
-  <link rel="stylesheet" href="../../style/reset.css">
-  <link rel="stylesheet" href="../../style/chat/chat-list.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <div class="container">
+  <div class="chat-container">
+    <h1 class="text-hide">채팅 리스트</h1>
     <header class="top-basic-nav">
-      <button type="button" class="prev-btn"></button>
-      <button type="button" class="more-btn"></button>
+      <button type="button" class="prev-btn">
+        <span class="text-hide">이전으로 가기 버튼</span>
+      </button>
+      <button type="button" class="more-btn">
+        <span class="text-hide">설정 더보기 버튼</span>
+      </button>
     </header>
     <main>
       <ul class="chat-list-cont">
         <li class="chat-item on">
           <a href="#none">
-            <img src="../../img/avatar50.png" alt="프로필 사진" class="avatar-img">
+            <img src="/images/avatar50.png" alt="프로필 사진" class="avatar-img">
             <div class="user-info">
               <strong class="market-name">애월읍 위니브 감귤농장</strong>
               <p class="short-info">
@@ -30,7 +34,7 @@
         </li>
         <li class="chat-item">
           <a href="#none">
-            <img src="../../img/avatar50.png" alt="프로필 사진" class="avatar-img">
+            <img src="/images/avatar50.png" alt="프로필 사진" class="avatar-img">
             <div class="user-info">
               <strong class="market-name">애월읍 위니브 감귤농장</strong>
               <p class="short-info">
@@ -42,14 +46,14 @@
         </li>
       </ul>
     </main>
-    <footer class="tab-menu">
-      <ul class="tab-wrap">
-        <li><a href="#none" class="home-tab"></a></li>
-        <li><a href="#none" class="on chat-tab"></a></li>
-        <li><a href="#none" class="post-tab"></a></li>
-        <li><a href="#none" class="profile-tab"></a></li>
+    <nav class="tab-menu">
+      <ul>
+        <li><a href="#none" class="home-tab">홈</a></li>
+        <li><a href="#none" class="chat-tab">채팅</a></li>
+        <li><a href="#none" class="post-tab">게시물 작성</a></li>
+        <li><a href="#none" class="profile-tab">프로필</a></li>
       </ul>
-    </footer>
+    </nav>
   </div>
 </body>
 </html>
