@@ -1,7 +1,24 @@
+@charset "utf-8";
+@import "common";
+
+/* chat_detail */
+
+.chat-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 main {
+  flex: 1;
+  overflow-y: scroll;
   background-color: #f2f2f2;
   .chatting-cont {
     padding: 20px 16px;
+    .avatar-img {
+      border-radius: 50%;
+      width: 42px;
+    }
     li + li { margin-top: 10px}
     .other-user {
       display: flex;
@@ -22,6 +39,7 @@ main {
       display: flex;
       justify-content: right;
       .sended-text {
+        position: relative;
         background-color: $base-color;
         border-top-right-radius: 0;
         color: #fff;
@@ -49,8 +67,6 @@ main {
   }
 }
 
-
-
 // 하단 메시지 보내기 창
 .chating-text {
   background-color: #fff;
@@ -71,7 +87,7 @@ main {
         content: "";
         position: absolute;
         top: 0; left: 0;
-        background-image: url(../../img/img-button.png);
+        background-image: url(/images/img-button.png);
         background-size: contain;
         background-repeat: no-repeat;
         width: 36px;
@@ -95,20 +111,4 @@ main {
       }
     }
   }
-}
-
-// fix 클래스
-.top-fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-}
-.bottom-fixed {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
 }
