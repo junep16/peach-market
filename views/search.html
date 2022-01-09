@@ -6,53 +6,55 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>peach market - search</title>
-  <link rel="stylesheet" href="../../style/reset.css">
-  <link rel="stylesheet" href="../../style/search/search.css">
+  <link rel="stylesheet" href="/css/search.css">
 </head>
 
 <body>
-  <header class="top-search-nav">
-    <button type="button" class="prev-btn"></button>
-    <input type="search" class="search-input" placeholder="계정 검색">
-  </header>
-  <main>
-    <ul class="search-user-cont">
-      <li class="user-search">
-        <a href="#none">
-          <img src="../../img/avatar50.png" alt="프로필 사진" class="avatar-img">
-          <p class="user-info">
-            <strong class="market-name">애월읍 위니브 감귤농장</strong>
-            <span class="user-name">@ weniv_Mandarin</span>
-          </p>
-        </a>
-      </li>
-      <li class="user-search">
-        <a href="#none">
-          <img src="../../img/avatar50.png" alt="프로필 사진" class="avatar-img">
-          <p class="user-info">
-            <strong class="market-name">애월읍 위니브 감귤농장</strong>
-            <span class="user-name">@ weniv_Mandarin</span>
-          </p>
-        </a>
-      </li>
-    </ul>
-  </main>
-  <footer class="tab-menu">
-    <ul class="tab-wrap">
-      <li><a href="#none" class="home-tab"></a></li>
-      <li><a href="#none" class="chat-tab on"></a></li>
-      <li><a href="#none" class="post-tab"></a></li>
-      <li><a href="#none" class="profile-tab"></a></li>
-    </ul>
-  </footer>
-  <script src="../../js/fixPosition.js"></script>
-  <script>
-    const navbar = document.querySelector('.top-search-nav');
-    const menuTab = document.querySelector(".tab-menu");
-  
-    fixedFunc(navbar, "top-fixed");
-    fixedFunc(menuTab, "bottom-fixed", false);
-  </script>
+  <div id="app">
+    <header class="top-search-nav">
+      <button type="button" class="prev-btn">
+        <span class="text-hide">이전으로 가기 버튼</span>
+      </button>
+      <form action="" method="get">
+        <label for="searchInput" class="text-hide">계정 검색 하기</label>
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="계정 검색"
+        >
+      </form>
+    </header>
+    <main>
+      <ul class="search-user-cont">
+        <li class="user-search">
+          <a href="#none">
+            <img src="/images/avatar50.png" alt="프로필 사진" class="avatar-img">
+            <p class="user-info">
+              <strong class="market-name">애월읍 위니브 감귤농장</strong>
+              <span class="user-name">@ weniv_Mandarin</span>
+            </p>
+          </a>
+        </li>
+        <li class="user-search">
+          <a href="#none">
+            <img src="/images/avatar50.png" alt="프로필 사진" class="avatar-img">
+            <p class="user-info">
+              <strong class="market-name">애월읍 위니브 감귤농장</strong>
+              <span class="user-name">@ weniv_Mandarin</span>
+            </p>
+          </a>
+        </li>
+      </ul>
+    </main>
+    <nav class="tab-menu">
+      <ul>
+        <li><a href="#none" class="home-tab">홈</a></li>
+        <li><a href="#none" class="chat-tab">채팅</a></li>
+        <li><a href="#none" class="post-tab">게시물 작성</a></li>
+        <li><a href="#none" class="profile-tab">프로필</a></li>
+      </ul>
+    </nav>
+  </div>
 </body>
 
 </html>
