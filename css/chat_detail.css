@@ -1,4 +1,3 @@
-/* module_sample */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -513,11 +512,161 @@ a {
   align-items: center;
 }
 
-.module-container {
-  border: 1px solid black;
-  background-color: #F2F2F2;
-  margin: 0 auto;
-  width: 390px;
+/* chat_detail */
+.chat-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/*# sourceMappingURL=module-sample.css.map */
+main {
+  flex: 1;
+  overflow-y: scroll;
+  background-color: #f2f2f2;
+}
+main .chatting-cont {
+  padding: 20px 16px;
+}
+main .chatting-cont .avatar-img {
+  border-radius: 50%;
+  width: 42px;
+  margin-right: 12px;
+}
+main .chatting-cont li + li {
+  margin-top: 10px;
+}
+main .chatting-cont .other-user {
+  display: flex;
+}
+main .chatting-cont .other-user .sended-text {
+  border-top-left-radius: 0;
+}
+main .chatting-cont .other-user .sended-time {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #767676;
+  margin: auto 0 10px 6px;
+}
+main .chatting-cont .my-user {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: right;
+}
+main .chatting-cont .my-user .sended-text {
+  position: relative;
+  background-color: #FFABA2;
+  border-top-right-radius: 0;
+  color: #fff;
+  border: none;
+}
+main .chatting-cont .my-user .sended-time {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #767676;
+  margin: auto 6px 10px 0;
+}
+main .chatting-cont .sended-text {
+  display: block;
+  background-color: #fff;
+  border: 1px solid #C4C4C4;
+  border-radius: 10px;
+  max-width: 240px;
+  font-size: 1.4rem;
+  line-height: 17px;
+  padding: 12px;
+}
+main .chatting-cont .sended-img {
+  border-radius: 5px;
+}
+
+.chating-text {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #DBDBDB;
+  padding: 1.3rem 2rem 1.2rem 1.6rem;
+}
+.chating-text form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.chating-text form .chat-img-input {
+  text-indent: -9999px;
+  position: relative;
+  width: 41px;
+  cursor: pointer;
+}
+.chating-text form .chat-img-input::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(/images/img-button.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 36px;
+  height: 36px;
+}
+.chating-text form .chat-text-input {
+  width: 90%;
+  font-size: 1.4rem;
+  border: none;
+  padding: 1rem 1.8rem;
+}
+.chating-text form .chat-text-input:focus {
+  outline: none;
+}
+.chating-text form .chat-text-input::placeholder {
+  color: #C4C4C4;
+}
+.chating-text form .chat-submit-btn {
+  color: #C4C4C4;
+  font-size: 1.4rem;
+  width: 32px;
+}
+.chating-text form .chat-submit-btn.on {
+  color: #FFABA2;
+}
+
+.modal {
+  font-size: 1.4rem;
+  font-weight: 500;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #fff;
+  height: 200px;
+  border: 1px solid #C4C4C4;
+  border-radius: 10px;
+  padding: 1.6em 0;
+}
+.modal .close-modal-btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 4px;
+  border-radius: 10px;
+  background-color: #DBDBDB;
+}
+.modal .close-modal-btn:hover {
+  background-color: #FFABA2;
+}
+.modal li {
+  margin-top: 3.6em;
+  padding: 1.4em 2.6em;
+}
+.modal li .chat-out-btn {
+  color: #000;
+}
+.modal li .chat-out-btn:hover {
+  color: #FFABA2;
+}
+
+.hidden {
+  display: none;
+}
+
+/*# sourceMappingURL=chat_detail.css.map */
