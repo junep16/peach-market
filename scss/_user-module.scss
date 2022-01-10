@@ -1,25 +1,21 @@
-.user-search {
+@charset "utf-8";
+/* user module */
+
+.user-search,
+.user-follow {
+  background-color: #FFF;
   a {
-    background-color: #FFF;
     display: flex;
     color: #000;
     &:active { color: $base-color; }
-    .avatar-img {
-      margin-right: 1.2rem;
-    }
-    .user-info {
-      display: flex;
+    img { margin-right: 12px; }
+    p {
+      display: flex; 
       flex-direction: column;
-      text-align: left;
       justify-content: space-around;
-      .market-name {
-        font-size: 1.4rem;
-        font-weight: 500;
-        color: inherit;
-      }
-      .user-name {
-        font-size: 1.2rem;
-        font-weight: 400;
+      strong { @include font_module(1.4rem); }
+      span {
+        @include font_module(1.2rem, 400);
         color: $gray-color;
       }
     }
@@ -27,33 +23,7 @@
 }
 
 .user-follow {
-  background-color: #FFF;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  a {
-    color: #000;
-    &:active { color: $base-color; }
-    .avatar-img {
-      margin-right: 1.2rem;
-    }
-    .wrap {
-      display: flex;
-      .user-info {
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-        justify-content: space-around;
-        .market-name {
-          font-size: 1.4rem;
-          font-weight: 500;
-        }
-        .user-name {
-          font-size: 1.2rem;
-          font-weight: 400;
-          color: $gray-color;
-        }
-      }
-    }
-  }
 }
