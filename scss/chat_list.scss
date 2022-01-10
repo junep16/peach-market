@@ -32,13 +32,18 @@
       align-items: center;
       color: #000;
       &:active { color: $base-color; }
-      .avatar-img { margin-right: 12px;}
+      .avatar-img {
+        border-radius: 50%;
+        margin-right: 12px
+      }
       .user-info {
         display: flex;
         flex-direction: column;
-        gap: 4px;
+        gap: 8px;
         .market-name { font-size: 1.4rem; }
         .short-info {
+          @include sl-ellipsis();
+          max-width: 250px;
           font-size: 1.2rem;
           color: $gray-color;
         }
