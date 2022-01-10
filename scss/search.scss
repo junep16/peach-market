@@ -1,0 +1,18 @@
+@charset "urf-8";
+@import "common";
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  main {
+    flex: 1;
+    overflow-y: scroll;
+  }
+  .search-user-cont {
+    padding: 20px 16px;
+    li + li {
+      margin-top: 16px;
+    }
+  }
+}

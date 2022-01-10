@@ -1,4 +1,3 @@
-/* module_sample */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -513,11 +512,69 @@ a {
   align-items: center;
 }
 
-.module-container {
-  border: 1px solid black;
-  background-color: #F2F2F2;
-  margin: 0 auto;
-  width: 390px;
+.chat-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.chat-container .chat-main {
+  flex: 1;
+  overflow-y: scroll;
 }
 
-/*# sourceMappingURL=module-sample.css.map */
+.chat-list-cont {
+  padding: 20px 16px;
+}
+.chat-list-cont .chat-item {
+  display: flex;
+  justify-content: space-between;
+}
+.chat-list-cont .chat-item.on a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  background-color: #FFABA2;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+}
+.chat-list-cont .chat-item a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: #000;
+}
+.chat-list-cont .chat-item a:active {
+  color: #FFABA2;
+}
+.chat-list-cont .chat-item a .avatar-img {
+  border-radius: 50%;
+  margin-right: 12px;
+}
+.chat-list-cont .chat-item a .user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.chat-list-cont .chat-item a .user-info .market-name {
+  font-size: 1.4rem;
+}
+.chat-list-cont .chat-item a .user-info .short-info {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 250px;
+  font-size: 1.2rem;
+  color: #767676;
+}
+.chat-list-cont .chat-item .create-date {
+  color: #DBDBDB;
+  margin-top: 30px;
+}
+.chat-list-cont li + li {
+  margin-top: 20px;
+}
+
+/*# sourceMappingURL=chat_list.css.map */
