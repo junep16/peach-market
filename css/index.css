@@ -522,8 +522,6 @@ header .tab-menu {
   z-index: 20;
   position: fixed;
   bottom: 0;
-}
-header .tab-menu {
   width: 100%;
 }
 

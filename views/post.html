@@ -4,62 +4,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-
     <link rel="stylesheet" href="/css/post.css">
     <title> 피치마켓 | 포스트 </title>
 </head>
 <body>
-  <h1 class="text-hide">포스트</h1>
-  <header class="top-basic-nav">
-    <button type="button" class="prev-btn"></button>
-    <button type="button" class="more-btn"></button>
+  <h1 class="text-hide">유저 포스트</h1>
+  <header>
+    <nav class="top-basic-nav">
+      <button type="button" class="prev-btn">
+        <span class="text-hide">이전으로 가기 버튼</span>
+      </button>
+      <button type="button" class="more-btn">
+        <span class="text-hide">설정 더보기 버튼</span>
+      </button>
+    </nav>
   </header>
-  <main>
-    <section>
-      <h1 class="text-hide">유저 포스팅</h1>
-      <article class="home-post">
-        <img src="/images/avatar.png" alt="프로필 사진" class="avatar-img">
-        <div class="content-wrap">
-          <p class="user-info">
-            <a href="#none">
-              <strong class="market-name">애월읍 위니브 감귤농장</strong>
-              <span class="user-name">@ weniv_Mandarin</span>
-            </a>
-            <button type="button" class="more-btn"></button>
-          </p>
-          <p class="post-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati beatae ipsam quaerat aperiam, dolor sapiente alias nihil dignissimos asperiores ex ipsa esse cum distinctio nostrum illum voluptatem ratione, earum ad?</p>
-          <img src="/src/img/post-img-example.png" alt="포스트 사진" class="post-img"> 
-          <button 
-            type="button"
-            class="heart-btn"
-            data-count="58"
-          >58</button>
-          <button
-            type="button"
-            class="comment-btn"
-            data-count="12"
-          >12</button>
-          <span class="upload-date">2020년 10월 21일</span>
-        </div>
-      </article>
-    </section>
-    <!-- 댓글 부분 -->
+  <main> 
+    <h2 class="text-hide">포스트 내용</h2>
+    <article class="home-post">
+      <img src="/images/avatar.png" alt="프로필 사진" class="avatar-img">
+      <div>
+        <p class="content-wrap">
+          <a href="#none">
+            <strong>애월읍 위니브 감귤농장</strong>
+            <span>@ weniv_Mandarin</span>
+          </a>
+          <button type="button" class="more-btn">
+            <span class="text-hide">더보기</span>
+          </button>
+        </p>
+        <p class="post-content">이것을 인생을 옷을 교향악이다. 품에 청춘의 시들어 품으며, 그것은 바로 우는 불어 뿐이다. 가지에 얼마나 얼음과 앞이 유소년에게서 그들은 부패뿐이다. 곧 인간이 인생에 철환하였는가? 것은 따뜻한 꽃이 예가 안고, 이것이다. 전인 무엇을 광야에서 힘있다. 밝은 품으며, 이상은 있다. 설산에서 같은 내는 트고, 불어 피고 아름답고 것이다. 이상 뛰노는 보는 있는 주는 찾아다녀도, 있으랴? 사라지지 끓는 그러므로 그들은 지혜는 것이다. 만천하의 그들은 하였으며, 봄바람이다.</p>
+        <img src="/images/post-img-example.png" alt="포스트 사진" class="post-img"> 
+        <button 
+          type="button"
+          class="heart-btn"
+          data-count="58"
+        >
+        <span class="text-hide">좋아요</span>
+        58
+        </button>
+        <button
+          type="button"
+          class="comment-btn"
+          data-count="12"
+        >
+        <span class="text-hide">댓글</span>
+        12
+        </button>
+        <span class="upload-date">2020년 10월 21일</span>
+      </div>
+    </article> 
     <ul class="comment-list">
-      <h2 class="text-hide">댓글</h2>
-      <article class="comment-card">
+      <h3 class="text-hide">댓글</h3>
+      <li class="comment-card">
         <div class="comment-info">
           <div class="image-wrapper">
-            <img src="/src/img/post-img-example.png" alt="프로필 이미지">
+            <img src="/images/post-img-example.png" alt="프로필 이미지">
           </div>
           <p> 서귀포시 무슨 농장<span>5분 전</span></p>
           <button class="button-more" type="button"></button>
         </div>
         <p class="comment-detail">안녕하세요. 사진이 너무 멋있어요. 한라봉 언제 먹을 수 있나요? 기다리기 지쳤어요 땡뻘땡뻘...</p>
-      </article>
+      </li>
     </ul>
   </main>
-  <footer class="comment">
-    <img src="/src/img/avatar.png" alt="프로필 사진" class="avatar-img">
+  <section class="comment"> 
+    <img src="/images/avatar.png" alt="프로필 사진" class="avatar-img">
     <form action="" method="get">
       <label for="commentInput" class="text-hide">댓글 입력창</label>
       <input
@@ -70,12 +80,12 @@
       >
       <button type="submit" class="comment-submit-btn">게시</button>
     </form>
-  </footer>
-  <div class="more-modal">
-    <article class="modal-content">
-      <button class="modal-toggle" type="button"></button>
-      <p class="comment-action">신고하기</p>
-    </article>
+  </section>
+  <div class="more-modal"> 
+      <button class="toggle-button" type="button">
+        <span class="text-hide">댓글 설정 닫기</span>
+      </button>
+      <button class="send-feedback-button">신고하기</button> 
   </div>
 </body>
 </html>
