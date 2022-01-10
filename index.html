@@ -4,64 +4,100 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link rel="stylesheet" href="/scss/style.css">
+    <link rel="stylesheet" href="/css/index.css">
     <title>피치마켓 | 홈</title>
 </head>
 <body>
   <h1 class="text-hide">피치마켓</h1>
-  <header class="top-main-nav">
-    <nav> 
-      <h2 class="top-nav-text">감귤마켓 피드</h2>
-      <button type="button" class="text-hide" alt="찾기 버튼">
-        <span class="text-hide">검색</span>
-      </button>
-    </nav>
-  </header>
-<main>
-  <h3 class="text-hide">피드 리스트</h3>
-  <ul class="feed-lists">
-    <li class="feed">
-      <article>
-        <div class="feed-user-info">
-          <img class="user-profile-image" src="/images/avatar.png" alt="프로필 사진">
-          <a href="#none">
-            <strong class="feed-user-name">애월읍 위니브 감귤농장</strong>
-            <p class="feed-user-id">@ weniv_Mandarin</p>
-          </a>
-          <button type="button" class="more-btn">
-            <span class="text-hide">더보기</span>
-          </button>
-        </div>
-        <div class="feed-content-wrap">
-          <p>위하여 석가는 기쁘며, 과실이 가장 사는가 피고 많이 위하여서. 불러 새가 곳으로 있으며, 그들은 얼음 가치를 말이다. 불어 실로 이상의 열매를 꽃이 가슴이 품으며, 사랑의 청춘 칼이다. 그러므로 우리 없으면, 구할 약동하다. 인간의 것이다.보라, 뜨고, 청춘은 가치를 생명을 원질이 것이다. 힘차게 설산에서 청춘의 이상을 눈에 반짝이는 이것이다. 생의 청춘이 품으며, 가치를 이상 있는 황금시대의 더운지라 유소년에게서 그리하였는가? 끓는 귀는 영원히 행복스럽고 힘있다. 무엇을 듣기만 청춘의 얼마나 발휘하기 방지하는 설레는 착목한는 무엇이 사막이다. 행복스럽고 고행을 갑 가는 군영과 있다. 얼마나 간에 때에, 이 얼음과 운다.</p>
-          <img src="/images/post-img-example.png" alt="피드 이미지"> 
-          <div class="feed-button-wrap">
-            <button type="button" class="feed-button-heart" data-count="58"> 58
-              <span class="text-hide">좋아요</span>
-            </button>
-            <button type="button" class="feed-button-comment" data-count="12"> 12
-              <span class="text-hide">댓글</span>
-            </button>
-          </div>
-          <span class="feed-upload-date">2020년 10월 21일</span>
-        </div>
-      </article>
-    </li>
-  </ul>
-</main>
   <header>
+    <nav class="top-main-nav">
+      <h2 class="top-nav-text">감귤마켓 피드</h2>
+      <a href="#none" class="search-btn">
+        <span class="text-hide">검색 버튼</span>
+      </a>
+    </nav>
     <nav class="tab-menu">
-      <h4 class="text-hide">하단 네비게이션</h4>
-      <ul class="tab-wrap">
-        <li><a href="#none" class="home-tab on"></a></li>
-        <li><a href="#none" class="chat-tab"></a></li>
-        <li><a href="#none" class="post-tab"></a></li>
-        <li><a href="#none" class="profile-tab"></a></li>
+      <ul>
+        <li><a href="#none" class="home-tab on">홈</a></li>
+        <li><a href="#none" class="chat-tab">채팅</a></li>
+        <li><a href="#none" class="post-tab">게시물 작성</a></li>
+        <li><a href="#none" class="profile-tab">프로필</a></li>
       </ul>
     </nav>
   </header>
+<main>
+  <h4 class="text-hide">피드 리스트</h4>
+  <ul class="post-lists">
+    <li class="home-post">
+      <img src="/images/avatar.png" alt="프로필 사진" class="avatar-img">
+      <div>
+        <p class="content-wrap">
+          <a href="#none">
+            <strong>애월읍 위니브 감귤농장</strong>
+            <span>@ weniv_Mandarin</span>
+          </a>
+          <button type="button" class="more-btn">
+            <span class="text-hide">설정 더보기 </span>
+          </button>
+        </p>
+        <p class="post-content">이것을 인생을 옷을 교향악이다. 품에 청춘의 시들어 품으며, 그것은 바로 우는 불어 뿐이다. 가지에 얼마나 얼음과 앞이 유소년에게서 그들은 부패뿐이다. 곧 인간이 인생에 철환하였는가? 것은 따뜻한 꽃이 예가 안고, 이것이다. 전인 무엇을 광야에서 힘있다. 밝은 품으며, 이상은 있다. 설산에서 같은 내는 트고, 불어 피고 아름답고 것이다. 이상 뛰노는 보는 있는 주는 찾아다녀도, 있으랴? 사라지지 끓는 그러므로 그들은 지혜는 것이다. 만천하의 그들은 하였으며, 봄바람이다.</p>
+        <img src="/images/post-img-example.png" alt="포스트 사진" class="post-img"> 
+        <button 
+          type="button"
+          class="heart-btn"
+          data-count="58"
+        >
+        <span class="text-hide">좋아요</span>
+        58
+        </button>
+        <button
+          type="button"
+          class="comment-btn"
+          data-count="12"
+        >
+        <span class="text-hide">댓글</span>
+        12
+        </button>
+        <span class="upload-date">2020년 10월 21일</span>
+      </div>
+    </li>
+    <li class="home-post">
+      <img src="/images/avatar.png" alt="프로필 사진" class="avatar-img">
+      <div>
+        <p class="content-wrap">
+          <a href="#none">
+            <strong>애월읍 위니브 감귤농장</strong>
+            <span>@ weniv_Mandarin</span>
+          </a>
+          <button type="button" class="more-btn">
+            <span class="text-hide">설정 더보기 </span>
+          </button>
+        </p>
+        <p class="post-content">이것을 인생을 옷을 교향악이다. 품에 청춘의 시들어 품으며, 그것은 바로 우는 불어 뿐이다. 가지에 얼마나 얼음과 앞이 유소년에게서 그들은 부패뿐이다. 곧 인간이 인생에 철환하였는가? 것은 따뜻한 꽃이 예가 안고, 이것이다. 전인 무엇을 광야에서 힘있다. 밝은 품으며, 이상은 있다. 설산에서 같은 내는 트고, 불어 피고 아름답고 것이다. 이상 뛰노는 보는 있는 주는 찾아다녀도, 있으랴? 사라지지 끓는 그러므로 그들은 지혜는 것이다. 만천하의 그들은 하였으며, 봄바람이다.</p>
+        <img src="/images/post-img-example.png" alt="포스트 사진" class="post-img"> 
+        <button 
+          type="button"
+          class="heart-btn"
+          data-count="58"
+        >
+        <span class="text-hide">좋아요</span>
+        58
+        </button>
+        <button
+          type="button"
+          class="comment-btn"
+          data-count="12"
+        >
+        <span class="text-hide">댓글</span>
+        12
+        </button>
+        <span class="upload-date">2020년 10월 21일</span>
+      </div>
+    </li>
+  </ul>
+</main>
   <div class="follow-modal">
-    <h4 class="text-hide">유저 팔로우</h4>
+    <h5 class="text-hide">유저 팔로우</h5>
     <div class="follow-wrapper">
       <img src="/images/logo_gray.png" alt="회색 피치마켓 로고">
       <p>유저를 검색해 팔로우 해보세요!</p>
