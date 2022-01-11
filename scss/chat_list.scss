@@ -1,0 +1,60 @@
+@charset "utf-8";
+@import "common";
+
+.chat-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  .chat-main {
+    flex: 1;
+    overflow-y: scroll;
+  }
+}
+
+.chat-list-cont {
+  padding: 20px 16px;
+  .chat-item {
+    display: flex;
+    justify-content: space-between;
+    &.on a::before {  
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      display: block;
+      background-color: $base-color;
+      border-radius: 50%;
+      width: 14px;
+      height: 14px;
+    }
+    a {
+      position: relative;
+      display: flex;
+      align-items: center;
+      color: #000;
+      &:active { color: $base-color; }
+      .avatar-img {
+        border-radius: 50%;
+        margin-right: 12px
+      }
+      .user-info {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        .market-name { font-size: 1.4rem; }
+        .short-info {
+          @include sl-ellipsis();
+          max-width: 250px;
+          font-size: 1.2rem;
+          color: $gray-color;
+        }
+      }
+    }
+    .create-date {
+      color: $line-color;
+      margin-top: 30px;
+    }
+  }
+  li + li {
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,64 @@
+@import "./common"; 
+
+header {
+  z-index: 20;
+  width: 100%; 
+  position: fixed;
+  top: 0;  
+  .tab-menu { 
+    z-index: 20; 
+    position: fixed;
+    bottom: 0; 
+    width: 100%
+  }
+}
+
+main {
+  position: relative;
+  width: 100%;
+  height: 100%; 
+  padding: 0 3%; 
+  box-sizing: border-box;
+}
+
+.post-lists {
+  margin: 20% 0;
+}
+.post-lists.off {
+  display: none;
+}
+.home-post {
+  margin-top: 10% ;
+}
+
+.follow-modal {  
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 800px;
+  overflow: auto;
+  box-sizing: border-box; 
+  padding-top: 60%;
+  background: #FFF;
+  .follow-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    img {
+      width: 12rem; 
+      height: 12rem;
+    }
+    p {
+      font-size: 1.4rem;
+      color: $gray-color; 
+      margin-bottom: 2rem;
+    }
+  }
+}
+.modal.on {
+  display: block;
+}

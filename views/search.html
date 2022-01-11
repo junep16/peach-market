@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>peach market - search</title>
+  <link rel="stylesheet" href="/css/search.css">
+</head>
+
+<body>
+  <div id="app">
+    <header class="top-search-nav">
+      <button type="button" class="prev-btn">
+        <span class="text-hide">이전으로 가기 버튼</span>
+      </button>
+      <form action="" method="get">
+        <label for="searchInput" class="text-hide">계정 검색 하기</label>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="계정 검색"
+        >
+      </form>
+    </header>
+    <main>
+      <ul class="search-user-cont"></ul>
+    </main>
+    <nav class="tab-menu">
+      <ul>
+        <li><a href="#none" class="home-tab on">홈</a></li>
+        <li><a href="#none" class="chat-tab">채팅</a></li>
+        <li><a href="#none" class="post-tab">게시물 작성</a></li>
+        <li><a href="#none" class="profile-tab">프로필</a></li>
+      </ul>
+    </nav>
+  </div>
+  <script src="/js/search.js"></script>
+</body>
+
+</html>

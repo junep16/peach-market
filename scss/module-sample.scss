@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* module_sample */
+
+@import "../scss/reset";
+@import "../scss/variables";
+@import "../scss/mixin";
+
+@import "../scss/button-module";
+@import "../scss/nav-module";
+@import "../scss/post-module";
+@import "../scss/user-module";
+
+.module-container {
+  border: 1px solid black;
+  background-color: $white-gray-color;
+  margin: 0 auto;
+  width: 390px;
+}
