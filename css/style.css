@@ -1,0 +1,21 @@
+/* Error: Undefined mixin.
+ *    ,
+ * 56 | /         @include post-icon-module(
+ * 57 | |           "/icon/icon-heart.svg",
+ * 58 | |           "/icon/icon-heart-active.svg"
+ * 59 | |         );
+ *    | '---------^
+ *    '
+ *   scss/_index.scss 56:9  @import
+ *   scss/style.scss 1:135  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: Undefined mixin.\a    \2577 \a 56 \2502  \250c          @include post-icon-module(\a 57 \2502  \2502            "/icon/icon-heart.svg",\a 58 \2502  \2502            "/icon/icon-heart-active.svg"\a 59 \2502  \2502          );\a    \2502  \2514 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 ^\a    \2575 \a   scss/_index.scss 56:9  @import\a   scss/style.scss 1:135  root stylesheet';
+}
