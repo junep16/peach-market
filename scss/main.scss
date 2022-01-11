@@ -14,6 +14,7 @@ a {
   background-color: #fff;
   z-index: 10;
   position: absolute;
+  transition: .5s;
   img {
     width: 160px;
     position: absolute;
@@ -22,7 +23,7 @@ a {
     transform: translate(-50%, -50%);
   }
   &.disappear {
-    display: none;
+    opacity: 0;
   }
 }
 .container {

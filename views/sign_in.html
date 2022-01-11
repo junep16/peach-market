@@ -1,28 +1,36 @@
 <!DOCTYPE html>
 <html lang="ko">
-
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>sign-in</title>
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/sign.css">
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/sign.css" />
   </head>
-
   <body>
     <section class="container">
       <h1>로그인</h1>
-      <form action="" method="post">
+      <form action="" method="post" id="login-form">
         <label for="email">이메일</label>
-        <input id="email" type="text" autocomplete="none">
+        <input
+          id="email"
+          type="text"
+          autocomplete="off"
+          placeholder="이메일을 입력해 주세요."
+        />
         <label for="password" class="password">비밀번호</label>
-        <input id="password" type="password">
-        <span class="error">*이메일 또는 비밀번호가 일치하지 않습니다.</span>
+        <input
+          id="password"
+          maxlength="15"
+          type="password"
+          placeholder="비밀번호를 입력해 주세요."
+        />
+        <span class="error hidden">이메일 또는 비밀번호가 일치하지 않습니다.</span>
         <button type="button" class="l-disabled-button">로그인</button>
       </form>
       <a href="/views/sign_up.html">이메일로 회원가입</a>
     </section>
+    <script src="/js/register.js"></script>
   </body>
-
 </html>
