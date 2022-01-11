@@ -1,4 +1,3 @@
-/* module_sample */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -76,7 +75,6 @@ a {
 /*# sourceMappingURL=reset.css.map */
 /* variables */
 /* mixin */
-/* variables */
 /* button module */
 [class$=button] {
   border: none;
@@ -488,10 +486,6 @@ a {
 }
 .user-search a img,
 .user-follow a img {
-  border: 1px solid #C4C4C4;
-  border-radius: 100%;
-  width: 50px;
-  height: 50px;
   margin-right: 12px;
 }
 .user-search a p,
@@ -518,11 +512,297 @@ a {
   align-items: center;
 }
 
-.module-container {
-  border: 1px solid black;
-  background-color: #F2F2F2;
+#pf-container {
   margin: 0 auto;
-  width: 390px;
+  width: 39rem;
+  min-height: 100vh;
+  position: relative;
+  border: none;
+}
+#pf-container header nav.tab-menu {
+  width: 100%;
+  max-width: 39rem;
+  position: fixed;
+  bottom: 0;
+  z-index: 3;
+}
+#pf-container #pf-main {
+  margin-top: 47px;
+  margin-bottom: 57px;
+  background-color: #fff;
+  position: relative;
+}
+#pf-container #pf-main .top-basic-nav {
+  width: 39rem;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+}
+#pf-container #pf-main .pf-modal {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  max-width: 39rem;
+  z-index: 10;
+  display: none;
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  display: none;
+  transition: ease-in;
+}
+#pf-container #pf-main .pf-modal.on {
+  display: block;
+}
+#pf-container #pf-main .pf-modal p.modal-line {
+  height: 3.6rem;
+  width: 100%;
+  line-height: 3.6rem;
+  text-align: center;
+}
+#pf-container #pf-main .pf-modal p.modal-line span {
+  display: inline-block;
+  width: 5rem;
+  height: 0.4rem;
+  background-color: #dbdbdb;
+}
+#pf-container #pf-main .pf-modal .pf-modal-btn li {
+  line-height: 46px;
+  padding: 0 26px;
+  font-size: 1.4rem;
+  text-align: left;
+  cursor: pointer;
+}
+#pf-container #pf-main .pf-userprofile {
+  background-color: #fff;
+  padding: 20px 34px;
+  text-align: center;
+  position: relative;
+  border-bottom: 1px solid #dbdbdb;
+}
+#pf-container #pf-main .pf-userprofile ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: #767676;
+}
+#pf-container #pf-main .pf-userprofile ul li p:first-child {
+  font-size: 1.8rem;
+  padding-bottom: 6px;
+}
+#pf-container #pf-main .pf-userprofile ul li p:last-child {
+  font-size: 1rem;
+}
+#pf-container #pf-main .pf-userprofile ul li img {
+  width: 110px;
+}
+#pf-container #pf-main .pf-userprofile ul .pf-followes p:first-child {
+  color: #000;
+  font-weight: 700;
+}
+#pf-container #pf-main .pf-userprofile h3 {
+  padding-top: 1.6rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+#pf-container #pf-main .pf-userprofile .pf-id {
+  padding-top: 0.6rem;
+  font-size: 1.2rem;
+  color: #767676;
+}
+#pf-container #pf-main .pf-userprofile .pf-description {
+  padding-top: 0.6rem;
+  font-size: 1.4rem;
+}
+#pf-container #pf-main .pf-userprofile .pf-sns {
+  padding-top: 24px;
+  padding-bottom: 26px;
+  display: flex;
+  justify-content: space-evenly;
+}
+#pf-container #pf-main .pf-userprofile .pf-sns li.pf-icon {
+  height: 3.4rem;
+  width: 3.4rem;
+  border: solid #dbdbdb 1px;
+  border-radius: 3.4rem;
+}
+#pf-container #pf-main .pf-userprofile .pf-sns li.pf-icon img {
+  width: 2rem;
+  padding-top: 5px;
+}
+#pf-container #pf-main .pf-userprofile .pf-sns li:nth-child(2) {
+  width: 12rem;
+}
+#pf-container #pf-main .pf-userprofile .pf-sns li:nth-child(2) button {
+  width: 100%;
+}
+#pf-container #pf-main section.pf-product {
+  padding: 20px 0 20px 21px;
+  border-top: #E5E5E5 solid 6px;
+  overflow: hidden;
+}
+#pf-container #pf-main section.pf-product h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+  padding-bottom: 16px;
+}
+#pf-container #pf-main section.pf-product ul {
+  display: flex;
+}
+#pf-container #pf-main section.pf-product ul li {
+  padding-right: 10px;
+}
+#pf-container #pf-main section.pf-home-post {
+  border-top: #E5E5E5 solid 6px;
+}
+#pf-container #pf-main section.pf-home-post nav {
+  padding: 1.2rem 1.2rem 1.2rem 1.6rem;
+  width: 39rem;
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px solid #DBDBDB;
+}
+#pf-container #pf-main section.pf-home-post button {
+  min-width: 2.8rem;
+  height: 2.8rem;
+}
+#pf-container #pf-main section.pf-home-post .list-btn {
+  background-image: url(../../icon/icon-post-list-on.png);
+}
+#pf-container #pf-main section.pf-home-post .list-btn.off {
+  background-image: url(../../icon/icon-post-list-off.png);
+}
+#pf-container #pf-main section.pf-home-post .album-btn {
+  background-image: url(../../icon/icon-post-album-off.png);
+}
+#pf-container #pf-main section.pf-home-post .album-btn.on {
+  background-image: url(../../icon/icon-post-album-on.png);
+}
+#pf-container #pf-main section.pf-home-post ul {
+  padding: 16px;
+}
+#pf-container #pf-main section.pf-home-post ul.list-post.off {
+  display: none;
+}
+#pf-container #pf-main section.pf-home-post ul.album-post {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  display: none;
+}
+#pf-container #pf-main section.pf-home-post ul.album-post li {
+  margin-bottom: 8px;
+  width: 29%;
+  min-width: 11.4rem;
+  height: 29%;
+  min-height: 11.4rem;
+  background: #dbdbdb;
+}
+#pf-container #pf-main section.pf-home-post ul.album-post.on {
+  display: block;
+}
+#pf-container #pf-main .pf-followes-list {
+  display: none;
+  width: 100%;
+  max-width: 39rem;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 30;
+  position: fixed;
+  top: 0;
+}
+#pf-container #pf-main .pf-followes-list.on {
+  display: block;
+}
+#pf-container #pf-main .pf-followes-list nav {
+  display: flex;
+  justify-content: flex-start;
+}
+#pf-container #pf-main .pf-followes-list nav p {
+  padding-left: 13px;
+  font-size: 1.4rem;
+}
+#pf-container #pf-main .pf-followes-list ul {
+  margin-top: 47px;
+  padding: 24px 16px;
+}
+#pf-container #pf-main .pf-followes-list ul li {
+  height: 50px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+#pf-container #pf-main .pf-followes-list ul li figure {
+  flex-grow: 2;
+  overflow: hidden;
+}
+#pf-container #pf-main .pf-followes-list ul li figure img {
+  float: left;
+  display: inline-block;
+}
+#pf-container #pf-main .pf-followes-list ul li figure figcaption {
+  padding: 9px 0 6px 62px;
+  height: 39px;
+}
+#pf-container #pf-main .pf-followes-list ul li figure figcaption p {
+  vertical-align: middle;
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding-bottom: 6px;
+}
+#pf-container #pf-main .pf-followes-list ul li figure figcaption small {
+  font-size: 1.2rem;
+  color: #767676;
+}
+#pf-container #pf-main .modal-logout {
+  width: 100%;
+  max-width: 39rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  display: none;
+}
+#pf-container #pf-main .modal-logout.on {
+  display: block;
+}
+#pf-container #pf-main .modal-logout .logout-popup {
+  margin: 0 auto;
+  margin-top: 50%;
+  width: 25.2rem;
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
+#pf-container #pf-main .modal-logout h4 {
+  margin: 0;
+  padding: 22px 0;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+#pf-container #pf-main .modal-logout ul {
+  min-width: 25.2rem;
+  text-align: center;
+  border-top: 1px solid #dbdbdb;
+}
+#pf-container #pf-main .modal-logout ul li {
+  width: 49%;
+  display: inline-block;
+  padding: 14px 0px;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+#pf-container #pf-main .modal-logout ul .logout-cancle {
+  border-right: 1px solid #dbdbdb;
 }
 
-/*# sourceMappingURL=module-sample.css.map */
+.hidden {
+  text-indent: -9999px;
+  width: 1px;
+  height: 1px;
+}
+
+/*# sourceMappingURL=your_profile.css.map */

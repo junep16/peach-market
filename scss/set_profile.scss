@@ -1,3 +1,6 @@
+@charset "utf-8";
+@import "variables";
+
 .container {
   .selectProfile{
     p {
@@ -12,7 +15,7 @@
       margin-bottom: 14px;
       border-radius: 50%;
       border: 1px solid #dbdbdb;
-      background: url(../../img/avatar50.png);
+      background: url(/images/avatar50.png);
       background-size: contain;
       img {
         display: inline-block;
