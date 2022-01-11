@@ -1,3 +1,4 @@
+/* variables */
 .container .selectProfile p {
   font-size: 1.4rem;
   margin-bottom: 30px;
@@ -10,7 +11,7 @@
   margin-bottom: 14px;
   border-radius: 50%;
   border: 1px solid #dbdbdb;
-  background: url(../../img/avatar50.png);
+  background: url(/images/avatar50.png);
   background-size: contain;
 }
 .container .selectProfile button img {

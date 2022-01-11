@@ -1,3 +1,4 @@
+/* variables */
 html {
   color: #767676;
 }
@@ -14,39 +15,49 @@ html {
   color: #111;
   margin-bottom: 40px;
 }
-.container form {
+.container #login-form {
   display: flex;
   flex-direction: column;
 }
-.container form label {
+.container #login-form label {
   font-size: 1.2rem;
   text-align: left;
 }
-.container form input {
+.container #login-form input {
   font-size: 1.4rem;
   border: none;
   border-bottom: 1px solid #c4c4c4;
   height: 48px;
 }
-.container form input::placeholder {
+.container #login-form input::placeholder {
   color: #dbdbdb;
 }
-.container form input:focus {
-  border-bottom: 1px solid red;
+.container #login-form input:focus {
+  border: 2px solid #FFABA2;
+  border-radius: 4px;
+  outline: none;
 }
-.container form .password {
+.container #login-form .password {
   margin-top: 16px;
 }
-.container form .error {
+.container #login-form .error {
   font-size: 1.2rem;
   text-align: start;
   color: #EB5757;
   line-height: 1.4rem;
   margin-top: 5px;
 }
-.container form button {
+.container #login-form .hidden {
+  display: none;
+}
+.container #login-form button {
   margin: 30px 0 20px 0;
   height: 48px;
+  background-color: #FFD2CC;
+  color: #fff;
+  font-size: 1.4rem;
+  height: 4.4rem;
+  width: 100%;
 }
 .container a {
   font-size: 1.2rem;

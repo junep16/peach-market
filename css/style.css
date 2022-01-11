@@ -74,6 +74,10 @@ a {
 }
 
 /*# sourceMappingURL=reset.css.map */
+/* variables */
+/* mixin */
+/* variables */
+/* button module */
 [class$=button] {
   border: none;
   border-radius: 30px;
@@ -135,20 +139,21 @@ a {
   width: 14.4%;
 }
 
+/* navigation module */
 .prev-btn {
-  background: url(/../../src/icon/icon-arrow-left.png);
+  background-image: url(/icon/icon-arrow-left.png);
   width: 22px;
   height: 22px;
 }
 
 .more-btn {
-  background-image: url(/../../src/icon/icon-more-vertical.png);
+  background-image: url(/icon/icon-more-vertical.png);
   width: 24px;
   height: 24px;
 }
 
 .search-btn {
-  background-image: url(/../../src/icon/icon-search.png);
+  background-image: url(/icon/icon-search.png);
   width: 24px;
   height: 24px;
 }
@@ -177,7 +182,10 @@ a {
 .top-search-nav .prev-btn {
   margin-right: 20px;
 }
-.top-search-nav .search-input {
+.top-search-nav form {
+  width: 100%;
+}
+.top-search-nav form input {
   font-size: 1.4rem;
   width: 100%;
   border-radius: 15px;
@@ -185,7 +193,7 @@ a {
   background-color: #F2F2F2;
   padding: 0.7rem 0 0.7rem 1.6rem;
 }
-.top-search-nav .search-input:focus {
+.top-search-nav form input:focus {
   outline: none;
 }
 
@@ -201,11 +209,11 @@ a {
   font-weight: 500;
 }
 
-.top-chat-nav .wrap {
+.top-chat-nav div {
   display: flex;
   align-items: center;
 }
-.top-chat-nav .wrap .top-nav-text {
+.top-chat-nav div .top-nav-text {
   font-size: 1.4rem;
   font-weight: 500;
   margin-left: 1rem;
@@ -214,117 +222,85 @@ a {
 .tab-menu {
   background-color: #fff;
   border-top: 1px solid #DBDBDB;
-  padding: 0 0.6rem;
+  padding: 12px 6px 6px;
 }
-.tab-menu .tab-wrap {
+.tab-menu ul {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-.tab-menu .tab-wrap li {
-  width: 8.4rem;
-  height: 6rem;
-  padding: 12px 30px 6px;
-}
-.tab-menu .tab-wrap li .home-tab {
-  position: relative;
-  display: block;
-  background-image: url("/../../src/icon/icon-home.svg");
-  background-size: cover;
-  font-size: 1rem;
-  width: 24px;
-  height: 24px;
+.tab-menu ul li {
+  width: 84px;
   text-align: center;
 }
-.tab-menu .tab-wrap li .home-tab::after {
-  content: "홈";
-  position: absolute;
+.tab-menu ul li a {
   color: #767676;
-  bottom: -14px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 54px;
 }
-.tab-menu .tab-wrap li .home-tab.on, .tab-menu .tab-wrap li .home-tab:hover {
-  background-image: url("/../../src/icon/icon-home-fill.svg");
-}
-.tab-menu .tab-wrap li .home-tab.on::after, .tab-menu .tab-wrap li .home-tab:hover::after {
+.tab-menu ul li a.on, .tab-menu ul li a:hover {
   color: #FFABA2;
 }
-.tab-menu .tab-wrap li .chat-tab {
-  position: relative;
+.tab-menu ul li a::before {
+  margin: 0 auto 4px;
+}
+.tab-menu ul li .home-tab::before {
+  content: "";
   display: block;
-  background-image: url("/../../src/icon/icon-message-circle.svg");
+  background-image: url("/icon/icon-home.svg");
   background-size: cover;
-  font-size: 1rem;
+  background-repeat: no-repeat;
   width: 24px;
   height: 24px;
-  text-align: center;
 }
-.tab-menu .tab-wrap li .chat-tab::after {
-  content: "채팅";
-  position: absolute;
-  color: #767676;
-  bottom: -14px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 54px;
-}
-.tab-menu .tab-wrap li .chat-tab.on, .tab-menu .tab-wrap li .chat-tab:hover {
-  background-image: url("/../../src/icon/icon-message-circle-fill.svg");
-}
-.tab-menu .tab-wrap li .chat-tab.on::after, .tab-menu .tab-wrap li .chat-tab:hover::after {
-  color: #FFABA2;
-}
-.tab-menu .tab-wrap li .post-tab {
-  position: relative;
+.tab-menu ul li .chat-tab::before {
+  content: "";
   display: block;
-  background-image: url("/../../src/icon/icon-edit.svg");
+  background-image: url("/icon/icon-message-circle.svg");
   background-size: cover;
-  font-size: 1rem;
+  background-repeat: no-repeat;
   width: 24px;
   height: 24px;
-  text-align: center;
 }
-.tab-menu .tab-wrap li .post-tab::after {
-  content: "게시물 작성";
-  position: absolute;
-  color: #767676;
-  bottom: -14px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 54px;
-}
-.tab-menu .tab-wrap li .post-tab.on, .tab-menu .tab-wrap li .post-tab:hover {
-  background-image: url("/../../src/icon/icon-edit-fill.svg");
-}
-.tab-menu .tab-wrap li .post-tab.on::after, .tab-menu .tab-wrap li .post-tab:hover::after {
-  color: #FFABA2;
-}
-.tab-menu .tab-wrap li .profile-tab {
-  position: relative;
+.tab-menu ul li .post-tab::before {
+  content: "";
   display: block;
-  background-image: url("/../../src/icon/icon-user.svg");
+  background-image: url("/icon/icon-edit.svg");
   background-size: cover;
-  font-size: 1rem;
+  background-repeat: no-repeat;
   width: 24px;
   height: 24px;
-  text-align: center;
 }
-.tab-menu .tab-wrap li .profile-tab::after {
-  content: "프로필";
-  position: absolute;
-  color: #767676;
-  bottom: -14px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 54px;
+.tab-menu ul li .profile-tab::before {
+  content: "";
+  display: block;
+  background-image: url("/icon/icon-user.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
 }
-.tab-menu .tab-wrap li .profile-tab.on, .tab-menu .tab-wrap li .profile-tab:hover {
-  background-image: url("/../../src/icon/icon-user-fill.svg");
+.tab-menu ul li .home-tab.on::before {
+  background-image: url(/icon/icon-home-fill.svg);
 }
-.tab-menu .tab-wrap li .profile-tab.on::after, .tab-menu .tab-wrap li .profile-tab:hover::after {
-  color: #FFABA2;
+.tab-menu ul li .chat-tab.on::before {
+  background-image: url(/icon/icon-message-circle-fill.svg);
+}
+.tab-menu ul li .post-tab.on::before {
+  background-image: url(/icon/icon-edit-fill.svg);
+}
+.tab-menu ul li .profile-tab.on::before {
+  background-image: url(/icon/icon-user-fill.svg);
+}
+.tab-menu ul li .home-tab:hover::before {
+  background-image: url(/icon/icon-home-fill.svg);
+}
+.tab-menu ul li .chat-tab:hover::before {
+  background-image: url(/icon/icon-message-circle-fill.svg);
+}
+.tab-menu ul li .post-tab:hover::before {
+  background-image: url(/icon/icon-edit-fill.svg);
+}
+.tab-menu ul li .profile-tab:hover::before {
+  background-image: url(/icon/icon-user-fill.svg);
 }
 
 .comment {
@@ -339,114 +315,131 @@ a {
   justify-content: space-between;
   width: 100%;
 }
-.comment .comment-input {
+.comment form input {
   width: 90%;
   font-size: 1.4rem;
   border: none;
   padding: 1rem 1.8rem;
 }
-.comment .comment-input:focus {
+.comment form input:focus {
   outline: none;
 }
-.comment .comment-input::placeholder {
+.comment form input::placeholder {
   color: #C4C4C4;
 }
-.comment .comment-submit-btn {
+.comment form button {
   color: #C4C4C4;
+  font-size: 1.4rem;
 }
 
+/* post module */
 .home-post,
 .home-post-onlytext {
   background-color: #fff;
   display: flex;
   justify-content: space-between;
 }
-
-.avatar-img {
+.home-post .avatar-img,
+.home-post-onlytext .avatar-img {
   width: 4.2rem;
   height: 4.2rem;
   margin-right: 1.2rem;
 }
-
-.content-wrap .user-info {
+.home-post div .content-wrap,
+.home-post-onlytext div .content-wrap {
   display: flex;
   justify-content: space-between;
   margin: 4px 0 16px;
 }
-.content-wrap .user-info a {
+.home-post div .content-wrap a,
+.home-post-onlytext div .content-wrap a {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
 }
-.content-wrap .user-info a:active {
-  color: #FFABA2;
-}
-.content-wrap .user-info a:active .market-name {
-  color: inherit;
-}
-.content-wrap .user-info a .market-name {
+.home-post div .content-wrap a strong,
+.home-post-onlytext div .content-wrap a strong {
   font-size: 1.4rem;
   font-weight: 500;
   color: #000;
 }
-.content-wrap .user-info a .user-name {
+.home-post div .content-wrap a span,
+.home-post-onlytext div .content-wrap a span {
   font-size: 1.2rem;
   font-weight: 400;
   color: #767676;
 }
-.content-wrap .post-content {
+.home-post div .content-wrap a:active,
+.home-post-onlytext div .content-wrap a:active {
+  color: #FFABA2;
+}
+.home-post div .content-wrap a:active strong,
+.home-post-onlytext div .content-wrap a:active strong {
+  color: inherit;
+}
+.home-post div .post-content,
+.home-post-onlytext div .post-content {
   font-size: 1.4rem;
   line-height: 17px;
   margin-bottom: 1.6rem;
 }
-.content-wrap .post-img {
+.home-post div .post-img,
+.home-post-onlytext div .post-img {
   display: block;
   margin-bottom: 1.5rem;
 }
-.content-wrap .heart-btn {
-  font-size: 12px;
-  font-weight: 400px;
+.home-post div .heart-btn,
+.home-post-onlytext div .heart-btn {
+  font-size: 1.2rem;
+  font-weight: 400;
   color: #767676;
   margin-bottom: 2rem;
 }
-.content-wrap .heart-btn::before {
+.home-post div .heart-btn::before,
+.home-post-onlytext div .heart-btn::before {
   content: "";
   display: inline-block;
-  background-image: url("/../../src/icon/icon-heart.svg");
+  background-image: url("/icon/icon-heart.svg");
+  background-size: cover;
   background-repeat: no-repeat;
-  background-size: contain;
-  width: 16px;
-  height: 16px;
+  width: 19px;
+  height: 17px;
   vertical-align: sub;
-  margin-right: 0.6rem;
+  margin-right: 6px;
 }
-.content-wrap .heart-btn.on::before {
-  background-image: url("/../../src/icon/icon-heart-active.svg");
+.home-post div .heart-btn.on:before,
+.home-post-onlytext div .heart-btn.on:before {
+  background-image: url("/icon/icon-heart-active.svg");
 }
-.content-wrap .comment-btn {
-  font-size: 12px;
-  font-weight: 400px;
+.home-post div .comment-btn,
+.home-post-onlytext div .comment-btn {
+  font-size: 1.2rem;
+  font-weight: 400;
   color: #767676;
   margin-bottom: 2rem;
 }
-.content-wrap .comment-btn::before {
+.home-post div .comment-btn::before,
+.home-post-onlytext div .comment-btn::before {
   content: "";
   display: inline-block;
-  background-image: url("/../../src/icon/icon-message-circle.svg");
+  background-image: url("/icon/icon-message-circle.svg");
+  background-size: cover;
   background-repeat: no-repeat;
-  background-size: contain;
-  width: 16px;
-  height: 16px;
+  width: 19px;
+  height: 17px;
   vertical-align: sub;
-  margin-right: 0.6rem;
+  margin-right: 6px;
 }
-.content-wrap .comment-btn.on::before {
-  background-image: url("/../../src/icon/icon-message-circle-fill.svg");
+.home-post div .comment-btn.on:before,
+.home-post-onlytext div .comment-btn.on:before {
+  background-image: url("/icon/icon-message-circle-fill.svg");
 }
-.content-wrap button + button {
+.home-post div button + button,
+.home-post-onlytext div button + button {
   margin-left: 1.8rem;
 }
-.content-wrap .upload-date {
+.home-post div .upload-date,
+.home-post-onlytext div .upload-date {
   display: block;
   font-size: 1rem;
   color: #767676;
@@ -463,82 +456,62 @@ a {
 .product a:active {
   color: #FFABA2;
 }
-.product a .product-img {
+.product a img {
   display: block;
   border-radius: 5px;
   margin-bottom: 0.6rem;
 }
-.product a .product-name {
+.product a strong {
   display: block;
   font-size: 1.4rem;
   margin-bottom: 0.4rem;
 }
-.product a .product-price {
+.product a span {
   font-size: 1.2rem;
   font-weight: 700;
   color: #FFABA2;
 }
 
-.user-search a {
+/* user module */
+.user-search,
+.user-follow {
   background-color: #FFF;
+}
+.user-search a,
+.user-follow a {
   display: flex;
   color: #000;
 }
-.user-search a:active {
+.user-search a:active,
+.user-follow a:active {
   color: #FFABA2;
 }
-.user-search a .avatar-img {
-  margin-right: 1.2rem;
+.user-search a img,
+.user-follow a img {
+  margin-right: 12px;
 }
-.user-search a .user-info {
+.user-search a p,
+.user-follow a p {
   display: flex;
   flex-direction: column;
-  text-align: left;
   justify-content: space-around;
 }
-.user-search a .user-info .market-name {
+.user-search a p strong,
+.user-follow a p strong {
   font-size: 1.4rem;
   font-weight: 500;
-  color: inherit;
 }
-.user-search a .user-info .user-name {
+.user-search a p span,
+.user-follow a p span {
   font-size: 1.2rem;
   font-weight: 400;
   color: #767676;
 }
 
 .user-follow {
-  background-color: #FFF;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.user-follow a {
-  color: #000;
-}
-.user-follow a:active {
-  color: #FFABA2;
-}
-.user-follow a .avatar-img {
-  margin-right: 1.2rem;
-}
-.user-follow a .wrap {
-  display: flex;
-}
-.user-follow a .wrap .user-info {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  justify-content: space-around;
-}
-.user-follow a .wrap .user-info .market-name {
-  font-size: 1.4rem;
-  font-weight: 500;
-}
-.user-follow a .wrap .user-info .user-name {
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: #767676;
 }
 
 .chat-list-cont {
@@ -851,6 +824,7 @@ footer {
   display: block;
 }
 
+/* variables */
 html {
   color: #767676;
 }
@@ -865,6 +839,7 @@ a {
   background-color: #fff;
   z-index: 10;
   position: absolute;
+  transition: 0.5s;
 }
 .splash img {
   width: 160px;
@@ -874,7 +849,7 @@ a {
   transform: translate(-50%, -50%);
 }
 .splash.disappear {
-  display: none;
+  opacity: 0;
 }
 
 .container {
@@ -1232,6 +1207,7 @@ form p {
   margin-top: 16px;
 }
 
+/* variables */
 .container .selectProfile p {
   font-size: 1.4rem;
   margin-bottom: 30px;
@@ -1244,7 +1220,7 @@ form p {
   margin-bottom: 14px;
   border-radius: 50%;
   border: 1px solid #dbdbdb;
-  background: url(../../img/avatar50.png);
+  background: url(/images/avatar50.png);
   background-size: contain;
 }
 .container .selectProfile button img {
@@ -1259,6 +1235,7 @@ form p {
   margin-top: 16px;
 }
 
+/* variables */
 html {
   color: #767676;
 }
@@ -1275,39 +1252,49 @@ html {
   color: #111;
   margin-bottom: 40px;
 }
-.container form {
+.container #login-form {
   display: flex;
   flex-direction: column;
 }
-.container form label {
+.container #login-form label {
   font-size: 1.2rem;
   text-align: left;
 }
-.container form input {
+.container #login-form input {
   font-size: 1.4rem;
   border: none;
   border-bottom: 1px solid #c4c4c4;
   height: 48px;
 }
-.container form input::placeholder {
+.container #login-form input::placeholder {
   color: #dbdbdb;
 }
-.container form input:focus {
-  border-bottom: 1px solid red;
+.container #login-form input:focus {
+  border: 2px solid #FFABA2;
+  border-radius: 4px;
+  outline: none;
 }
-.container form .password {
+.container #login-form .password {
   margin-top: 16px;
 }
-.container form .error {
+.container #login-form .error {
   font-size: 1.2rem;
   text-align: start;
   color: #EB5757;
   line-height: 1.4rem;
   margin-top: 5px;
 }
-.container form button {
+.container #login-form .hidden {
+  display: none;
+}
+.container #login-form button {
   margin: 30px 0 20px 0;
   height: 48px;
+  background-color: #FFD2CC;
+  color: #fff;
+  font-size: 1.4rem;
+  height: 4.4rem;
+  width: 100%;
 }
 .container a {
   font-size: 1.2rem;
