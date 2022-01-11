@@ -1,3 +1,5 @@
+@import "./common"; 
+
 main {
   width: 100%; 
   box-sizing: border-box;
@@ -17,15 +19,22 @@ form {
     width: 11rem; 
     height: 11rem; 
   }
-  .profile-upload {
+  .upload-button {
+    background-image: url(/images/upload-file.png);
+    background-size: 3.6rem;
     position: absolute;
     top: 7.3rem;
     right: 0.2rem;
     width: 3.6rem;
     height: 3.6rem;
+    font-size: 0.01px;
+  }
+  .upload-input {
+    display: none;
   }
 }
-.input-wrapper {
+
+.user-input {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,12 +58,16 @@ form {
   input::placeholder {
     color: $light-gray-color;
   }
-  .input-id.error {
-    border-bottom: 1px solid red;
-  }
-  .input-id.error::after {
-    content: "*영문, 숫자, 밑줄 및 마침표만 사용할 수 있습니다.";
+  .input-id.error, .user-name.error {
+    border-bottom: 1px solid $red-color;
+  } 
+  .input-error {
+    display: none;
+    font-size: 1.4rem; 
+    margin-top: 10px;
+    color: $red-color;
+  } 
+  .input-error.on {
     display: block;
-    font-size: 1rem;
   }
 }
