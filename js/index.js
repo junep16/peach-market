@@ -16,13 +16,12 @@ const response = await fetch(url+"/post/feed", {
 const json = await response.json(); 
 const posts = json.posts;  
 
-posts.forEach( post => { 
+posts.forEach( (post, i) => {
   const authorImage = post.author.image;   
   const authorAccount = post.author.accountname; 
   const authorName = post.author.username;  
   const postContent = post.content;  
-  const postImage = post.image.split(",");   
-  console.log(postImage); 
+  const postImage = post.image.split(","); 
   const postDate = post.createdAt.split('T')[0]; 
   const commentCount = post.commentCount; 
   const heartCount = post.heartCount;
@@ -43,7 +42,7 @@ posts.forEach( post => {
         </div>
         <p class="post-content">${postContent}</p>
         <div class="post-img-window">
-          <ul class="post-img-container"></ul>
+          <ul id="post${i}" class="post-img-container"></ul>
           <div class="post-img-button-wrap">
             <button class="img-slide one on" type="button"></button>
             <button class="img-slide two" type="button"></button>
@@ -64,37 +63,42 @@ posts.forEach( post => {
     </div>
     <span class="upload-date">${postDate}</span> 
   </li> 
-`
-addPostImages(postImage); 
+` 
+  console.log(postImage); 
+  addPostImages(postImage, i); 
 });  
-
-
 }
 
-function addPostImages(eachpost) {
-  const slides = document.querySelector(".post-img-container");  
+function addPostImages(eachpost, i) {  
+  const slides = document.querySelector(`#post${i}`);  
   const li = document.createElement("li"); 
   const img = document.createElement("img"); 
   li.classList.add("post-img-wrap"); 
   img.classList.add("post-img"); 
-
+  console.log(slides); 
+  
   if (eachpost.length === 1) {
     img.src=`${eachpost[0]}`
     li.appendChild(img); 
     slides.appendChild(li); 
     console.log("하나지롱");
   } else if (eachpost.length > 1) {
-    for(i = 0; i <= eachpost.length; i++) {
-      img.src=`${eachpost[i]}`
-      li.appendChild(img); 
-      slides.appendChild(li); 
-      console.log("여러개지롱");
+    for(let j = 0; j <= eachpost.length -1; j++) {
+      img.src=`${eachpost[j]}`
+      const lis = document.createElement("li");
+      const imgs = document.createElement("img");
+      lis.classList.add("post-img-wrap"); 
+      imgs.classList.add("post-img"); 
+      imgs.style.width = "304"; 
+      imgs.style.height = "228"; 
+      lis.appendChild(imgs); 
+      slides.appendChild(lis); 
+      console.log("여러개지롱"); 
     }  
   } else {
     console.log("이미지 없음"); 
   }
 }
-
 
 // *** 이미지 슬라이드 *** 
 function handleImageSlide() { 
@@ -142,7 +146,7 @@ function handleImageSlide() {
     currentIndex = 1;
     moveSlide(currentIndex +1);  
   });  
-}
+} 
 
 async function init() {
   await getPosts(); 
