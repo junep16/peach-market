@@ -14,19 +14,19 @@ const response = await fetch(url+"/post/feed", {
   } 
 })
 const json = await response.json(); 
-console.log(json); 
-const posts = json.posts; 
+const posts = json.posts;  
 
-posts.forEach( post => {
+posts.forEach( post => { 
   const authorImage = post.author.image;   
   const authorAccount = post.author.accountname; 
-  const authorName = post.author.username; 
-  const postImage = post.image;
+  const authorName = post.author.username;  
   const postContent = post.content;  
+  const postImage = post.image.split(",");   
+  console.log(postImage); 
   const postDate = post.createdAt.split('T')[0]; 
   const commentCount = post.commentCount; 
   const heartCount = post.heartCount;
-  const hearted = post.hearted;  
+  const hearted = post.hearted;   
   postList.innerHTML+=`
   <li>
     <div class="home-post">
@@ -43,22 +43,12 @@ posts.forEach( post => {
         </div>
         <p class="post-content">${postContent}</p>
         <div class="post-img-window">
-          <ul class="post-img-container">
-            <li class="post-img-wrap">
-              <img src="https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg" alt="포스트사진" class="post-img"> 
-            </li>
-            <li class="post-img-wrap">
-              <img src="/images/post-img-example.png" alt="포스트 사진" class="post-img"> 
-            </li>
-            <li class="post-img-wrap">
-              <img src="/images/post-img-example.png" alt="포스트 사진" class="post-img"> 
-            </li>
-          </ul>
+          <ul class="post-img-container"></ul>
           <div class="post-img-button-wrap">
             <button class="img-slide one on" type="button"></button>
             <button class="img-slide two" type="button"></button>
             <button class="img-slide three" type="button"></button></div>
-        </div>
+          </div>
         </div>
       </div>
     </div> 
@@ -75,15 +65,43 @@ posts.forEach( post => {
     <span class="upload-date">${postDate}</span> 
   </li> 
 `
-})
+addPostImages(postImage); 
+});  
+
+
 }
+
+function addPostImages(eachpost) {
+  const slides = document.querySelector(".post-img-container");  
+  const li = document.createElement("li"); 
+  const img = document.createElement("img"); 
+  li.classList.add("post-img-wrap"); 
+  img.classList.add("post-img"); 
+
+  if (eachpost.length === 1) {
+    img.src=`${eachpost[0]}`
+    li.appendChild(img); 
+    slides.appendChild(li); 
+    console.log("하나지롱");
+  } else if (eachpost.length > 1) {
+    for(i = 0; i <= eachpost.length; i++) {
+      img.src=`${eachpost[i]}`
+      li.appendChild(img); 
+      slides.appendChild(li); 
+      console.log("여러개지롱");
+    }  
+  } else {
+    console.log("이미지 없음"); 
+  }
+}
+
 
 // *** 이미지 슬라이드 *** 
 function handleImageSlide() { 
-const buttonController = document.querySelector(".post-img-button-wrap");   
-const buttonOne = document.querySelector(".img-slide.one"); 
-const buttonTwo = document.querySelector(".img-slide.two"); 
-const buttonThree = document.querySelector(".img-slide.three");
+  const buttonController = document.querySelector(".post-img-button-wrap");   
+  const buttonOne = document.querySelector(".img-slide.one"); 
+  const buttonTwo = document.querySelector(".img-slide.two"); 
+  const buttonThree = document.querySelector(".img-slide.three");
 
   buttonController.addEventListener("click", event => { 
     if(buttonOne.classList.contains("on")) {
