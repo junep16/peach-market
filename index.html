@@ -28,20 +28,20 @@
 <main>
   <h4 class="text-hide">피드 리스트</h4>
   <ul class="post-lists">
-    <div>
+    <!-- <li>
       <div class="home-post">
-        <img src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg" alt="프로필 사진" class="avatar-img">
+        <img src=${authorImage} alt="프로필 사진" class="avatar-img">
         <div>
           <div class="content-wrap">
             <a href="#none">
-              <strong>애월읍 위니브 감귤농장</strong>
-              <span>@ weniv_Mandarin</span>
+              <strong>${authorName}</strong>
+              <span>@ ${authorAccount}</span>
             </a>
             <button type="button" class="more-btn">
               <span class="text-hide">설정 더보기 </span>
             </button>
           </div>
-          <p class="post-content">이것을 인생을 옷을 교향악이다. 품에 청춘의 시들어 품으며, 그것은 바로 우는 불어 뿐이다. 가지에 얼마나 얼음과 앞이 유소년에게서 그들은 부패뿐이다. 곧 인간이 인생에 철환하였는가? 것은 따뜻한 꽃이 예가 안고, 이것이다. 전인 무엇을 광야에서 힘있다. 밝은 품으며, 이상은 있다. 설산에서 같은 내는 트고, 불어 피고 아름답고 것이다. 이상 뛰노는 보는 있는 주는 찾아다녀도, 있으랴? 사라지지 끓는 그러므로 그들은 지혜는 것이다. 만천하의 그들은 하였으며, 봄바람이다.</p>
+          <p class="post-content">${postContent}</p>
           <div class="post-img-window">
             <ul class="post-img-container">
               <li class="post-img-wrap">
@@ -62,27 +62,19 @@
           </div>
           </div>
         </div>
-      </div>
+      </div> 
       <div class="post-button-wrap">
-        <button 
-          type="button"
-          class="heart-btn"
-          data-count="58"
-        >
-        <span class="text-hide">좋아요</span>
-        58
+        <button type="button" class="heart-btn" data-count="58">
+          <span class="text-hide">좋아요</span>
+          ${heartCount}
         </button>
-        <button
-          type="button"
-          class="comment-btn"
-          data-count="12"
-        >
-        <span class="text-hide">댓글</span>
-        12
+        <button type="button" class="comment-btn" data-count="12">
+          <span class="text-hide">댓글</span>
+          ${commentCount}
         </button>
       </div>
-      <span class="upload-date">2020년 10월 21일</span> 
-    </li>
+      <span class="upload-date">${postDate}</span> 
+    </li>  -->
   </ul>
 </main>
   <div class="follow-modal">

@@ -407,6 +407,7 @@ a {
 .home-post-onlytext div .post-img-window .post-img-container .post-img-wrap:not(:last-child) .post-img {
   width: 304px;
   height: 228px;
+  border-radius: 10px;
 }
 .home-post div .post-img-button-wrap,
 .home-post-onlytext div .post-img-button-wrap {
