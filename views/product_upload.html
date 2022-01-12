@@ -8,31 +8,58 @@
     <title>PEACH MARKET | PRODUCT UPLOAD</title>
 </head>
 <body>
-  <header class="top-upload-nav">
-    <button type="button" class="prev-btn"></button>
-    <button type="button" class="ms-disabled-button">저장</button>
-  </header>
-  <main>
-    <form>
-      <h1 class="text-hide">상품 등록</h1>
-      <p>이미지 등록</p>
-    <div>
-      <div class="product-image-wrap">
-        <img class="product-image" src="" alt="상품 이미지">
-        <button class="image-upload-button" type="button">
-          <img class="product-upload" src="/src/img/img-button.png" alt="이미지 업로드">
-        </button>
+  <h1 class="text-hide">상품 등록</h1>
+  <form>
+    <header class="top-upload-nav">
+      <button type="button" class="prev-btn"></button>
+      <button type="button" class="ms-disabled-button" id="submitBtn">저장</button>
+    </header>
+    <div role="main" class="product-app">
+        <p>이미지 등록</p>
+        <!-- 상품 이미지 인풋 -->
+        <fieldset class="product-image-wrap">
+          <img class="product-image hidden" src="/" alt="상품 이미지">
+          <label for="uploadInput">
+            <span class="text-hide">이미지 등록 버튼</span>
+          </label>
+          <input type="file" id="uploadInput" >
+        </fieldset>
+        <div class="input-wrapper">
+          <!-- 상품 이름 인풋 -->
+          <fieldset class="name-input-wrap">
+            <label for="productName">상품명</label>
+            <input
+            type="text"
+            id="productName"
+            placeholder="2~15자 이내여야 합니다."
+            minlength="2"
+            maxlength="15"
+            required
+            >
+          </fieldset>
+          <!-- 상품 가격 인풋 -->
+          <fieldset class="price-input-wrap">
+            <label for="productPrice">가격</label>
+            <input
+            type="number"
+            id="productPrice"
+            placeholder="숫자만 입력 가능합니다."
+            required
+            >
+          </fieldset>
+          <!-- 상품 주소 인풋 -->
+          <fieldset class="link-input-wrap">
+            <label for="productLink">판매 링크</label>
+            <input
+              type="url"
+              id="productLink"
+              placeholder="URL을 입력해 주세요."
+              pattern="https://.*"
+              required
+            >
+          </fieldset>
+        </div> 
       </div>
-    </div> 
-    <div class="input-wrapper">
-      <label for="product-name">상품명</label>
-      <input type="text" id="product-name" placeholder="2~15자 이내여야 합니다.">
-      <label for="product-price">가격</label>
-      <input type="text" id="product-price" class ="input-id error" placeholder="숫자만 입력 가능합니다.">
-      <label for="product-link">판매 링크</label>
-      <input type="text" id="product-link" placeholder="URL을 입력해 주세요.">
-    </div> 
-    </form>
-  </main>
+  </form>
 </body>
 </html>
