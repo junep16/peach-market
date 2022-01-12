@@ -145,26 +145,18 @@ function handleImageSlide() {
     currentIndex = num; 
   }
 
-  buttonController.addEventListener("click", event => {
-    if(event.target.classList.contains(".img-slide.one")) {
-      console.log("누름1"); 
-      moveSlide(0); 
-    } else if (event.target.classList.contains(".img-slide.two")) {
-      console.log("누름2"); 
-      moveSlide(currentIndex + 1);
-    } else if(event.target.classList.contains(".img-slide.three")) {
-      console.log("누름3"); 
-      moveSlide(currentIndex + 2);
-    } 
+  buttonOne.addEventListener("click", event => { 
+    moveSlide(0);  
   }); 
-
-  // buttonTwo.addEventListener("click", function (event) { 
-  //   if (currentIndex < slideCount - 1) {
-  //     moveSlide(currentIndex + 1); 
-  //   } else {
-  //     moveSlide(0); 
-  //   }
-  // }); 
+  
+  buttonTwo.addEventListener("click", event => {
+    currentIndex = 0;
+    moveSlide(currentIndex +1);  
+  }); 
+  buttonThree.addEventListener("click", event => {
+    currentIndex = 1;
+    moveSlide(currentIndex +1);  
+  });  
 }
 
 handleImageSlide(); 
