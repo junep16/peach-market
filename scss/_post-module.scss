@@ -12,7 +12,7 @@
     border-radius: 4.2rem;
     margin-right: 1.2rem;
   }
-  div {
+  div {  
     .content-wrap {
       display: flex;
       justify-content: space-between;
@@ -103,44 +103,49 @@
         background-image: url($active-img-path);
       }
     }
-    .heart-btn{
-      @include font_module(1.2rem, 400);
-      color: $gray-color;
-      margin-bottom: 2rem;
-      &::before {
-        @include create_visual_class(
-          "/icon/icon-heart.svg",
-          19px, 17px, inline-block);
-        vertical-align: sub;
-        margin-right: 6px;
-      }
-      &.on:before { background-image: url("/icon/icon-heart-active.svg"); }
+  } 
+}
+.post-button-wrap {
+  display: flex; 
+  justify-content: flex-start; 
+  margin: 3% 15% 0 15%;
+  .heart-btn{
+    @include font_module(1.2rem, 400);
+    color: $gray-color;
+    margin-bottom: 2rem;
+    &::before {
+      @include create_visual_class(
+        "/icon/icon-heart.svg",
+        19px, 17px, inline-block);
+      vertical-align: sub;
+      margin-right: 6px;
     }
-    .comment-btn{
-      @include font_module(1.2rem, 400);
-      color: $gray-color;
-      margin-bottom: 2rem;
-      &::before {
-        @include create_visual_class(
-          "/icon/icon-message-circle.svg",
-          19px, 17px, inline-block);
-        vertical-align: sub;
-        margin-right: 6px;
-      }
-      &.on:before { background-image: url("/icon/icon-message-circle-fill.svg"); }
+    &.on:before { background-image: url("/icon/icon-heart-active.svg"); }
+  }
+  .comment-btn{
+    @include font_module(1.2rem, 400);
+    color: $gray-color;
+    margin-bottom: 2rem;
+    &::before {
+      @include create_visual_class(
+        "/icon/icon-message-circle.svg",
+        19px, 17px, inline-block);
+      vertical-align: sub;
+      margin-right: 6px;
     }
-    button + button {
-      margin-left: 1.8rem;
-    }
-    .upload-date {
-      display: block;
-      font-size: 1rem;
-      color: $gray-color;
-      margin-bottom: .4rem;
-    }
+    &.on:before { background-image: url("/icon/icon-message-circle-fill.svg"); }
+  }
+  button + button {
+    margin-left: 1.8rem;
   }
 }
-
+.upload-date {
+  display: block;
+  font-size: 1rem;
+  color: $gray-color;
+  margin-bottom: .4rem;
+  margin-left: 15%; 
+}
 
 .product {
   background-color: #fff;

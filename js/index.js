@@ -114,7 +114,7 @@
 function handleImageSlide() {
 
   const buttonController = document.querySelector(".post-img-button-wrap"); 
-  // 슬라이드 버튼 컨트롤
+  // 슬라이드 버튼 색 컨트롤
   const buttonOne = document.querySelector(".img-slide.one"); 
   const buttonTwo = document.querySelector(".img-slide.two"); 
   const buttonThree = document.querySelector(".img-slide.three"); 
@@ -158,6 +158,5 @@ function handleImageSlide() {
     moveSlide(currentIndex +1);  
   });  
 }
-
 handleImageSlide(); 
 
