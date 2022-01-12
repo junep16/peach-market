@@ -540,7 +540,7 @@ a {
   overflow: hidden;
   margin: 0 auto;
 }
-.product-image-wrap .product-image {
+.product-image-wrap .preview-image {
   width: 100%;
   height: 100%;
 }
@@ -559,33 +559,33 @@ a {
   bottom: 12px;
   right: 12px;
 }
-.product-image-wrap #uploadInput {
+.product-image-wrap #imageInput {
   display: none;
 }
 
-.input-wrapper {
+.nonFile-input-wrapper {
   margin-top: 30px;
 }
-.input-wrapper fieldset + fieldset {
+.nonFile-input-wrapper fieldset + fieldset {
   margin-top: 16px;
 }
-.input-wrapper fieldset label {
+.nonFile-input-wrapper fieldset label {
   font-size: 1.2rem;
   color: #767676;
   margin-top: 8%;
 }
-.input-wrapper fieldset input {
+.nonFile-input-wrapper fieldset input {
   width: 100%;
   font-size: 1.4rem;
   border-style: none;
   border-bottom: 1px solid #C4C4C4;
   padding: 10px 0 8px;
 }
-.input-wrapper fieldset input:focus {
+.nonFile-input-wrapper fieldset input:focus {
   border-color: #FFABA2;
   outline: none;
 }
-.input-wrapper fieldset input::placeholder {
+.nonFile-input-wrapper fieldset input::placeholder {
   color: #C4C4C4;
 }
 

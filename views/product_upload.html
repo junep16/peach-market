@@ -18,19 +18,20 @@
         <p>이미지 등록</p>
         <!-- 상품 이미지 인풋 -->
         <fieldset class="product-image-wrap">
-          <img class="product-image hidden" src="/" alt="상품 이미지">
-          <label for="uploadInput">
+          <img class="preview-image hidden" src="/" alt="상품 이미지">
+          <label for="imageInput">
             <span class="text-hide">이미지 등록 버튼</span>
           </label>
-          <input type="file" id="uploadInput" >
+          <input type="file" id="imageInput" accept="image/png, image/jpeg">
         </fieldset>
-        <div class="input-wrapper">
+        <div class="nonFile-input-wrapper">
           <!-- 상품 이름 인풋 -->
           <fieldset class="name-input-wrap">
             <label for="productName">상품명</label>
             <input
             type="text"
             id="productName"
+            name="itemName"
             placeholder="2~15자 이내여야 합니다."
             minlength="2"
             maxlength="15"
@@ -43,6 +44,7 @@
             <input
             type="number"
             id="productPrice"
+            name="price"
             placeholder="숫자만 입력 가능합니다."
             required
             >
@@ -53,6 +55,7 @@
             <input
               type="url"
               id="productLink"
+              name="link"
               placeholder="URL을 입력해 주세요."
               pattern="https://.*"
               required
@@ -61,5 +64,6 @@
         </div> 
       </div>
   </form>
+  <script src="/js/product_upload.js"></script>
 </body>
 </html>

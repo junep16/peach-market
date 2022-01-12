@@ -22,7 +22,7 @@
   border-radius: 10px;
   overflow: hidden;
   margin: 0 auto;
-  .product-image {
+  .preview-image {
     width: 100%;
     height: 100%;
   }
@@ -37,10 +37,10 @@
       bottom: 12px; right: 12px;
     }
   }
-  #uploadInput { display: none; }
+  #imageInput { display: none; }
 }
 
-.input-wrapper {
+.nonFile-input-wrapper {
   margin-top: 30px;
   fieldset + fieldset {
     margin-top: 16px;
