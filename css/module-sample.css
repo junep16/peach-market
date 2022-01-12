@@ -343,6 +343,7 @@ a {
 .home-post-onlytext .avatar-img {
   width: 4.2rem;
   height: 4.2rem;
+  border-radius: 4.2rem;
   margin-right: 1.2rem;
 }
 .home-post div .content-wrap,
@@ -379,14 +380,57 @@ a {
 }
 .home-post div .post-content,
 .home-post-onlytext div .post-content {
+  position: relative;
   font-size: 1.4rem;
   line-height: 17px;
   margin-bottom: 1.6rem;
 }
-.home-post div .post-img,
-.home-post-onlytext div .post-img {
-  display: block;
-  margin-bottom: 1.5rem;
+.home-post div .post-img-window,
+.home-post-onlytext div .post-img-window {
+  position: relative;
+  width: 304px;
+  height: 228px;
+  overflow: hidden;
+}
+.home-post div .post-img-window .post-img-container,
+.home-post-onlytext div .post-img-window .post-img-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: left 0.5s ease-out;
+}
+.home-post div .post-img-window .post-img-container .post-img-wrap:not(:last-child),
+.home-post-onlytext div .post-img-window .post-img-container .post-img-wrap:not(:last-child) {
+  float: left;
+  margin-right: 20px;
+}
+.home-post div .post-img-window .post-img-container .post-img-wrap:not(:last-child) .post-img,
+.home-post-onlytext div .post-img-window .post-img-container .post-img-wrap:not(:last-child) .post-img {
+  width: 304px;
+  height: 228px;
+}
+.home-post div .post-img-button-wrap,
+.home-post-onlytext div .post-img-button-wrap {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home-post div .post-img-button-wrap .img-slide,
+.home-post-onlytext div .post-img-button-wrap .img-slide {
+  margin: 0 10px;
+  border-style: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 7px;
+  background-color: #FFF;
+}
+.home-post div .post-img-button-wrap button.on,
+.home-post-onlytext div .post-img-button-wrap button.on {
+  background-color: #FFABA2;
 }
 .home-post div .heart-btn,
 .home-post-onlytext div .heart-btn {

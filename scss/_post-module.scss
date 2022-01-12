@@ -1,6 +1,6 @@
 @charset "utf-8";
 /* post module */
-
+ 
 .home-post,
 .home-post-onlytext {
   background-color: #fff;
@@ -9,6 +9,7 @@
   .avatar-img {
     width: 4.2rem;
     height: 4.2rem;
+    border-radius: 4.2rem;
     margin-right: 1.2rem;
   }
   div {
@@ -35,14 +36,53 @@
       }
     }
     .post-content {
+      position: relative;
       font-size: 1.4rem;
       line-height: 17px;
-      margin-bottom: 1.6rem;
+      margin-bottom: 1.6rem; 
     }
-    .post-img {
-      display: block;
-      margin-bottom: 1.5rem;
+    .post-img-window {
+      position: relative;
+      width: 304px;  
+      height: 228px;
+      overflow: hidden;
+      .post-img-container{  
+        position: absolute;
+        left: 0; 
+        top: 0; 
+        transition: left 0.5s ease-out;
+        .post-img-wrap:not(:last-child){ 
+          float: left;
+          margin-right: 20px; 
+          .post-img {  
+            width: 304px; 
+            height: 228px;
+          }
+        }
+      }
     }
+    .post-img-button-wrap {
+      position: absolute; 
+      bottom: 1.5rem;
+      left: 50%; 
+      transform: translate(-50%, -50%);
+
+      display: flex; 
+      justify-content: center;
+      align-items: center;
+      .img-slide {
+        margin: 0 10px ;
+        border-style: none;
+        width: 7px; 
+        height: 7px;
+        border-radius: 7px;
+        background-color: #FFF;  
+      }
+      button.on {
+        background-color: $base-color;
+      } 
+    } 
+    
     @mixin post-icon-module($base-img-path, $active-img-path) {
       font-size: 12px;
       font-weight: 400px;
