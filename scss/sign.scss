@@ -68,6 +68,9 @@ html {
       font-size: 1.4rem;
       height: 4.4rem;
       width: 100%;
+      &.able {
+        background-color: #FFABA2;
+      }
     }
   }
 

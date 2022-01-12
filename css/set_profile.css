@@ -1,9 +1,9 @@
 /* variables */
-.container .selectProfile p {
+.container .setProfile p {
   font-size: 1.4rem;
   margin-bottom: 30px;
 }
-.container .selectProfile button {
+.container .setProfile button {
   background-color: inherit;
   width: 110px;
   height: 110px;
@@ -14,7 +14,7 @@
   background: url(/images/avatar50.png);
   background-size: contain;
 }
-.container .selectProfile button img {
+.container .setProfile button img {
   display: inline-block;
   position: relative;
   top: 38px;
