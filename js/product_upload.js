@@ -82,48 +82,74 @@ async function uploadProduct() {
 }
 
 
-// 상품 생성
-submitBtn.addEventListener("click", uploadProduct);
-
-
 // 상품 상세
 // query paramter가 있다면
 const queryParam = window.location.search;
 
 
-if (queryParam !== "" && queryParam.split("=")[0] === "?id") {
+// 상품 생성
+if (queryParam === "") {
+  submitBtn.addEventListener("click", uploadProduct);
+
+} else if (queryParam.split("=")[0] === "?id") {
+  // 상품 상세
   const productId = queryParam.split("=")[1];
-  let userCheck = true; // true면 본인, false면 다른 유저
 
   async function detailProduct() {
     const reqData = {
       method: "GET",
       headers: HEADERS,
     }
-
     const res = await fetch(`${ENDPOINT}/product/detail/${productId}`, reqData);
-    const productItem = await res.json();
-    const { itemImage, itemName, price, link } = productItem.product;
-    const [ imageInput, productName, productPrice, productLink ] = inputList;
+    const resJson = await res.json();
 
-    // 해당 product 값 뿌리기
-    previewImage.src = itemImage;
-    previewImage.classList.remove("hidden");
-    productName.value = itemName;
-    productPrice.value = price;
-    productLink.value = link;
-    
-    // 접근한 사람이 다른 유저라면 수정 불가
-    if (userCheck === false) {
-      productName.readOnly = true;
-      productPrice.readOnly = true;
-      productLink.readOnly = true;
-      submitBtn.classList.add("hidden");
-      ProductApp.querySelector("p").textContent = "상품 이미지";
-      document.querySelector(".preview-image + label").classList.add("hidden");
+    // 예외 처리
+    if (resJson.status === "404") {
+      alert(`${resJson.message} 이전 페이지로 이동합니다.`);
+      window.history.back();
+    } else {
+      const { itemImage, itemName, price, link } = resJson.product;
+      const [ imageInput, productName, productPrice, productLink ] = inputList;
+      
+      // 해당 product 값 뿌리기
+      previewImage.src = itemImage;
+      previewImage.classList.remove("hidden");
+      productName.value = itemName;
+      productPrice.value = price;
+      productLink.value = link;
     }
   }
 
   // 페이지 로딩될 때 값들 뿌려주기
   window.onload = detailProduct;
+
+
+  // 상품 수정
+  async function updateProduct() {
+    const imageUrl = previewImage.src;
+  
+    // 서버에 보낼 product 데이터 생성
+    // inputList = [input#imageInput, input#productName, input#productPrice, input#productLink]
+    const product = { "itemImage": imageUrl, };
+    [].slice.call(inputList, 1).forEach((el) => { 
+      // price인 경우 정수로 변환
+      product[el.name] = (el.name === "price") ? parseInt(el.value) : el.value;
+    });
+  
+    const reqData = {
+      method: "PUT",
+      headers: HEADERS,
+      body: JSON.stringify({ product }),
+    }
+    const res = await fetch(`${ENDPOINT}/product/${productId}`, reqData);
+    console.log(res);
+    // if (res.ok) {
+    //   location.href = "/views/your_profile";
+    // } else {
+    //   alert("파일전송에 실패했습니다..");
+    // }
+  }
+
+  // 상품 수정
+  submitBtn.addEventListener("click", updateProduct);
 }
