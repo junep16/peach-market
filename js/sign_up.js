@@ -1,5 +1,3 @@
-//로그인
-
 //로그인 버튼 활성화 START
 //이메일, 패스워드의 인풋태그의 값이 모두 들어와 있으면 버튼활성화 
 
@@ -13,7 +11,7 @@ function able() {
   for (let i = 0; i < loginInputList.length; i++) {
     if (loginInputList[i].value !== '') {
       check += 1;
-    }  
+    }
   }
   if (check === loginInputList.length) {
     loginButton.disabled = false;
@@ -27,41 +25,86 @@ loginForm.addEventListener('keyup', able);
 
 //로그인 버튼 활성화 END
 
-// 로그인 API START
-function getInput() {
-  console.log(document.querySelector("#email").value);
-  console.log(document.querySelector("#password").value);
-}
+// sign_in API START
+// function getInput() {
+//   console.log(document.querySelector("#email").value);
+//   console.log(document.querySelector("#password").value);
+// }
 
-async function login() {
-  const email = document.querySelector("#email").value;
-  const pw = document.querySelector("#password").value;
+// async function login() {
+//   const email = document.querySelector("#email").value;
+//   const pw = document.querySelector("#password").value;
+//   const url = "http://146.56.183.55:5050";
+//   const loginData = {
+//     "user": {
+//       "email": email,
+//       "password": pw,
+//     }
+//   }
+//   const res = await fetch(url + '/user/login', {
+//     method: "POST",
+//     headers: {
+//       "Content-type": "application/json"
+//     },
+//     body: JSON.stringify(loginData),
+//   })
+//   const json = await res.json();
+//   console.log(json.message);
+//   console.log(json.status);
+//   console.log(res);
+//   if (json.status === 422) {
+//     const errMsg = document.querySelector(".error");
+//     // errMsg.textContent = json.message;
+//     errMsg.classList.remove("hidden");
+//   }
+// }
+
+// loginButton.addEventListener("click", login);
+
+//password input에서 enter 할 때 button클릭
+
+// const pw = document.querySelector(".password");
+// pw.addEventListener('keydown', () => {
+//   console.log('머냐고');
+// })
+
+//회원가입
+const emailPw = document.querySelector(".email-pw");
+const profile = document.querySelector(".profile");
+async function checkEmailValid(email) {
   const url = "http://146.56.183.55:5050";
-  const loginData = {
-    "user":{
-        "email": email,
-        "password": pw,
-    }
-}
-  const res = await fetch(url+'/user/login',{
+  const res = await fetch(url + '/user/emailValid', {
     method: "POST",
     headers: {
-      "Content-type" : "application/json"
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(loginData),
+    body: JSON.stringify({
+      "user": {
+        "email": email
+      }
+    }),
   })
-  const json = await res.json();
-  console.log(json.message);
-  console.log(json.status);
-  console.log(res);
-  if (json.status === 422) {
-    const errMsg = document.querySelector(".error"); 
-    // errMsg.textContent = json.message;
-    errMsg.classList.remove("hidden");
-  }
-}
+  console.log(res)
+  const json = await res.json()
+  console.log(json)
+  return false
 
-loginButton.addEventListener("click", login);
+}
+const nextBtn = document.querySelector(".next-btn");
+nextBtn.addEventListener("click", async () => {
+  const email = document.querySelector("#email").value;
+  const pw = document.querySelector("#password").value;
+  if (pw.length > 5) {
+    const emailValid = await checkEmailValid(email)
+    if (emailValid) {
+      emailPw.style.display = "none";
+      profile.style.display = "block";
+    }
+  } else {
+    alert("비밀번호를 다시 입력하세요.")
+  }
+})
+
 
 // function login() {
 //   console.log(document.querySelector("#email").value);

@@ -77,7 +77,8 @@ async function login() {
   }
 }
 
-loginButton.addEventListener("click", login);
+
+
 
 // function login() {
 //   console.log(document.querySelector("#email").value);
