@@ -548,13 +548,12 @@ a {
   bottom: 0px;
   width: 100%;
   max-width: 39rem;
-  z-index: 10;
+  z-index: 30;
   display: none;
   background-color: #fff;
   border: 1px solid #fff;
   border-radius: 10px;
   display: none;
-  transition: ease-in;
 }
 #pf-container #pf-main .pf-modal.on {
   display: block;
@@ -594,6 +593,7 @@ a {
 #pf-container #pf-main .pf-userprofile ul li p:first-child {
   font-size: 1.8rem;
   padding-bottom: 6px;
+  cursor: pointer;
 }
 #pf-container #pf-main .pf-userprofile ul li p:last-child {
   font-size: 1rem;
@@ -619,10 +619,15 @@ a {
   padding-top: 0.6rem;
   font-size: 1.4rem;
 }
-#pf-container #pf-main .pf-userprofile .pf-sns {
+#pf-container #pf-main .pf-userprofile ul {
   padding-top: 24px;
   padding-bottom: 26px;
   display: flex;
+}
+#pf-container #pf-main .pf-userprofile ul .m-activ-button {
+  border: solid #dbdbdb 1px;
+}
+#pf-container #pf-main .pf-userprofile .pf-sns {
   justify-content: space-evenly;
 }
 #pf-container #pf-main .pf-userprofile .pf-sns li.pf-icon {
@@ -640,11 +645,28 @@ a {
 }
 #pf-container #pf-main .pf-userprofile .pf-sns li:nth-child(2) button {
   width: 100%;
+  display: none;
+  border-radius: 30px;
+}
+#pf-container #pf-main .pf-userprofile .pf-sns li:nth-child(2) button.on {
+  display: block;
+}
+#pf-container #pf-main .pf-userprofile .pf-modify {
+  justify-content: center;
+}
+#pf-container #pf-main .pf-userprofile .pf-modify li:first-child {
+  padding-right: 12px;
+}
+#pf-container #pf-main .pf-userprofile .pf-modify li:first-child button {
+  min-width: 12rem;
+}
+#pf-container #pf-main .pf-userprofile .pf-modify li:last-child button {
+  min-width: 10rem;
 }
 #pf-container #pf-main section.pf-product {
   padding: 20px 0 20px 21px;
   border-top: #E5E5E5 solid 6px;
-  overflow: hidden;
+  overflow-x: scroll;
 }
 #pf-container #pf-main section.pf-product h3 {
   font-size: 1.6rem;
@@ -659,6 +681,7 @@ a {
   padding-right: 10px;
 }
 #pf-container #pf-main section.pf-home-post {
+  position: relative;
   border-top: #E5E5E5 solid 6px;
 }
 #pf-container #pf-main section.pf-home-post nav {
@@ -673,10 +696,10 @@ a {
   height: 2.8rem;
 }
 #pf-container #pf-main section.pf-home-post .list-btn {
-  background-image: url(../../icon/icon-post-list-on.png);
-}
-#pf-container #pf-main section.pf-home-post .list-btn.off {
   background-image: url(../../icon/icon-post-list-off.png);
+}
+#pf-container #pf-main section.pf-home-post .list-btn.on {
+  background-image: url(../../icon/icon-post-list-on.png);
 }
 #pf-container #pf-main section.pf-home-post .album-btn {
   background-image: url(../../icon/icon-post-album-off.png);
@@ -687,8 +710,11 @@ a {
 #pf-container #pf-main section.pf-home-post ul {
   padding: 16px;
 }
-#pf-container #pf-main section.pf-home-post ul.list-post.off {
+#pf-container #pf-main section.pf-home-post ul.list-post {
   display: none;
+}
+#pf-container #pf-main section.pf-home-post ul.list-post.on {
+  display: block;
 }
 #pf-container #pf-main section.pf-home-post ul.album-post {
   display: flex;
@@ -707,7 +733,40 @@ a {
 #pf-container #pf-main section.pf-home-post ul.album-post.on {
   display: block;
 }
-#pf-container #pf-main .pf-followes-list {
+#pf-container #pf-main section.pf-home-post .pf-modify-modal {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  max-width: 39rem;
+  z-index: 30;
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  display: none;
+}
+#pf-container #pf-main section.pf-home-post .pf-modify-modal.on {
+  display: block;
+}
+#pf-container #pf-main section.pf-home-post .pf-modify-modal p.modal-line {
+  height: 3.6rem;
+  width: 100%;
+  line-height: 3.6rem;
+  text-align: center;
+}
+#pf-container #pf-main section.pf-home-post .pf-modify-modal p.modal-line span {
+  display: inline-block;
+  width: 5rem;
+  height: 0.4rem;
+  background-color: #dbdbdb;
+}
+#pf-container #pf-main section.pf-home-post .pf-modify-modal .pf-modal-btn li {
+  line-height: 46px;
+  padding: 0 26px;
+  font-size: 1.4rem;
+  text-align: left;
+  cursor: pointer;
+}
+#pf-container #pf-main #pf-follow article {
   display: none;
   width: 100%;
   max-width: 39rem;
@@ -717,48 +776,56 @@ a {
   position: fixed;
   top: 0;
 }
-#pf-container #pf-main .pf-followes-list.on {
-  display: block;
-}
-#pf-container #pf-main .pf-followes-list nav {
+#pf-container #pf-main #pf-follow article nav {
   display: flex;
   justify-content: flex-start;
 }
-#pf-container #pf-main .pf-followes-list nav p {
+#pf-container #pf-main #pf-follow article nav p {
   padding-left: 13px;
   font-size: 1.4rem;
 }
-#pf-container #pf-main .pf-followes-list ul {
+#pf-container #pf-main #pf-follow article ul {
   margin-top: 47px;
   padding: 24px 16px;
 }
-#pf-container #pf-main .pf-followes-list ul li {
+#pf-container #pf-main #pf-follow article ul li {
   height: 50px;
   margin-bottom: 16px;
   display: flex;
   align-items: center;
 }
-#pf-container #pf-main .pf-followes-list ul li figure {
+#pf-container #pf-main #pf-follow article ul li figure {
   flex-grow: 2;
   overflow: hidden;
 }
-#pf-container #pf-main .pf-followes-list ul li figure img {
+#pf-container #pf-main #pf-follow article ul li figure img {
   float: left;
   display: inline-block;
 }
-#pf-container #pf-main .pf-followes-list ul li figure figcaption {
+#pf-container #pf-main #pf-follow article ul li figure figcaption {
   padding: 9px 0 6px 62px;
   height: 39px;
 }
-#pf-container #pf-main .pf-followes-list ul li figure figcaption p {
+#pf-container #pf-main #pf-follow article ul li figure figcaption p {
   vertical-align: middle;
   font-size: 1.4rem;
   font-weight: 500;
   padding-bottom: 6px;
 }
-#pf-container #pf-main .pf-followes-list ul li figure figcaption small {
+#pf-container #pf-main #pf-follow article ul li figure figcaption small {
   font-size: 1.2rem;
   color: #767676;
+}
+#pf-container #pf-main #pf-follow article ul li .s-button {
+  width: 5.6rem;
+}
+#pf-container #pf-main #pf-follow article ul li .s-activ-button {
+  width: 5.6rem;
+  border: 1px solid #dbdbdb;
+  border-radius: 30px;
+}
+#pf-container #pf-main #pf-follow article.on {
+  display: block;
 }
 #pf-container #pf-main .modal-logout {
   width: 100%;
@@ -810,4 +877,4 @@ a {
   height: 1px;
 }
 
-/*# sourceMappingURL=your_profile.css.map */
+/*# sourceMappingURL=profile_detail.css.map */

@@ -35,16 +35,16 @@
       bottom: 0px;
       width: 100%;
       max-width: 39rem;
-      z-index: 10;
+      z-index: 30;
       display: none;
       background-color: #fff;
       border: 1px solid #fff;
       border-radius: 10px;
       display: none;
-      transition: ease-in;
-      &.on{
+      &.on {
         display: block;
       }
+
       p.modal-line {
         height: 3.6rem;
         width: 100%;
@@ -84,10 +84,12 @@
         align-items: center;
         justify-content: space-evenly;
         color: #767676;
+
         li {
           p:first-child {
             font-size: 1.8rem;
             padding-bottom: 6px;
+            cursor: pointer;
           }
 
           p:last-child {
@@ -98,6 +100,7 @@
             width: 110px;
           }
         }
+
         .pf-followes p:first-child {
           color: #000;
           font-weight: 700;
@@ -123,12 +126,19 @@
         // color: $gray-color;
       }
 
-      .pf-sns {
+      ul {
         padding-top: 24px;
         padding-bottom: 26px;
         display: flex;
-        justify-content: space-evenly;
+        
+        .m-activ-button {
+          border: solid #dbdbdb 1px;        
+        }
+      }
 
+//너의 프로필 상세 버튼
+      .pf-sns{
+        justify-content: space-evenly;
         li.pf-icon {
           height: 3.4rem;
           width: 3.4rem;
@@ -140,17 +150,32 @@
             padding-top: 5px;
           }
         }
-
         li:nth-child(2) {
           width: 12rem;
-          // border: solid #dbdbdb 1px;
-          // border-radius: 3.4rem;
-
           button {
             width: 100%;
+            display: none;
+            border-radius: 30px;
+            &.on {
+              display: block;
+            }
+          }
+        }        
+      }
+ //나의 프로필 상세 버튼
+      .pf-modify {
+        justify-content: center;
+        li:first-child {
+          padding-right:12px;
+          button{
+            min-width: 12rem;
           }
         }
-
+        li:last-child {
+          button{
+            min-width: 10rem;
+          }
+        }
       }
     }
 
@@ -158,7 +183,7 @@
     section.pf-product {
       padding: 20px 0 20px 21px;
       border-top: #E5E5E5 solid 6px;
-      overflow: hidden;
+      overflow-x: scroll;
 
       h3 {
         font-size: 1.6rem;
@@ -178,6 +203,7 @@
 
     // 홈포스트
     section.pf-home-post {
+      position: relative;
       border-top: #E5E5E5 solid 6px;
 
       nav {
@@ -194,10 +220,10 @@
       }
 
       .list-btn {
-        background-image: url(../../icon/icon-post-list-on.png);
+        background-image: url(../../icon/icon-post-list-off.png);
 
-        &.off {
-          background-image: url(../../icon/icon-post-list-off.png);
+        &.on {
+          background-image: url(../../icon/icon-post-list-on.png);
         }
       }
 
@@ -214,8 +240,9 @@
       }
 
       ul.list-post {
-        &.off {
-          display: none;
+        display: none;
+        &.on {
+          display: block;
         }
       }
 
@@ -238,26 +265,59 @@
           display: block;
         }
       }
-
-
+      .pf-modify-modal {
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+        max-width: 39rem;
+        z-index: 30;
+        background-color: #fff;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        display: none;
+        &.on {
+          display: block;
+        }
+        p.modal-line {
+          height: 3.6rem;
+          width: 100%;
+          line-height: 3.6rem;
+          text-align: center;
+          span {
+            display: inline-block;
+            width: 5rem;
+            height: 0.4rem;
+            background-color: #dbdbdb;
+          }
+        }
+  
+        .pf-modal-btn {
+          li {
+            line-height: 46px;
+            padding: 0 26px;
+            font-size: 1.4rem;
+            text-align: left;
+            cursor: pointer;
+          }
+        }
+      }
     }
 
-    .pf-followes-list {
+    //팔로워, 팔로잉 리스트 
+    #pf-follow article {
       display: none;
-      width:100%;
+      width: 100%;
       max-width: 39rem;
       height: 100vh;
       background-color: #fff;
       z-index: 30;
       position: fixed;
       top: 0;
-      &.on {
-        display: block
-      }
 
       nav {
         display: flex;
         justify-content: flex-start;
+
         p {
           padding-left: 13px;
           font-size: 1.4rem;
@@ -267,36 +327,51 @@
       ul {
         margin-top: 47px;
         padding: 24px 16px;
-        li{
-        height: 50px;
-        margin-bottom: 16px;
-        display: flex;
-        align-items: center;  
-        figure {
-          flex-grow: 2;
-          overflow: hidden;
-         
-          img {
-            float: left;
-            display: inline-block;
+
+        li {
+          height: 50px;
+          margin-bottom: 16px;
+          display: flex;
+          align-items: center;
+
+          figure {
+            flex-grow: 2;
+            overflow: hidden;
+
+            img {
+              float: left;
+              display: inline-block;
+            }
+
+            figcaption {
+              padding: 9px 0 6px 62px;
+              height: 39px;
+
+              p {
+                vertical-align: middle;
+                font-size: 1.4rem;
+                font-weight: 500;
+                padding-bottom: 6px;
+              }
+
+              small {
+                font-size: 1.2rem;
+                color: #767676;
+              }
+            }
           }
-          figcaption{
-            padding: 9px 0 6px 62px;
-            height: 39px;
-            
-            p {
-              vertical-align: middle;
-              font-size: 1.4rem;
-              font-weight: 500;
-              padding-bottom: 6px;
-            }
-            small {
-              font-size: 1.2rem;
-              color: #767676;
-            }
+          .s-button {
+            width: 5.6rem;
+          }
+          .s-activ-button {
+            width: 5.6rem;
+            border: 1px solid #dbdbdb;
+            border-radius: 30px;
           }
         }
-        }
+      }
+      &.on {
+        display: block
       }
     }
 
@@ -310,9 +385,11 @@
       background-color: rgba($color: #000000, $alpha: 0.3);
       z-index: 10;
       display: none;
-      &.on{
+
+      &.on {
         display: block;
       }
+
       .logout-popup {
         margin: 0 auto;
         margin-top: 50%;
@@ -358,4 +435,4 @@
   width: 1px;
   height: 1px;
 }
-
+ 
