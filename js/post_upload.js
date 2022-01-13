@@ -27,11 +27,11 @@ function handleUploadImages() {
     }
     deleteImages(); 
     })
-  } 
-handleUploadImages();
+  }  
+  handleUploadImages();
 
 // 2. 이미지 제거하기
-function deleteImages() {
+function deleteImages() { 
   const imageOne = document.querySelector("#image0");  
   const imageTwo = document.querySelector("#image1");
   const imageThree = document.querySelector("#image2");  
@@ -47,10 +47,7 @@ function deleteImages() {
   })  
 } 
 
-
-
-
-// 2. 이미지 업로드
+// 3. 이미지 업로드
 async function imageUpload(files,index){
   const formData = new FormData();
   formData.append("image", files[index]); 
@@ -71,7 +68,7 @@ async function createPost(event) {
   const files = imageUploadButton.files;  
   console.log(content); 
   console.log(files); 
-  
+
   const imageUrls = []; 
 
   if (files.length <= 3) {
