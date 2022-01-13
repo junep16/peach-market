@@ -5,8 +5,8 @@ const submitButton = document.querySelector("#submit-button");
 const uploadImageList = document.querySelector(".post-image-list"); 
 
 // 1. 이미지 업로드시 확인하기 
-function viewUploadImages() {
-  imageUploadButton.addEventListener("change", event => {
+function handleUploadImages() {
+  imageUploadButton.addEventListener("change", function(event) {
     const file = imageUploadButton.files; 
     if (file.length <= 3) {
       for(let i = 0; i < file.length; i++) {
@@ -14,9 +14,9 @@ function viewUploadImages() {
         console.log(singleImage); 
         uploadImageList.innerHTML+=
         `
-        <li class="post-image">
+        <li class= "post-image" id="image${i}">
           <img src=${singleImage}>
-          <button class="image-delete" type="button"> 
+          <button class="image-delete ${i}" type="button"> 
           <span class="text-hide">이미지 제거</span>
           </button>
         </li> 
@@ -25,13 +25,29 @@ function viewUploadImages() {
     } else if (file.length > 3) {
       alert("이미지가 너무 많아염 (3개만 선택)"); 
     }
+    deleteImages(); 
     })
-  }
-viewUploadImages(); 
+  } 
+handleUploadImages();
 
+// 2. 이미지 제거하기
 function deleteImages() {
-  
-}
+  const imageOne = document.querySelector("#image0");  
+  const imageTwo = document.querySelector("#image1");
+  const imageThree = document.querySelector("#image2");  
+
+  uploadImageList.addEventListener("click", (event) => {
+    if (event.target.className == "image-delete 0"){ 
+      imageOne.remove(); 
+    } else if (event.target.className == "image-delete 1"){ 
+      imageTwo.remove(); 
+    } else if (event.target.className == "image-delete 2"){ 
+      imageThree.remove(); 
+    }
+  })  
+} 
+
+
 
 
 // 2. 이미지 업로드
