@@ -1,6 +1,9 @@
 const TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxY2E2MzhhYjVjNmNkMTgwODRlNDQ3ZCIsImV4cCI6MTY0NzE4MzkyNCwiaWF0IjoxNjQxOTk5OTI0fQ.gGHALhJfzegmSJafhze2TIeds_De5h1k4mE4gB3czEo";
 const ENDPOINT = "http://146.56.183.55:5050";
-
+const HEADERS = {
+  "Authorization" : `Bearer ${TOKEN}`,
+  "Content-type" : "application/json"
+}
 
 const inputList = document.querySelectorAll(".product-app input");
 const submitBtn = document.querySelector("#submitBtn");
@@ -26,20 +29,20 @@ async function setPrevImage() {
   // 서버 통신으로 받은 이미지로 prev-image 변경
   const imageData = await uploadImage(formData); // filename 반환
 
-  const imageUrl = `${ENDPOINT}/${imageData}`
+  const imageUrl = `${ENDPOINT}/${imageData}`;
   previewImage.src = imageUrl;
   previewImage.classList.remove('hidden');
 }
 
-imageInput.addEventListener("change", setPrevImage);
 
+// 이미지 서버에 올리고 preview 이미지 변환
+imageInput.addEventListener("change", setPrevImage);
 
 // button 활성화 
 function setEnabledBtn() {
   let check = 0;
   inputList.forEach(el => { if (el.value !== "") check++ });
-
-  if (check === inputList.length) {
+  if (check >= inputList.length-1) {
     submitBtn.className = "ms-button";
     submitBtn.disabled = false;
   } else {
@@ -66,10 +69,7 @@ async function uploadProduct() {
 
   const reqData = {
     method: "POST",
-    headers: {
-      "Authorization" : `Bearer ${TOKEN}`,
-      "Content-type" : "application/json"
-    },
+    headers: HEADERS,
     body: JSON.stringify({ product }),
   }
   const res = await fetch(`${ENDPOINT}/product`, reqData);
@@ -81,9 +81,49 @@ async function uploadProduct() {
   // }
 }
 
+
 // 상품 생성
 submitBtn.addEventListener("click", uploadProduct);
 
 
-// 상품 수정
+// 상품 상세
+// query paramter가 있다면
+const queryParam = window.location.search;
 
+
+if (queryParam !== "" && queryParam.split("=")[0] === "?id") {
+  const productId = queryParam.split("=")[1];
+  let userCheck = true; // true면 본인, false면 다른 유저
+
+  async function detailProduct() {
+    const reqData = {
+      method: "GET",
+      headers: HEADERS,
+    }
+
+    const res = await fetch(`${ENDPOINT}/product/detail/${productId}`, reqData);
+    const productItem = await res.json();
+    const { itemImage, itemName, price, link } = productItem.product;
+    const [ imageInput, productName, productPrice, productLink ] = inputList;
+
+    // 해당 product 값 뿌리기
+    previewImage.src = itemImage;
+    previewImage.classList.remove("hidden");
+    productName.value = itemName;
+    productPrice.value = price;
+    productLink.value = link;
+    
+    // 접근한 사람이 다른 유저라면 수정 불가
+    if (userCheck === false) {
+      productName.readOnly = true;
+      productPrice.readOnly = true;
+      productLink.readOnly = true;
+      submitBtn.classList.add("hidden");
+      ProductApp.querySelector("p").textContent = "상품 이미지";
+      document.querySelector(".preview-image + label").classList.add("hidden");
+    }
+  }
+
+  // 페이지 로딩될 때 값들 뿌려주기
+  window.onload = detailProduct;
+}
