@@ -2,7 +2,8 @@ const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxY2E2MzhhYjVjNmNk
 
 const textContent = document.querySelector("textarea"); 
 const imageUploadButton = document.querySelector("#image-upload");
-const submitButton = document.querySelector("#submit-button");  
+const submitButton = document.querySelector("#submit-button"); 
+const uploadImageList = document.querySelector(".post-image-list"); 
 
 // 0. 유저 데이터 뿌리기 (프로필이미지)
 
@@ -15,9 +16,9 @@ async function imageUpload(files,index){
     method: "POST",
     body : formData
   })
-  const data = await res.json()
+  const data = await res.json() 
   const productImgName = data["filename"];
-  return productImgName
+  return productImgName;
 }
 
 // 2. 피드 작성 
@@ -25,13 +26,15 @@ async function createPost(event) {
   const url = "http://146.56.183.55:5050"; 
   const content = textContent.value; 
   const files = imageUploadButton.files;  
+  console.log(content); 
+  console.log(files); 
   
   const imageUrls = []; 
 
   if (files.length <= 3) {
     for(let i = 0; i < files.length; i++) {
       const imgurl = await imageUpload(files, i); 
-      imageUrls.push(url+imgurl);  
+      imageUrls.push(url+"/"+imgurl);  
     }
     const res = await fetch(url+"/post",{
       method:"POST",
@@ -49,27 +52,53 @@ async function createPost(event) {
   } else {
     alert("투마치"); 
   }; 
-
-  addUploadImages(imageUrls[0]); 
+  // imageUrls.forEach( (image) => {
+  //   let singleImage = image; 
+  //   console.log(singleImage); 
+  //   uploadImageList.innerHTML+=
+  //   `
+  //   <li class="post-image">
+  //     <img src=${image}>
+  //     <button class="image-delete" type="button"> 
+  //     <span class="text-hide">이미지 제거</span>
+  //     </button>
+  //   </li> 
+  //   `
+  // }) 
 
 }
 submitButton.addEventListener("click",createPost); 
+imageUploadButton.addEventListener("click", addUploadImages); 
 
 // 3. 이미지 보여주기
 const uploadedImageList = document.querySelector(".post-image-list"); 
 
 async function addUploadImages(imageurl) {
-  const url = "http://146.56.183.55:5050";
+
+  imageUrls.forEach( (image) => {
+    let singleImage = image; 
+    console.log(singleImage); 
+    uploadImageList.innerHTML+=
+    `
+    <li class="post-image">
+      <img src=${image}>
+      <button class="image-delete" type="button"> 
+      <span class="text-hide">이미지 제거</span>
+      </button>
+    </li> 
+    `
+  }) 
+  // const url = "http://146.56.183.55:5050";
   
-  const response = await fetch(imageurl, {
-    method: "GET", 
-    headers: {
-      "Authorization": `Bearer ${token}`,  
-      "Content-type" : "application/json"
-    } 
-  })
-  const json = await response.json(); 
-  const images = json;    
-  console.log(images); 
+  // const response = await fetch(imageurl, {
+  //   method: "GET", 
+  //   headers: {
+  //     "Authorization": `Bearer ${token}`,  
+  //     "Content-type" : "application/json"
+  //   } 
+  // })
+  // const json = await response.json(); 
+  // const images = json;    
+  // console.log(images); 
 } 
 
