@@ -5,70 +5,71 @@ const postList = document.querySelector("main .post-lists");
 // TODO
 // 1. 유저 팔로워 피드 받아오기  
 async function getPosts() { 
-const url = "http://146.56.183.55:5050"
-const response = await fetch(url+"/post/feed", {
-  method: "GET", 
-  headers: {
-    "Authorization": `Bearer ${token}`,  
-    "Content-type" : "application/json"
-  } 
-})
-const json = await response.json(); 
-const posts = json.posts;  
+  const url = "http://146.56.183.55:5050"
+  const response = await fetch(url+"/post/feed", {
+    method: "GET", 
+    headers: {
+      "Authorization": `Bearer ${token}`,  
+      "Content-type" : "application/json"
+    } 
+  })
+  const json = await response.json(); 
+  const posts = json.posts;  
 
-posts.forEach( (post, i) => {
-  const authorImage = post.author.image;   
-  const authorAccount = post.author.accountname; 
-  const authorName = post.author.username;  
-  const postContent = post.content;  
-  const postImage = post.image.split(","); 
-  const postDate = post.createdAt.split('T')[0]; 
-  const commentCount = post.commentCount; 
-  const heartCount = post.heartCount;
-  const hearted = post.hearted;   
-  postList.innerHTML+=`
-  <li>
-    <div class="home-post">
-      <img src= ${authorImage} alt="프로필 사진" class="avatar-img">
-      <div>
-        <div class="content-wrap">
-          <a href="#none">
-            <strong>${authorName}</strong>
-            <span>@ ${authorAccount}</span>
-          </a>
-          <button type="button" class="more-btn">
-            <span class="text-hide">설정 더보기 </span>
-          </button>
-        </div>
-        <p class="post-content">${postContent}</p>
-        <div class="post-img-window">
-          <ul id="post${i}" class="post-img-container"></ul>
-          <div class="post-img-button-wrap">
-            <button class="img-slide one on" type="button"></button>
-            <button class="img-slide two" type="button"></button>
-            <button class="img-slide three" type="button"></button></div>
+  posts.forEach( (post, i) => {
+    const authorImage = post.author.image;   
+    const authorAccount = post.author.accountname; 
+    const authorName = post.author.username;  
+    const postContent = post.content;  
+    const postImage = post.image.split(","); 
+    const postDate = post.createdAt.split('T')[0]; 
+    const commentCount = post.commentCount; 
+    const heartCount = post.heartCount;
+    const hearted = post.hearted;   
+    postList.innerHTML+=`
+    <li>
+      <div class="home-post">
+        <img src= ${authorImage} alt="프로필 사진" class="avatar-img">
+        <div>
+          <div class="content-wrap">
+            <a href="#none">
+              <strong>${authorName}</strong>
+              <span>@ ${authorAccount}</span>
+            </a>
+            <button type="button" class="more-btn">
+              <span class="text-hide">설정 더보기 </span>
+            </button>
+          </div>
+          <p class="post-content">${postContent}</p>
+          <div class="post-img-window">
+            <ul id="post${i}" class="post-img-container"></ul>
+            <div class="post-img-button-wrap">
+              <button class="img-slide one on" type="button"></button>
+              <button class="img-slide two" type="button"></button>
+              <button class="img-slide three" type="button"></button></div>
+            </div>
           </div>
         </div>
+      </div> 
+      <div class="post-button-wrap">
+        <button type="button" class="heart-btn" data-count="58">
+          <span class="text-hide">좋아요</span>
+          ${heartCount}
+        </button>
+        <button type="button" class="comment-btn" data-count="12">
+          <span class="text-hide">댓글</span>
+          ${commentCount}
+        </button>
       </div>
-    </div> 
-    <div class="post-button-wrap">
-      <button type="button" class="heart-btn" data-count="58">
-        <span class="text-hide">좋아요</span>
-        ${heartCount}
-      </button>
-      <button type="button" class="comment-btn" data-count="12">
-        <span class="text-hide">댓글</span>
-        ${commentCount}
-      </button>
-    </div>
-    <span class="upload-date">${postDate}</span> 
-  </li> 
-` 
-  console.log(postImage); 
-  addPostImages(postImage, i); 
-});  
-}
+      <span class="upload-date">${postDate}</span> 
+    </li> 
+  ` 
+    console.log(postImage); 
+    addPostImages(postImage, i); 
+  });  
+  }
 
+// 2. 이미지 렌더링 하는 함수 (위 68번째 줄에서 실행)
 function addPostImages(eachpost, i) {  
   const slides = document.querySelector(`#post${i}`);  
   const li = document.createElement("li"); 
@@ -100,13 +101,14 @@ function addPostImages(eachpost, i) {
   }
 }
 
-// *** 이미지 슬라이드 *** 
+// 3. 이미지 슬라이드  
 function handleImageSlide() { 
   const buttonController = document.querySelector(".post-img-button-wrap");   
   const buttonOne = document.querySelector(".img-slide.one"); 
   const buttonTwo = document.querySelector(".img-slide.two"); 
   const buttonThree = document.querySelector(".img-slide.three");
 
+  // 버튼 컨트롤 (누르면 각각 불이 들어오도록)
   buttonController.addEventListener("click", event => { 
     if(buttonOne.classList.contains("on")) {
       buttonOne.classList.toggle("on");  
@@ -118,7 +120,7 @@ function handleImageSlide() {
     event.target.classList.toggle("on");   
   }); 
 
-  // 슬라이드 컨트롤
+  //
   const slides = document.querySelector(".post-img-container"); 
   const slide = document.querySelectorAll(".post-img-container li");  
 
@@ -134,6 +136,7 @@ function handleImageSlide() {
     currentIndex = num; 
   }
 
+  // 각각 버튼 누르면 움직이는 부분
   buttonOne.addEventListener("click", event => { 
     moveSlide(0);  
   }); 
@@ -148,10 +151,11 @@ function handleImageSlide() {
   });  
 } 
 
+// 비동기적으로 각각의 함수 실행
 async function init() {
+  // 포스팅 데이터 먼저 렌더
   await getPosts(); 
+  // 이후 이미지 슬라이더 작동
   handleImageSlide(); 
 }
 init();
-
-// *** 이미지 슬라이드 *** 

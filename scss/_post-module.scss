@@ -1,6 +1,7 @@
 @charset "utf-8";
 /* post module */
- 
+
+// [1] 이부분 부터
 .home-post,
 .home-post-onlytext {
   background-color: #fff;
@@ -67,7 +68,6 @@
       bottom: 1.5rem;
       left: 50%; 
       transform: translate(-50%, -50%);
-
       display: flex; 
       justify-content: center;
       align-items: center;
@@ -83,7 +83,8 @@
         background-color: $base-color;
       } 
     } 
-    
+    // [1]이부분 까지 세부 사항 변경 // 
+
     @mixin post-icon-module($base-img-path, $active-img-path) {
       font-size: 12px;
       font-weight: 400px;
@@ -106,6 +107,8 @@
     }
   } 
 }
+
+// [2]이부분 세부 사항 변경 // 
 .post-button-wrap {
   display: flex; 
   justify-content: flex-start; 
@@ -140,6 +143,9 @@
     margin-left: 1.8rem;
   }
 }
+// [2]여기 까지 세부 사항 변경 // 
+
+
 .upload-date {
   display: block;
   font-size: 1rem;
