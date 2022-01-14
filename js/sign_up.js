@@ -1,7 +1,7 @@
 //로그인 버튼 활성화 START
-//이메일, 패스워드의 인풋태그의 값이 모두 들어와 있으면 버튼활성화 
+//이메일, 패스워드의 인풋태그의 값이 모두 들어와 있으면 버튼활성화
 
-//querySelectorAll로 했을때 
+//querySelectorAll로 했을때
 const loginForm = document.querySelector("#login-form");
 const loginInputList = loginForm.querySelectorAll("input");
 const loginButton = loginForm.querySelector("button");
@@ -9,19 +9,19 @@ const loginButton = loginForm.querySelector("button");
 function able() {
   let check = 0;
   for (let i = 0; i < loginInputList.length; i++) {
-    if (loginInputList[i].value !== '') {
+    if (loginInputList[i].value !== "") {
       check += 1;
     }
   }
   if (check === loginInputList.length) {
     loginButton.disabled = false;
-    loginButton.classList.add('able');
+    loginButton.classList.add("able");
   } else {
     loginButton.disabled = true;
   }
 }
 
-loginForm.addEventListener('keyup', able);
+loginForm.addEventListener("keyup", able);
 
 //로그인 버튼 활성화 END
 
@@ -73,38 +73,65 @@ const emailPw = document.querySelector(".email-pw");
 const profile = document.querySelector(".profile");
 async function checkEmailValid(email) {
   const url = "http://146.56.183.55:5050";
-  const res = await fetch(url + '/user/emailValid', {
+  const res = await fetch(url + "/user/emailValid", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      "user": {
-        "email": email
-      }
+      user: {
+        email: email,
+      },
     }),
-  })
-  console.log(res)
-  const json = await res.json()
-  console.log(json)
-  return false
-
+  });
+  console.log(res);
+  const json = await res.json();
+  console.log(json);
+  return false;
 }
+
 const nextBtn = document.querySelector(".next-btn");
 nextBtn.addEventListener("click", async () => {
   const email = document.querySelector("#email").value;
   const pw = document.querySelector("#password").value;
   if (pw.length > 5) {
-    const emailValid = await checkEmailValid(email)
+    const emailValid = await checkEmailValid(email);
     if (emailValid) {
       emailPw.style.display = "none";
       profile.style.display = "block";
     }
   } else {
-    alert("비밀번호를 다시 입력하세요.")
+    alert("비밀번호를 다시 입력하세요.");
   }
-})
+});
 
+// email 정규표현식
+// const email = document.querySelector("#email");
+// let emailVal = email.value;
+
+// let emailRegExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+
+// email.addEventListener("change", () =>{
+//   if (emailVal.match(emailRegExp) !== null) {
+//     console.log('됐다');
+//   } else {
+//     console.log('안됐다');
+//   }
+// })
+
+// 프로필설정 정규표현식
+const account = document.querySelector("#account");
+
+account.addEventListener("change", () => {
+  let accountRegExp = /^(?=.*[a-zA-Z0-9._]).{5,15}$/;
+  // let accountRegExp =  /^(?=.*[a-zA-Z])(?=.*[._])(?=.*[0-9]).{5,15}$/;
+  // let accountVal = account.value;
+  if (account.value.match(accountRegExp) != null) {
+    console.log("일치");
+  } else {
+    console.log("불일치");
+  }
+});
 
 // function login() {
 //   console.log(document.querySelector("#email").value);
@@ -113,22 +140,18 @@ nextBtn.addEventListener("click", async () => {
 
 // loginButton.addEventListener("click", login);
 
-
-
 // loginInput.forEach(el => {
 //   let count = 0;
 //   if (el.value !== '') {
 //     count += 1;
-//   } 
+//   }
 // });
-
 
 // function login () {
 //   console.log(loginInput.value);
 // }
 
 // loginButton.addEventListener("click", login);
-
 
 // function able () {
 //   const check = 0;
@@ -140,14 +163,13 @@ nextBtn.addEventListener("click", async () => {
 //     } else {
 //       loginButton.disabled = true;
 //       console.log('disable');
-//     }  
+//     }
 //   }
 // }
 
 // loginButton.addEventListener('input', );
 
 //
-
 
 // const loginEmail = loginForm.querySelector("#email");
 // const loginPassword = loginForm.querySelector("#password");
