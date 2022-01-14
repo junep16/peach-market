@@ -328,8 +328,13 @@ a {
   color: #C4C4C4;
 }
 .comment form button {
-  color: #C4C4C4;
   font-size: 1.4rem;
+  color: #C4C4C4;
+  pointer-events: none;
+}
+.comment form button.enabled {
+  color: #FFABA2;
+  pointer-events: all;
 }
 
 /* post module */

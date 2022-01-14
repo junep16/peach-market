@@ -53,8 +53,8 @@
                 <button class="img-slide three" type="button"></button>
               </div>
             </div>
-            </div>
           </div>
+        </div>
         <div class="post-button-wrap">
           <button type="button" class="heart-btn" data-count="58">
             <span class="text-hide">좋아요</span>
@@ -68,24 +68,26 @@
         <span class="upload-date">${postDate}</span>  
     </section> 
     <section>
-      <h2 class="text-hide">댓글</h2>
+      <h2 class="text-hide">댓글 리스트</h2>
       <ul class="comment-list">
         <li class="comment-card">
           <div class="comment-info">
             <div class="image-wrapper">
-              <img src="/images/post-img-example.png" alt="프로필 이미지">
+              <img src="${author.image}" alt="프로필 이미지">
             </div>
-            <p> 서귀포시 무슨 농장<span>5분 전</span></p>
-            <button class="button-more" type="button"></button>
+            <p> 안녕<span>5분 전</span></p>
+            <button id=${id} class="button-more" type="button">
+              <span class="text-hide">설정 더보기</span>
+            </button>
           </div>
-          <p class="comment-detail">안녕하세요. 사진이 너무 멋있어요. 한라봉 언제 먹을 수 있나요? 기다리기 지쳤어요 땡뻘땡뻘...</p>
+          <p class="comment-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum adipisci hic sapiente iusto possimus minima magnam vitae repellat quod, corporis, animi tenetur, odit quia pariatur veniam earum dolore dolorem nostrum.</p>
         </li>
       </ul>
     </section>
   </main>
   <section class="comment"> 
     <img src="/images/avatar.png" alt="프로필 사진" class="avatar-img">
-    <form action="" method="get">
+    <form>
       <label for="commentInput" class="text-hide">댓글 입력창</label>
       <input
         id="commentInput"
@@ -96,11 +98,15 @@
       <button type="submit" class="comment-submit-btn">게시</button>
     </form>
   </section>
-  <div class="more-modal"> 
+  <div class="more-modal">
+    <form>
       <button class="toggle-button" type="button">
         <span class="text-hide">댓글 설정 닫기</span>
       </button>
-      <button class="send-feedback-button">신고하기</button> 
+      <button type="submit" class="send-feedback-button">신고하기</button> 
+      <button type="submit" class="delete-button">삭제하기</button> 
+    </form>
   </div>
+  <script src="/js/post.js"></script>
 </body>
 </html>
