@@ -68,8 +68,21 @@
         <span class="upload-date">${postDate}</span>  
     </section> 
     <section>
-      <h2 class="text-hide">댓글</h2>
-      <ul class="comment-list"></ul>
+      <h2 class="text-hide">댓글 리스트</h2>
+      <ul class="comment-list">
+        <li class="comment-card">
+          <div class="comment-info">
+            <div class="image-wrapper">
+              <img src="${author.image}" alt="프로필 이미지">
+            </div>
+            <p> 안녕<span>5분 전</span></p>
+            <button id=${id} class="button-more" type="button">
+              <span class="text-hide">설정 더보기</span>
+            </button>
+          </div>
+          <p class="comment-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum adipisci hic sapiente iusto possimus minima magnam vitae repellat quod, corporis, animi tenetur, odit quia pariatur veniam earum dolore dolorem nostrum.</p>
+        </li>
+      </ul>
     </section>
   </main>
   <section class="comment"> 
@@ -85,11 +98,14 @@
       <button type="submit" class="comment-submit-btn">게시</button>
     </form>
   </section>
-  <div class="more-modal"> 
+  <div class="more-modal">
+    <form>
       <button class="toggle-button" type="button">
         <span class="text-hide">댓글 설정 닫기</span>
       </button>
-      <button class="send-feedback-button">신고하기</button> 
+      <button type="submit" class="send-feedback-button">신고하기</button> 
+      <button type="submit" class="delete-button">삭제하기</button> 
+    </form>
   </div>
   <script src="/js/post.js"></script>
 </body>

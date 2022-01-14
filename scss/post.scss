@@ -42,6 +42,8 @@ main {
       border-radius: 36px;  
       overflow: hidden;
       img {
+        border: 1px solid $line-color;
+        border-radius: 50%;
         width: 100%;
         height: 100%;
       }
@@ -93,11 +95,13 @@ main {
     margin: 5% 0;
     background-color: $light-gray-color;
   }
-  .send-feedback-button {
+  .send-feedback-button,
+  .delete-button {
     width: 100%;
     text-align: left;
     font-size: 1.4rem;
     padding: 3% 5% 3% 5%;
+    &:hover { color: $base-color; }
   }
 }
 .more-modal.on{
