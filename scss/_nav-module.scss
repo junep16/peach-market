@@ -154,8 +154,13 @@
       &::placeholder { color: $light-gray-color; }
     }
     button {
-      color: $light-gray-color;
       font-size: 1.4rem;
+      color: $light-gray-color;
+      pointer-events: none;
+    }
+    button.enabled {
+      color: $base-color;
+      pointer-events: all;
     }
   }
 }

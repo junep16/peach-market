@@ -327,8 +327,13 @@ a {
   color: #C4C4C4;
 }
 .comment form button {
-  color: #C4C4C4;
   font-size: 1.4rem;
+  color: #C4C4C4;
+  pointer-events: none;
+}
+.comment form button.enabled {
+  color: #FFABA2;
+  pointer-events: all;
 }
 
 /* post module */
@@ -342,6 +347,7 @@ a {
 .home-post-onlytext .avatar-img {
   width: 4.2rem;
   height: 4.2rem;
+  border-radius: 4.2rem;
   margin-right: 1.2rem;
 }
 .home-post div .content-wrap,
@@ -378,24 +384,72 @@ a {
 }
 .home-post div .post-content,
 .home-post-onlytext div .post-content {
+  position: relative;
   font-size: 1.4rem;
   line-height: 17px;
   margin-bottom: 1.6rem;
 }
-.home-post div .post-img,
-.home-post-onlytext div .post-img {
-  display: block;
-  margin-bottom: 1.5rem;
+.home-post div .post-img-window,
+.home-post-onlytext div .post-img-window {
+  position: relative;
+  width: 304px;
+  height: 228px;
+  overflow: hidden;
 }
-.home-post div .heart-btn,
-.home-post-onlytext div .heart-btn {
+.home-post div .post-img-window .post-img-container,
+.home-post-onlytext div .post-img-window .post-img-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: left 0.5s ease-out;
+}
+.home-post div .post-img-window .post-img-container .post-img-wrap:not(:last-child),
+.home-post-onlytext div .post-img-window .post-img-container .post-img-wrap:not(:last-child) {
+  float: left;
+  margin-right: 20px;
+}
+.home-post div .post-img-window .post-img-container .post-img-wrap:not(:last-child) .post-img,
+.home-post-onlytext div .post-img-window .post-img-container .post-img-wrap:not(:last-child) .post-img {
+  width: 304px;
+  height: 228px;
+  border-radius: 10px;
+}
+.home-post div .post-img-button-wrap,
+.home-post-onlytext div .post-img-button-wrap {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home-post div .post-img-button-wrap .img-slide,
+.home-post-onlytext div .post-img-button-wrap .img-slide {
+  margin: 0 10px;
+  border-style: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 7px;
+  background-color: #FFF;
+}
+.home-post div .post-img-button-wrap button.on,
+.home-post-onlytext div .post-img-button-wrap button.on {
+  background-color: #FFABA2;
+}
+
+.post-button-wrap {
+  display: flex;
+  justify-content: flex-start;
+  margin: 3% 15% 0 15%;
+}
+.post-button-wrap .heart-btn {
   font-size: 1.2rem;
   font-weight: 400;
   color: #767676;
   margin-bottom: 2rem;
 }
-.home-post div .heart-btn::before,
-.home-post-onlytext div .heart-btn::before {
+.post-button-wrap .heart-btn::before {
   content: "";
   display: inline-block;
   background-image: url("/icon/icon-heart.svg");
@@ -406,19 +460,16 @@ a {
   vertical-align: sub;
   margin-right: 6px;
 }
-.home-post div .heart-btn.on:before,
-.home-post-onlytext div .heart-btn.on:before {
+.post-button-wrap .heart-btn.on:before {
   background-image: url("/icon/icon-heart-active.svg");
 }
-.home-post div .comment-btn,
-.home-post-onlytext div .comment-btn {
+.post-button-wrap .comment-btn {
   font-size: 1.2rem;
   font-weight: 400;
   color: #767676;
   margin-bottom: 2rem;
 }
-.home-post div .comment-btn::before,
-.home-post-onlytext div .comment-btn::before {
+.post-button-wrap .comment-btn::before {
   content: "";
   display: inline-block;
   background-image: url("/icon/icon-message-circle.svg");
@@ -429,20 +480,19 @@ a {
   vertical-align: sub;
   margin-right: 6px;
 }
-.home-post div .comment-btn.on:before,
-.home-post-onlytext div .comment-btn.on:before {
+.post-button-wrap .comment-btn.on:before {
   background-image: url("/icon/icon-message-circle-fill.svg");
 }
-.home-post div button + button,
-.home-post-onlytext div button + button {
+.post-button-wrap button + button {
   margin-left: 1.8rem;
 }
-.home-post div .upload-date,
-.home-post-onlytext div .upload-date {
+
+.upload-date {
   display: block;
   font-size: 1rem;
   color: #767676;
   margin-bottom: 0.4rem;
+  margin-left: 15%;
 }
 
 .product {
@@ -564,6 +614,8 @@ main {
   overflow: hidden;
 }
 .comment-card .comment-info .image-wrapper img {
+  border: 1px solid #DBDBDB;
+  border-radius: 50%;
   width: 100%;
   height: 100%;
 }
@@ -612,11 +664,16 @@ main {
   margin: 5% 0;
   background-color: #C4C4C4;
 }
-.more-modal .send-feedback-button {
+.more-modal .send-feedback-button,
+.more-modal .delete-button {
   width: 100%;
   text-align: left;
   font-size: 1.4rem;
   padding: 3% 5% 3% 5%;
+}
+.more-modal .send-feedback-button:hover,
+.more-modal .delete-button:hover {
+  color: #FFABA2;
 }
 
 .more-modal.on {
