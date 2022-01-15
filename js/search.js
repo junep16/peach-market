@@ -1,8 +1,9 @@
 const TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxY2E2MzhhYjVjNmNkMTgwODRlNDQ3ZCIsImV4cCI6MTY0NzA2ODE2NywiaWF0IjoxNjQxODg0MTY3fQ.VIsQCW4nLbV-C1SzHK3FhNG3aVFUYUXefcpn-ffEmBA";
 const ENDPOINT = "http://146.56.183.55:5050";
 const SEARCH_API = ENDPOINT + "/user/searchuser/?keyword=";
+const defaultImage = "http://146.56.183.55:5050/Ellipse.png";
 
-const reqData = {
+const reqOption = {
   method: "get",
   headers: {
     "Authorization" : `Bearer ${TOKEN}`,
@@ -10,34 +11,39 @@ const reqData = {
   }
 };
 
-async function getUser(searchQuery) {
-  const response = fetch(`${SEARCH_API}${searchQuery}`, reqData);
-  return response;
-}
-
+// 기존에 있던 목록 지우기
 function removeAllChilden(parentNode) {
   while (parentNode.hasChildNodes()) {
     parentNode.removeChild(parentNode.firstChild);
   } 
 }
 
-document.querySelector("form").addEventListener("keyup", async (event) => {
-  // 기존에 있던 목록 지우기
+// 검색 결과 유저 정보 화면에 보여주기
+async function paintUserList(event) {
   const userList = document.querySelector("main .search-user-cont");
   removeAllChilden(userList);
-  const searchValue = event.target.value;
-  const res = await getUser(searchValue);
-  const json = await res.json();
 
+  const searchValue = event.target.value;
+  const res = await fetch(`${SEARCH_API}${searchValue}`, reqOption);
+  const json = await res.json();
+  
   if (json[0]) {
     const frag = document.createDocumentFragment("ul");
       json.forEach((user) => {
+        // 검색 키워드 하이라이트
+        const userName = user.username.replace(searchValue, `<span>${searchValue}</span>`);
+        // 잘못된 이미지 경로 예외 처리
+        const userImageUrl = 
+        (user.image.match(/http:\/\/[0-9].*:5050\//)
+          && !user.image.match(/undefined/))
+          ? user.image
+          : defaultImage;
+  
         const li = document.createElement("li");
         li.className = "user-search";
-        const userName = user.username.replace(searchValue, `<span>${searchValue}</span>`)
         li.innerHTML = `
           <a href="#none">
-            <img src=${user.image} alt="프로필 사진" class="avatar-img">
+            <img src=${userImageUrl} alt="프로필 사진" class="avatar-img">
             <p class="user-info">
               <strong class="market-name">${userName}</strong>
               <span class="user-name">@ ${user.accountname}</span>
@@ -48,7 +54,9 @@ document.querySelector("form").addEventListener("keyup", async (event) => {
       });
       userList.appendChild(frag);
   }
-});
+};
+
+document.querySelector("form").addEventListener("keyup", paintUserList);
 
 // 뒤로 가기 버튼
 const prevBtn = document.querySelector(".prev-btn");
