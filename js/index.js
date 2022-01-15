@@ -1,8 +1,7 @@
 const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxY2E2MzhhYjVjNmNkMTgwODRlNDQ3ZCIsImV4cCI6MTY0NzE0MzQ1MCwiaWF0IjoxNjQxOTU5NDUwfQ.MPLwiebPtzC4JjWF3UqCT01v-IeUhNtT8JQ05Kp3gXA"; 
 
 const postList = document.querySelector("main .post-lists"); 
-
-// TODO
+ 
 // 1. 유저 팔로워 피드 받아오기  
 async function getPosts() { 
   const url = "http://146.56.183.55:5050"
@@ -159,3 +158,28 @@ async function init() {
   handleImageSlide(); 
 }
 init();
+
+// 화면 내 버튼 컨트롤
+const searchButton = document.querySelector(".search-btn"); 
+const bottomNavBar = document.querySelector(".tab-menu"); 
+
+// 검색 페이지로 이동
+searchButton.addEventListener("click", () => {
+  location.href = "/views/search.html"; 
+}) 
+
+
+// 하단 페이지 네비게이션 
+bottomNavBar.addEventListener("click", event => {
+  if (event.target.className === "chat-tab") { 
+    location.href = "/views/chat_list.html";
+  } else if (event.target.className === "post-tab") { 
+    location.href = "/views/post.html";
+  } else if (event.target.className === "profile-tab") { 
+    location.href = "/views/edit_profile.html";
+  } else if (event.target.className === "home-tab") { 
+    location.href = "/views/index.html";
+  }
+})
+
+

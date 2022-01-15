@@ -4,24 +4,31 @@ const imageUploadButton = document.querySelector("#image-upload");
 const submitButton = document.querySelector("#submit-button"); 
 const uploadImageList = document.querySelector(".post-image-list"); 
 
-// 1. 이미지 업로드시 확인하기 
+
+// 유저 프로필사진 가져오기
+
+// 이미지 업로드시 프리뷰 및 삭제
 function handleUploadImages() {
-  imageUploadButton.addEventListener("change", function(event) {
+  imageUploadButton.addEventListener("change", async function(event) {
     const file = imageUploadButton.files; 
+    const url = "http://146.56.183.55:5050"; 
+    console.log(file); 
+    const imageUrls = []; 
     if (file.length <= 3) {
       for(let i = 0; i < file.length; i++) {
-        let singleImage = URL.createObjectURL(file[i]); 
-        console.log(singleImage); 
+        const imgurl = await imageUpload(file, i); 
+        imageUrls.push(url+"/"+imgurl);   
+        console.log(imageUrls); 
         uploadImageList.innerHTML+=
         `
         <li class= "post-image" id="image${i}">
-          <img src=${singleImage}>
+          <img src=${imageUrls[i]} class= "selected-image">
           <button class="image-delete ${i}" type="button"> 
           <span class="text-hide">이미지 제거</span>
           </button>
         </li> 
         `
-      } 
+      }
     } else if (file.length > 3) {
       alert("이미지가 너무 많아염 (3개만 선택)"); 
     }
@@ -30,7 +37,7 @@ function handleUploadImages() {
   }  
   handleUploadImages();
 
-// 2. 이미지 제거하기
+// 이미지 삭제 로직
 function deleteImages() { 
   const imageOne = document.querySelector("#image0");  
   const imageTwo = document.querySelector("#image1");
@@ -44,10 +51,10 @@ function deleteImages() {
     } else if (event.target.className == "image-delete 2"){ 
       imageThree.remove(); 
     }
-  })  
+  })   
 } 
 
-// 3. 이미지 업로드
+// 이미지 업로드
 async function imageUpload(files,index){
   const formData = new FormData();
   formData.append("image", files[index]); 
@@ -57,25 +64,23 @@ async function imageUpload(files,index){
     body : formData
   })
   const data = await res.json() 
-  const productImgName = data["filename"];
-  return productImgName;
+  const productImgName = data["filename"]; 
+  return productImgName; 
 }
 
-// 2. 피드 작성 
+// 피드 작성 및 전송 
 async function createPost(event) {
   const url = "http://146.56.183.55:5050"; 
-  const content = textContent.value; 
-  const files = imageUploadButton.files;  
-  console.log(content); 
-  console.log(files); 
+  const content = textContent.value;  
+  const selectedImages = document.querySelectorAll(".selected-image"); 
+  const selectedImageUrls = [];
 
-  const imageUrls = []; 
-
-  if (files.length <= 3) {
-    for(let i = 0; i < files.length; i++) {
-      const imgurl = await imageUpload(files, i); 
-      imageUrls.push(url+"/"+imgurl);   
-      console.log(imageUrls); 
+  if (selectedImages.length <= 3) {
+     // li src url 배열에 담기
+    for(i = 0; i <= selectedImages.length-1; i++) {
+      // img태그 src 가져오기
+      const imgurl = selectedImages[i].src;  
+      selectedImageUrls.push(imgurl);  
     }
     const res = await fetch(url+"/post",{
       method:"POST",
@@ -86,7 +91,7 @@ async function createPost(event) {
       body:JSON.stringify({
         "post": {
           "content": content,
-          "image": imageUrls+''  
+          "image": selectedImageUrls+''  
           }
       })
   })
