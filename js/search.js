@@ -21,24 +21,25 @@ function removeAllChilden(parentNode) {
   } 
 }
 
-document.querySelector("form").addEventListener("keyup", (event) => {
+document.querySelector("form").addEventListener("keyup", async (event) => {
   // 기존에 있던 목록 지우기
   const userList = document.querySelector("main .search-user-cont");
   removeAllChilden(userList);
+  const searchValue = event.target.value;
+  const res = await getUser(searchValue);
+  const json = await res.json();
 
-  getUser(event.target.value)
-  .then((res) => res.json())
-  .then((datas) => {
-    if (datas[0]) {
-      const frag = document.createDocumentFragment("ul");
-      datas.forEach((user) => {
+  if (json[0]) {
+    const frag = document.createDocumentFragment("ul");
+      json.forEach((user) => {
         const li = document.createElement("li");
         li.className = "user-search";
+        const userName = user.username.replace(searchValue, `<span>${searchValue}</span>`)
         li.innerHTML = `
           <a href="#none">
             <img src=${user.image} alt="프로필 사진" class="avatar-img">
             <p class="user-info">
-              <strong class="market-name">${user.username}</strong>
+              <strong class="market-name">${userName}</strong>
               <span class="user-name">@ ${user.accountname}</span>
             </p>
           </a>
@@ -46,8 +47,7 @@ document.querySelector("form").addEventListener("keyup", (event) => {
         frag.appendChild(li);
       });
       userList.appendChild(frag);
-    }
-  });
+  }
 });
 
 // 뒤로 가기 버튼
