@@ -33,7 +33,7 @@ function updateProfile() {
   const profileImage = uploadProfileImage.files;
   
   uploadProfileImage.addEventListener("change", (event) => {
-    
+  
   })
   
 }

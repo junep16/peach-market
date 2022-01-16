@@ -106,7 +106,7 @@ async function createPost(event) {
   } else {
     alert("투마치"); 
   }; 
-  location.href = "/views/index.html"; 
+  // location.href = "/views/index.html"; 
 }
 submitButton.addEventListener("click",createPost);   
 
