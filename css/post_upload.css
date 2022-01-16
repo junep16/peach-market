@@ -108,6 +108,11 @@ a {
   pointer-events: none;
 }
 
+.m-activ-button,
+.s-activ-button {
+  border: 1px solid #DBDBDB;
+}
+
 [class^=l-] {
   font-size: 1.4rem;
   height: 4.4rem;
@@ -431,11 +436,15 @@ a {
   width: 7px;
   height: 7px;
   border-radius: 7px;
-  background-color: #FFF;
+  background-color: #ebebeb;
 }
 .home-post div .post-img-button-wrap button.on,
 .home-post-onlytext div .post-img-button-wrap button.on {
   background-color: #FFABA2;
+}
+.home-post div .post-img-button-wrap.off,
+.home-post-onlytext div .post-img-button-wrap.off {
+  display: none;
 }
 
 .post-button-wrap {
@@ -655,9 +664,10 @@ section img {
   position: absolute;
   top: 5%;
   right: 5%;
-  background-image: url("/icon/icon-delete.png");
+  background-image: url("/icon/icon_delete.svg");
   width: 20px;
   height: 20px;
+  background-color: transparent;
 }
 
 /*# sourceMappingURL=post_upload.css.map */

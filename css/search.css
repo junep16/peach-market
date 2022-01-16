@@ -108,6 +108,11 @@ a {
   pointer-events: none;
 }
 
+.m-activ-button,
+.s-activ-button {
+  border: 1px solid #DBDBDB;
+}
+
 [class^=l-] {
   font-size: 1.4rem;
   height: 4.4rem;
@@ -431,11 +436,15 @@ a {
   width: 7px;
   height: 7px;
   border-radius: 7px;
-  background-color: #FFF;
+  background-color: #ebebeb;
 }
 .home-post div .post-img-button-wrap button.on,
 .home-post-onlytext div .post-img-button-wrap button.on {
   background-color: #FFABA2;
+}
+.home-post div .post-img-button-wrap.off,
+.home-post-onlytext div .post-img-button-wrap.off {
+  display: none;
 }
 
 .post-button-wrap {
@@ -567,20 +576,24 @@ a {
   align-items: center;
 }
 
-#app {
+#search-app {
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
-#app main {
+#search-app main {
   flex: 1;
   overflow-y: scroll;
 }
-#app .search-user-cont {
+#search-app .search-user-cont {
   padding: 20px 16px;
 }
-#app .search-user-cont li + li {
+#search-app .search-user-cont li + li {
   margin-top: 16px;
+}
+#search-app .search-user-cont strong span {
+  font-size: inherit;
+  color: #FFABA2;
 }
 
 /*# sourceMappingURL=search.css.map */

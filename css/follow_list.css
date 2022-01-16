@@ -436,15 +436,11 @@ a {
   width: 7px;
   height: 7px;
   border-radius: 7px;
-  background-color: #ebebeb;
+  background-color: #FFF;
 }
 .home-post div .post-img-button-wrap button.on,
 .home-post-onlytext div .post-img-button-wrap button.on {
   background-color: #FFABA2;
-}
-.home-post div .post-img-button-wrap.off,
-.home-post-onlytext div .post-img-button-wrap.off {
-  display: none;
 }
 
 .post-button-wrap {
@@ -576,75 +572,18 @@ a {
   align-items: center;
 }
 
-main {
-  width: 100%;
-  box-sizing: border-box;
-  padding-top: 10%;
+.tab-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.follow-container {
+  padding: 24px 16px 81px;
+}
+.follow-container li + li {
+  margin-top: 16px;
 }
 
-.profile-image-wrapper {
-  position: relative;
-}
-.profile-image-wrapper .profile-image {
-  width: 11rem;
-  height: 11rem;
-}
-.profile-image-wrapper .upload-button {
-  background-image: url(/images/upload-file.png);
-  background-size: 3.6rem;
-  position: absolute;
-  top: 7.3rem;
-  right: 0.2rem;
-  width: 3.6rem;
-  height: 3.6rem;
-  font-size: 0.01px;
-}
-.profile-image-wrapper .upload-input {
-  display: none;
-}
-
-.user-input {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 3rem 3.4rem;
-}
-.user-input label {
-  font-size: 1.2rem;
-  color: #767676;
-  margin-top: 8%;
-}
-.user-input input {
-  width: 100%;
-  height: 3rem;
-  font-size: 1.4rem;
-  border-style: none;
-  border-bottom: 1px solid #C4C4C4;
-}
-.user-input input::placeholder {
-  color: #C4C4C4;
-}
-.user-input .input-id.error, .user-input .user-name.error {
-  border-bottom: 1px solid #EB5757;
-}
-.user-input .input-error {
-  display: none;
-  font-size: 1.4rem;
-  margin-top: 10px;
-  color: #EB5757;
-}
-.user-input .input-error.on {
-  display: block;
-}
-
-/*# sourceMappingURL=edit_profile.css.map */
+/*# sourceMappingURL=follow_list.css.map */
