@@ -3,6 +3,8 @@
 const signUp = document.querySelector(".sign-up");
 const loginInputList = signUp.querySelectorAll("input");
 const loginButton = signUp.querySelector("button");
+const joined = document.querySelector("#joined");
+const emailInput = document.querySelector("#email");
 
 function able() {
   let check = 0;
@@ -18,15 +20,14 @@ function able() {
     loginButton.disabled = true;
   }
 }
-
 signUp.addEventListener("keyup", able);
 
-//회원가입
+//이메일로 회원가입
 const emailPw = document.querySelector(".email-pw");
 const profile = document.querySelector(".profile");
 async function checkEmailValid(emailInputValue) {
   const url = "http://146.56.183.55:5050";
-  const res = await fetch(url + "/user/emailValid", {
+  const res = await fetch(url + "/user/emailvalid", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -41,18 +42,18 @@ async function checkEmailValid(emailInputValue) {
   const json = await res.json();
   console.log(json);
   console.log(json.message);
-  // const error = document.createElement("span");
-  // const inputPw = document.querySelector("#password");
-  // inputPw.appendChild(error);
-  // inputPw.textContent = json.message;
-  return false;
+  if (json.message !== "사용 가능한 이메일 입니다.") {
+    joined.textContent = json.message;
+    joined.classList.remove("hidden");
+    emailInput.value = "";
+    loginButton.disabled = true;
+  }
 }
 
 // 이메일 인풋태그에 값이 변경 됐을 때
 // 이메일 인풋 태그에 이벤트를 걸어주겠다.
 // 값이 변경되는 이벤트가 발생할 때,
 // 체크 이메일 밸리드 라는 함수를 실행하겠다.
-const emailInput = document.querySelector("#email");
 emailInput.addEventListener("change", () => {
   checkEmailValid(emailInput.value);
 });
@@ -77,32 +78,46 @@ nextBtn.addEventListener("click", () => {
   // }
 });
 
-// email 정규표현식
+// email 정규표현식 유효성검사
 const email = document.querySelector("#email");
-let emailVal = email.value;
-
 let emailRegExp =
   /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
 
 email.addEventListener("change", () => {
-  if (emailVal.match(emailRegExp) !== null) {
-    console.log("됐다");
+  let emailVal = email.value;
+  if (emailVal.match(emailRegExp) == null) {
+    joined.textContent = "이메일 형식이 맞지 않습니다.";
+    email.value = "";
+    joined.classList.remove("hidden");
+    console.log("사용 불가능");
   } else {
-    console.log("안됐다");
+    console.log("사용 가능");
+    joined.classList.add("hidden");
+  }
+});
+//사용 가능 불가능 다시체크하기. 정규표현식이 틀린듯
+
+//비밀번호 6자리 이상. 유효성검사
+const passwordInput = signUp.querySelector("#password");
+passwordInput.addEventListener("change", () => {
+  console.log(passwordInput.value);
+  if (passwordInput.value.length < 6) {
+    passwordInput.value = "";
+    const passwordError = document.querySelector("#passwordError");
+    passwordError.classList.remove("hidden");
   }
 });
 
 // 프로필설정 계정 ID 정규표현식
 const account = document.querySelector("#account");
 
-account.addEventListener("change", () => {
-  // let accountRegExp = /^(?=.*[a-zA-Z0-9._]).{5,15}$/;
+account.addEventListener("keydown", () => {
   let accountRegExp = /^[a-zA-Z0-9._]+$/;
-  // let accountRegExp = /^(?=.*[a-zA-Z0-9._]).{5,15}$/;
-  // let accountRegExp =  /^(?=.*[a-zA-Z])(?=.*[._])(?=.*[0-9]).{5,15}$/;
+  // let accountRegExp = /^(?=.*[a-zA-Z0-9._]).{1,15}$/;
+  // let accountRegExp =  /^(?=.*[a-zA-Z])(?=.*[._])(?=.*[0-9])$/;
   // let accountVal = account.value;
   const accOnly = document.querySelector("#acc_only");
-  if (account.value.match(accountRegExp) === null) {
+  if (account.value.match(accountRegExp) == null) {
     accOnly.classList.remove("hidden");
     // } else if (중복체크){
     //이미 사용중인 아이디...
@@ -114,7 +129,7 @@ account.addEventListener("change", () => {
 //프로필계정 3개의 input요소 채워지면 버튼 활성화 (querySelectorAll)
 const setProfile = document.querySelector(".set-profile");
 const setInputList = setProfile.querySelectorAll("input");
-const setButton = setProfile.querySelector("button");
+const startBtn = setProfile.querySelector("button");
 
 function profile1() {
   let checkThis = 0;
@@ -124,11 +139,22 @@ function profile1() {
     }
   }
   if (checkThis === setInputList.length) {
-    setButton.disabled = false;
-    setButton.classList.add("able");
+    startBtn.disabled = false;
+    startBtn.classList.add("able");
   } else {
-    setButton.disabled = true;
+    startBtn.disabled = true;
   }
 }
 
 setProfile.addEventListener("keyup", profile1);
+
+// 감귤마켓 시작하기 버튼 클릭시 .profile hidden속성 제거,
+// .email-pw에 hidden속성 추가(화면 전환)
+// const nextBtn = document.querySelector(".next-btn");
+// nextBtn.addEventListener("click", () => {
+//   profile.classList.remove("hidden");
+//   emailPw.classList.add("hidden");
+
+startBtn.addEventListener("click", () => {
+  location.href = "/index.html";
+});
