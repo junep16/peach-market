@@ -1,7 +1,7 @@
 const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxY2E2MzhhYjVjNmNkMTgwODRlNDQ3ZCIsImV4cCI6MTY0NzE0MzQ1MCwiaWF0IjoxNjQxOTU5NDUwfQ.MPLwiebPtzC4JjWF3UqCT01v-IeUhNtT8JQ05Kp3gXA"; 
 
 const postList = document.querySelector("main .post-lists"); 
- 
+
 // 1. 유저 팔로워 피드 받아오기  
 async function getPosts() { 
   const url = "http://146.56.183.55:5050"

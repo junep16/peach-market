@@ -169,9 +169,10 @@ async function getPost() {
   const authorImage = post.author.image; 
   const authorAccount= post.author.accountname; 
   const authorName = post.author.username; 
-  const postImage = post.image.split(","); 
-  const postContent = post.content; 
-  const postDate = post.createdAt.split('T'); 
+  const postImage = post.image.split(",");  
+  const postContent = post.content;   
+  const postDate = post.createdAt.split('T')[0].split("-"); 
+  console.log(postDate); 
   const heartCount = post.heartCount;
   const commentCount = post.commentCount; 
   const hearted = post.hearted;   
@@ -201,13 +202,11 @@ async function getPost() {
       </div>
     </div> 
     <div class="post-button-wrap">
-      <button type="button" class="heart-btn" data-count="58">
+      <button type="button" class="heart-btn" data-count="58">${heartCount}
         <span class="text-hide">좋아요</span>
-        ${heartCount}
       </button>
-      <button type="button" class="comment-btn" data-count="12">
+      <button type="button" class="comment-btn" data-count="12">${commentCount}
         <span class="text-hide">댓글</span>
-        ${commentCount}
       </button>
     </div>
     <span class="upload-date">${postDate}</span> 
@@ -219,7 +218,7 @@ async function getPost() {
 
 // 2. 이미지 렌더링 하는 함수 (위 68번째 줄에서 실행)
 function addPostImages(eachpost) {  
-  const slides = document.querySelector(`#post${i}`);  
+  const slides = document.querySelector(`#post`);  
   const li = document.createElement("li"); 
   const img = document.createElement("img"); 
   li.classList.add("post-img-wrap"); 
@@ -288,7 +287,6 @@ function handleImageSlide() {
   buttonOne.addEventListener("click", event => { 
     moveSlide(0);  
   }); 
-  
   buttonTwo.addEventListener("click", event => {
     currentIndex = 0;
     moveSlide(currentIndex +1);  
@@ -305,5 +303,22 @@ async function init() {
   await getPost(); 
   // 이후 이미지 슬라이더 작동
   handleImageSlide(); 
+  postButtonControl();
 }
 init();
+
+// 좋아요 버튼 컨트롤 
+
+function postButtonControl() {
+  const buttonControl = document.querySelector(".post-button-wrap"); 
+  const likeButton = document.querySelector(".heart-btn");
+  let likeCount = parseInt(likeButton.innerText.split("")[0]);  
+
+  likeButton.addEventListener("click", event => {
+    if(event.target.className = "heart-btn") {
+      event.target.classList.add("on"); 
+      event.target.innerText =  likeCount + 1; 
+    }
+  })
+}
+

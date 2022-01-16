@@ -72,8 +72,14 @@ async function imageUpload(files,index){
 async function createPost(event) {
   const url = "http://146.56.183.55:5050"; 
   const content = textContent.value;  
+  console.dir(content);
   const selectedImages = document.querySelectorAll(".selected-image"); 
   const selectedImageUrls = [];
+  
+  // 텍스트 작성 여부 확인
+  if (content == "") { 
+    throw alert("내용을 입력해주세요"); 
+  }
 
   if (selectedImages.length <= 3) {
      // li src url 배열에 담기
@@ -99,8 +105,8 @@ async function createPost(event) {
   console.log(json);
   } else {
     alert("투마치"); 
-  };  
+  }; 
+  location.href = "/views/index.html"; 
 }
 submitButton.addEventListener("click",createPost);   
-
 
