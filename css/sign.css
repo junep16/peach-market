@@ -19,42 +19,51 @@ html {
   color: #111;
   margin-bottom: 40px;
 }
-.container #login-form {
+.container #login-form,
+.container #profile-form {
   display: flex;
   flex-direction: column;
 }
-.container #login-form label {
+.container #login-form label,
+.container #profile-form label {
   font-size: 1.2rem;
   text-align: left;
 }
-.container #login-form input {
+.container #login-form input,
+.container #profile-form input {
   font-size: 1.4rem;
   border: none;
   border-bottom: 1px solid #c4c4c4;
   height: 48px;
 }
-.container #login-form input::placeholder {
+.container #login-form input::placeholder,
+.container #profile-form input::placeholder {
   color: #dbdbdb;
 }
-.container #login-form input:focus {
+.container #login-form input:focus,
+.container #profile-form input:focus {
   border: 2px solid #FFABA2;
   border-radius: 4px;
   outline: none;
 }
-.container #login-form .password {
+.container #login-form .password,
+.container #profile-form .password {
   margin-top: 16px;
 }
-.container #login-form .error {
+.container #login-form .error,
+.container #profile-form .error {
   font-size: 1.2rem;
   text-align: start;
   color: #EB5757;
   line-height: 1.4rem;
   margin-top: 5px;
 }
-.container #login-form .hidden {
+.container #login-form .hidden,
+.container #profile-form .hidden {
   display: none;
 }
-.container #login-form button {
+.container #login-form button,
+.container #profile-form button {
   margin: 30px 0 20px 0;
   height: 48px;
   background-color: #FFD2CC;
@@ -64,18 +73,19 @@ html {
   width: 100%;
   border-radius: 4px;
 }
-.container #login-form button.able {
+.container #login-form button.able,
+.container #profile-form button.able {
   background-color: #FFABA2;
 }
 .container a {
   font-size: 1.2rem;
   color: #767676;
 }
-.container .setProfile p {
+.container .set-photo p {
   font-size: 1.4rem;
   margin-bottom: 30px;
 }
-.container .setProfile button {
+.container .set-photo button {
   background-color: inherit;
   width: 110px;
   height: 110px;
@@ -86,7 +96,7 @@ html {
   background: url(/images/basic-profile-img-.png);
   background-size: contain;
 }
-.container .setProfile button img {
+.container .set-photo button img {
   display: inline-block;
   position: relative;
   top: 38px;

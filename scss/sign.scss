@@ -21,7 +21,8 @@ html {
     margin-bottom: 40px;
   }
 
-  #login-form {
+  #login-form,
+  #profile-form {
     display: flex;
     flex-direction: column;
 
@@ -82,7 +83,7 @@ html {
     font-size: 1.2rem;
     color: $gray-color;
   }
-  .setProfile{
+  .set-photo{
     p {
       font-size: 1.4rem;
       margin-bottom: 30px;
