@@ -572,76 +572,18 @@ a {
   align-items: center;
 }
 
-.hidden {
-  display: none;
+.tab-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
-.product-app {
-  padding: 0 34px;
+.follow-container {
+  padding: 24px 16px 81px;
 }
-.product-app p {
-  font-size: 1.2rem;
-  color: #767676;
-  margin: 30px 0 18px;
-}
-
-.product-image-wrap {
-  position: relative;
-  width: 322px;
-  height: 204px;
-  background-color: #F2F2F2;
-  border: 1px solid #DBDBDB;
-  border-radius: 10px;
-  overflow: hidden;
-  margin: 0 auto;
-}
-.product-image-wrap .preview-image {
-  width: 100%;
-  height: 100%;
-}
-.product-image-wrap label {
-  cursor: pointer;
-}
-.product-image-wrap label::before {
-  content: "";
-  display: block;
-  background-image: url("/images/img-button.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 36px;
-  height: 36px;
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-}
-.product-image-wrap #imageInput {
-  display: none;
-}
-
-.nonFile-input-wrapper {
-  margin-top: 30px;
-}
-.nonFile-input-wrapper fieldset + fieldset {
+.follow-container li + li {
   margin-top: 16px;
 }
-.nonFile-input-wrapper fieldset label {
-  font-size: 1.2rem;
-  color: #767676;
-  margin-top: 8%;
-}
-.nonFile-input-wrapper fieldset input {
-  width: 100%;
-  font-size: 1.4rem;
-  border-style: none;
-  border-bottom: 1px solid #C4C4C4;
-  padding: 10px 0 8px;
-}
-.nonFile-input-wrapper fieldset input:focus {
-  border-color: #FFABA2;
-  outline: none;
-}
-.nonFile-input-wrapper fieldset input::placeholder {
-  color: #C4C4C4;
-}
 
-/*# sourceMappingURL=product_upload.css.map */
+/*# sourceMappingURL=follow_list.css.map */
