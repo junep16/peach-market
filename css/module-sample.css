@@ -109,6 +109,11 @@ a {
   pointer-events: none;
 }
 
+.m-activ-button,
+.s-activ-button {
+  border: 1px solid #DBDBDB;
+}
+
 [class^=l-] {
   font-size: 1.4rem;
   height: 4.4rem;
