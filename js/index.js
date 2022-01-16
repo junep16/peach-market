@@ -62,8 +62,8 @@ async function getPosts() {
       </div>
       <span class="upload-date">${postDate}</span> 
     </li> 
-  ` 
-    console.log(postImage); 
+  `   
+    console.log(postImage);
     addPostImages(postImage, i); 
   });  
   }
@@ -74,30 +74,39 @@ function addPostImages(eachpost, i) {
   const li = document.createElement("li"); 
   const img = document.createElement("img"); 
   li.classList.add("post-img-wrap"); 
-  img.classList.add("post-img"); 
-  console.log(slides); 
-  
+  img.classList.add("post-img");  
+  // 이미지가 하나일 경우
   if (eachpost.length === 1) {
-    img.src=`${eachpost[0]}`
+    img.src =`${eachpost[0]}`
     li.appendChild(img); 
     slides.appendChild(li); 
-    console.log("하나지롱");
-  } else if (eachpost.length > 1) {
-    for(let j = 0; j <= eachpost.length -1; j++) {
-      img.src=`${eachpost[j]}`
-      const lis = document.createElement("li");
+    const postImage = document.querySelector(".post-img"); 
+    postImage.style.width = "304px"; 
+    postImage.style.height = "228px"; 
+    postImage.style.borderRadius = "15px"; 
+    const buttonController = document.querySelector(".post-img-button-wrap");
+    buttonController.classList.add("off");  
+
+  } //이미지 여러개일 경우
+    else if (eachpost.length > 1) {
+    for(let j = 0; j <= eachpost.length - 1 ; j++) {  
       const imgs = document.createElement("img");
-      lis.classList.add("post-img-wrap"); 
+      console.log(imgs); 
       imgs.classList.add("post-img"); 
-      imgs.style.width = "304"; 
-      imgs.style.height = "228"; 
-      lis.appendChild(imgs); 
-      slides.appendChild(lis); 
-      console.log("여러개지롱"); 
+      li.appendChild(imgs); 
+      slides.appendChild(li);  
+      imgs.src=`${eachpost[j]}`;  
+
+      // 이미지 스타일링
+      const postImage = document.querySelector(".post-img"); 
+      postImage.style.width = "304px"; 
+      postImage.style.height = "228px"; 
+      postImage.style.borderRadius = "15px";  
     }  
   } else {
     console.log("이미지 없음"); 
-  }
+  } 
+  console.log(slides); 
 }
 
 // 3. 이미지 슬라이드  
@@ -174,7 +183,7 @@ bottomNavBar.addEventListener("click", event => {
   if (event.target.className === "chat-tab") { 
     location.href = "/views/chat_list.html";
   } else if (event.target.className === "post-tab") { 
-    location.href = "/views/post.html";
+    location.href = "/views/post_upload.html";
   } else if (event.target.className === "profile-tab") { 
     location.href = "/views/edit_profile.html";
   } else if (event.target.className === "home-tab") { 

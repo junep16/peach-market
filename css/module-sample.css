@@ -438,6 +438,10 @@ a {
 .home-post-onlytext div .post-img-button-wrap button.on {
   background-color: #FFABA2;
 }
+.home-post div .post-img-button-wrap.off,
+.home-post-onlytext div .post-img-button-wrap.off {
+  display: none;
+}
 
 .post-button-wrap {
   display: flex;
