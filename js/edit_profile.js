@@ -6,6 +6,7 @@ const profileImage = document.querySelector(".profile-image");
 const userName = document.querySelector(".user-name"); 
 const userId = document.querySelector(".input-id"); 
 const userIntro = document.querySelector("#user-introduction"); 
+const submitButton = document.querySelector(".ms-disabled-button");  
 
 async function getUserProfile() {
   const res= await fetch (url + "/profile/hey_binky", {
@@ -35,18 +36,19 @@ async function imageUpload(file){
   const res = await fetch(`http://146.56.183.55:5050/image/uploadfile`, {
     method: "POST",
     body : formData
-  }); 
+  })
   const data = await res.json() 
-  const productImgName = data["filename"]; 
-  return productImgName; 
+  const profileImgName = data["filename"]; 
+  return profileImgName; 
 }
 
 // 프로필 수정내용 업데이트 및 전달
-function updateProfile() {
+async function updateProfile() {
   uploadProfileImage.addEventListener("change", async function(event) {
     const file = uploadProfileImage.files;  
+    console.log(file);
     const imageUrls = []; 
-    const imgurl = await imageUpload(file); 
+    const imgurl = await imageUpload(file[0]); 
     imageUrls.push(url+"/"+imgurl); 
     console.log(imageUrls); 
     profileImage.src = imageUrls; 
@@ -55,42 +57,42 @@ function updateProfile() {
   // 유저 이름 validation (2~10자) **확인해야함
   userName.addEventListener("change", function(event) { 
     if (userName.value.length === 0) {
-      document.querySelector(".input-error").classList.add("on");  
+      document.querySelector(".input-error.name").classList.add("on");  
     } else if (userName.value.length < 2) {
-      document.querySelector(".input-error").classList.add("on");
+      document.querySelector(".input-error.name").classList.add("on");
     } else if (userName.value.length > 10) {
-      document.querySelector(".input-error").classList.add("on");
+      document.querySelector(".input-error.name").classList.add("on");
     }
   })
 
-  // 유저 ID validation (영문, 숫자, 특수문자(.,_)만 사용 가능)
-  // 정규표현식 써야함 ^^ 
-  userId.addEventListener("change", function(event) { 
-    const userIdValidate = []; 
-    userIdValidate.push(userId.value); 
-    let id = userIdValidate[0].split(""); 
-    console.log(arr); 
+  // 유저 ID validation (영문, 숫자, 특수문자(.,_)만 사용 가능) 
+  const IdRegEx = /[0-9a-zA-Z,._]/gm; 
+  userId.addEventListener("change", function(event) {  
+    let Id = userId.value; 
+    console.log(IdRegEx);
+    let found = Id.match(IdRegEx); 
+    Id = found.join(""); 
+    console.log(Id); 
+
+    if (userId.value === Id) {
+      console.log(Id)
+    } else {
+      document.querySelector(".input-error.id").classList.add("on");
+    }
+  })
   
-    if (id.includes("")) {
-      document.querySelector(".input-error").classList.add("on");  
-    } else if (userName.value.length < 2) {
-      document.querySelector(".input-error").classList.add("on");
-    } else if (userName.value.length > 10) {
-      document.querySelector(".input-error").classList.add("on");
-    }
+  const res = await fetch(url+"/user", {
+    method:"PUT", 
+    body:JSON.stringify({
+      "user": {
+        "username": userName.value,
+        "accountname": userId,
+        "intro": userIntro.value,
+        "image": imageUrls
+        }
+    })
   })
-
-}
-updateProfile(); 
-
-
-
-// async function upadateUserProfile() {
-//   const res = await fetch (url + "/user", {
-//     method: "PUT", 
-//     body: {
-//         "Authorization" : `Bearer ${token}`, 
-//         "Content-type" : "application/json"
-//         }
-//     })
-// }
+  const json = await res.json(); 
+  console.log(json);  
+};
+submitButton.addEventListener("click", updateProfile); 
