@@ -52,13 +52,16 @@ async function imageUpload(file){
   // 유저 이름 validation (2~10자)
   userName.addEventListener("change", function(event) { 
     if (userName.value.length === 0) {
+      userName.value = ""; 
       document.querySelector(".input-error.name").classList.add("on"); 
       throw "글자수가 0입니다"; 
     } else if (userName.value.length < 2) {
       document.querySelector(".input-error.name").classList.add("on");
+      userName.value = ""; 
       throw "글자수가 2보다 작습니다";  
     } else if (userName.value.length > 10) {
       document.querySelector(".input-error.name").classList.add("on");
+      userName.value = ""; 
       throw "글자수가 10보다 큽니다";
     } else {
       document.querySelector(".input-error.name").classList.remove("on");
@@ -76,6 +79,7 @@ async function imageUpload(file){
       document.querySelector(".input-error.id").classList.remove("on");
     } else if (userId.value !== Id) { 
       document.querySelector(".input-error.id").classList.add("on");
+      userId.value = ""; 
       throw "아이디가 유효하지 않습니다";
     }  
   })
