@@ -72,7 +72,6 @@ async function imageUpload(files,index){
 async function createPost(event) {
   const url = "http://146.56.183.55:5050"; 
   const content = textContent.value;  
-  console.dir(content);
   const selectedImages = document.querySelectorAll(".selected-image"); 
   const selectedImageUrls = [];
   
