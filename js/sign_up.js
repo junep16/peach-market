@@ -1,11 +1,22 @@
-//로그인 버튼 활성화 START
-//이메일, 패스워드의 인풋태그의 값이 모두 들어와 있으면 버튼활성화
+const url = "http://146.56.183.55:5050";
+
 const signUp = document.querySelector(".sign-up");
 const loginInputList = signUp.querySelectorAll("input");
 const loginButton = signUp.querySelector("button");
-const joined = document.querySelector("#joined");
+const emailError = document.querySelector("#email-error");
+const passwordInput = signUp.querySelector("#password");
 const emailInput = document.querySelector("#email");
+const imageInput = document.querySelector("#image-input");
+const nameInput = document.querySelector("#name");
+const accountInput = document.querySelector("#account");
+const introInput = document.querySelector("#intro");
 
+const previewImg = document.querySelector(".img-label img");
+const emailPw = document.querySelector(".email-pw");
+const profile = document.querySelector(".profile");
+
+//로그인 버튼 활성화 START
+//이메일, 패스워드의 인풋태그의 값이 모두 들어와 있으면 버튼활성화
 function able() {
   let check = 0;
   for (let i = 0; i < loginInputList.length; i++) {
@@ -23,10 +34,7 @@ function able() {
 signUp.addEventListener("keyup", able);
 
 //이메일로 회원가입
-const emailPw = document.querySelector(".email-pw");
-const profile = document.querySelector(".profile");
 async function checkEmailValid(emailInputValue) {
-  const url = "http://146.56.183.55:5050";
   const res = await fetch(url + "/user/emailvalid", {
     method: "POST",
     headers: {
@@ -38,13 +46,14 @@ async function checkEmailValid(emailInputValue) {
       },
     }),
   });
+
   console.log(res);
   const json = await res.json();
   console.log(json);
   console.log(json.message);
   if (json.message !== "사용 가능한 이메일 입니다.") {
-    joined.textContent = json.message;
-    joined.classList.remove("hidden");
+    emailError.textContent = json.message;
+    emailError.classList.remove("hidden");
     emailInput.value = "";
     loginButton.disabled = true;
   }
@@ -58,80 +67,74 @@ emailInput.addEventListener("change", () => {
   checkEmailValid(emailInput.value);
 });
 
-// 다음 버튼 클릭시 .profile hidden속성 제거,
-// .email-pw에 hidden속성 추가(화면 전환)
-const nextBtn = document.querySelector(".next-btn");
-nextBtn.addEventListener("click", () => {
-  profile.classList.remove("hidden");
-  emailPw.classList.add("hidden");
-
-  // const email = document.querySelector("#email").value;
-  // const pw = document.querySelector("#password").value;
-  // if (pw.length > 5) {
-  //   const emailValid = await checkEmailValid(email);
-  //   if (emailValid) {
-  //     emailPw.style.display = "none";
-  //     profile.style.display = "block";
-  //   }
-  // } else {
-  //   alert("비밀번호를 다시 입력하세요.");
-  // }
-});
-
 // email 정규표현식 유효성검사
-const email = document.querySelector("#email");
 let emailRegExp =
-  /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-
-email.addEventListener("change", () => {
-  let emailVal = email.value;
+  /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z].{2,3}$/i;
+// /^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/;
+emailInput.addEventListener("change", () => {
+  let emailVal = emailInput.value;
   if (emailVal.match(emailRegExp) == null) {
-    joined.textContent = "이메일 형식이 맞지 않습니다.";
-    email.value = "";
-    joined.classList.remove("hidden");
-    console.log("사용 불가능");
+    emailError.textContent = "이메일 형식이 맞지 않습니다.";
+    emailInput.value = "";
+    emailError.classList.remove("hidden");
   } else {
-    console.log("사용 가능");
-    joined.classList.add("hidden");
+    emailError.classList.add("hidden");
   }
 });
-//사용 가능 불가능 다시체크하기. 정규표현식이 틀린듯
 
 //비밀번호 6자리 이상. 유효성검사
-const passwordInput = signUp.querySelector("#password");
 passwordInput.addEventListener("change", () => {
-  console.log(passwordInput.value);
-  if (passwordInput.value.length < 6) {
+  if (passwordInput.value.length >= 6) {
+    passwordError.classList.add("hidden");
+  } else {
     passwordInput.value = "";
     const passwordError = document.querySelector("#passwordError");
     passwordError.classList.remove("hidden");
   }
 });
 
-// 프로필설정 계정 ID 정규표현식
-const account = document.querySelector("#account");
+// 다음 버튼 클릭시 회원가입 페이지 사라지고 프로필 설정 화면 나타나기
+const nextBtn = document.querySelector(".next-btn");
+nextBtn.addEventListener("click", () => {
+  emailPw.classList.add("hidden");
+  profile.classList.remove("hidden");
+});
 
-account.addEventListener("keydown", () => {
+// 프로필 사진 등록하기
+imageInput.addEventListener("change", async () => {
+  const dataForm = new FormData();
+  dataForm.append("image", imageInput.files[0]);
+  const res = await fetch(url + "/image/uploadfile", {
+    method: "POST",
+    body: dataForm,
+  });
+  const json = await res.json();
+  previewImg.src = `http://146.56.183.55:5050/${json.filename}`;
+  console.log(res);
+  console.log(json);
+});
+
+// 프로필설정 계정 ID 정규표현식
+
+accountInput.addEventListener("change", () => {
   let accountRegExp = /^[a-zA-Z0-9._]+$/;
   // let accountRegExp = /^(?=.*[a-zA-Z0-9._]).{1,15}$/;
   // let accountRegExp =  /^(?=.*[a-zA-Z])(?=.*[._])(?=.*[0-9])$/;
   // let accountVal = account.value;
   const accOnly = document.querySelector("#acc_only");
-  if (account.value.match(accountRegExp) == null) {
+  if (accountInput.value.match(accountRegExp) == null) {
     accOnly.classList.remove("hidden");
-    // } else if (중복체크){
-    //이미 사용중인 아이디...
   } else {
     accOnly.classList.add("hidden");
   }
 });
 
 //프로필계정 3개의 input요소 채워지면 버튼 활성화 (querySelectorAll)
-const setProfile = document.querySelector(".set-profile");
-const setInputList = setProfile.querySelectorAll("input");
-const startBtn = setProfile.querySelector("button");
 
-function profile1() {
+const setInputList = profile.querySelectorAll("input");
+const startBtn = profile.querySelector("button");
+
+function profileBtnEnable() {
   let checkThis = 0;
   for (let i = 0; i < setInputList.length; i++) {
     if (setInputList[i].value !== "") {
@@ -146,15 +149,29 @@ function profile1() {
   }
 }
 
-setProfile.addEventListener("keyup", profile1);
+profile.addEventListener("keyup", profileBtnEnable);
 
-// 감귤마켓 시작하기 버튼 클릭시 .profile hidden속성 제거,
-// .email-pw에 hidden속성 추가(화면 전환)
-// const nextBtn = document.querySelector(".next-btn");
-// nextBtn.addEventListener("click", () => {
-//   profile.classList.remove("hidden");
-//   emailPw.classList.add("hidden");
-
-startBtn.addEventListener("click", () => {
-  location.href = "/index.html";
+// 회원가입 API 연동
+const submitForm = document.querySelector("form");
+submitForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const res = await fetch(url + "/user", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify({
+      user: {
+        email: emailInput.value,
+        password: passwordInput.value,
+        username: nameInput.value,
+        accountname: accountInput.value,
+        intro: introInput.value,
+        image: previewImg.src,
+      },
+    }),
+  });
+  const json = await res.json();
+  console.log(res);
+  console.log(json);
 });

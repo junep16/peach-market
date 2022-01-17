@@ -66,7 +66,7 @@ html {
 .container #profile-form button {
   margin: 30px 0 20px 0;
   height: 48px;
-  background-color: #FFD2CC;
+  background-color: #ffd2cc;
   color: #fff;
   font-size: 1.4rem;
   height: 4.4rem;
@@ -75,7 +75,7 @@ html {
 }
 .container #login-form button.able,
 .container #profile-form button.able {
-  background-color: #FFABA2;
+  background-color: #ffaba2;
 }
 .container a {
   font-size: 1.2rem;
@@ -85,24 +85,26 @@ html {
   font-size: 1.4rem;
   margin-bottom: 30px;
 }
-.container .set-photo button {
-  background-color: inherit;
+.container .set-photo .img-label {
+  cursor: pointer;
+  position: relative;
+}
+.container .set-photo .img-label img {
+  border-radius: 50%;
+  overflow: hidden;
   width: 110px;
   height: 110px;
-  padding: 0;
-  margin-bottom: 14px;
-  border-radius: 50%;
-  border: 1px solid #dbdbdb;
-  background: url(/images/basic-profile-img-.png);
-  background-size: contain;
 }
-.container .set-photo button img {
+.container .set-photo .img-label::after {
   display: inline-block;
-  position: relative;
-  top: 38px;
-  left: 37px;
+  content: "";
   width: 36px;
   height: 36px;
+  background-image: url("/images/upload-file.png");
+  background-size: contain;
+  position: absolute;
+  top: -20px;
+  right: 0;
 }
 .container form label {
   margin-top: 16px;

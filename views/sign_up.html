@@ -10,9 +10,9 @@
   </head>
 
   <body>
-    <section class="container email-pw">
-      <h1>이메일로 회원가입</h1>
-      <form action="" method="post" id="login-form" class="sign-up">
+    <form action="" method="post" id="login-form" class="sign-up">
+      <section class="container email-pw">
+        <h1>이메일로 회원가입</h1>
         <label for="email">이메일</label>
         <input
           id="email"
@@ -20,7 +20,7 @@
           autocomplete="off"
           placeholder="이메일 주소를 입력해 주세요."
         />
-        <span id="joined" class="error hidden">error</span>
+        <span id="email-error" class="error hidden">error</span>
         <label for="password" class="password">비밀번호</label>
         <input
           id="password"
@@ -29,22 +29,26 @@
           type="password"
           placeholder="비밀번호를 설정해 주세요."
         />
-        <span id="passwordError" class="error hidden">비밀번호는 6자 이상이어야 합니다.</span>
+        <span id="passwordError" class="error hidden"
+          >비밀번호는 6자 이상이어야 합니다.</span
+        >
         <button type="button" class="next-btn">다음</button>
-      </form>
-    </section>
-    <section class="container profile hidden">
-      <!-- 클래스에 hidden 추가 -->
-      <div class="set-photo">
-        <h1>프로필 설정</h1>
-        <p>나중에 언제든지 변경할 수 있습니다.</p>
-        <button>
-          <a href="/views/product_upload.html"
-            ><img src="/images/upload-file.png" alt="프로필 선택"
-          /></a>
-        </button>
-      </div>
-      <form action="" method="post" id="profile-form" class="set-profile">
+      </section>
+      <section class="container profile">
+        <!-- 클래스에 hidden 추가 -->
+        <div class="set-photo">
+          <h1>프로필 설정</h1>
+          <p>나중에 언제든지 변경할 수 있습니다.</p>
+          <label for="image-input" class="img-label">
+            <img src="/images/basic-profile-img-.png" alt="프로필사진" />
+          </label>
+          <input
+            id="image-input"
+            type="file"
+            class="hidden"
+            accept="image/png, image/jpeg"
+          />
+        </div>
         <label for="name">사용자 이름</label>
         <input
           id="name"
@@ -65,14 +69,14 @@
         <label for="intro">소개</label>
         <input
           id="intro"
-          type="password"
+          type="text"
           placeholder="자신과 판매할 상품에 대해 소개해 주세요!"
         />
-        <button type="button" class="l-disabled-button">
+        <button id="submit-button" type="submit" class="l-disabled-button">
           감귤마켓 시작하기
         </button>
-      </form>
-    </section>
+      </section>
+    </form>
     <!-- <script src="/js/set_profile.js"></script> -->
     <script src="/js/sign_up.js"></script>
   </body>
