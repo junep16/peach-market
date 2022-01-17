@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>user profile</title>
+  <link rel="stylesheet" href="/css/profile_detail.css">
+  <style>
+    body {
+      background-color: #dbdbdb;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="pf-container">
+    <header>
+      <h1 class="hidden">유저 프로필 페이지</h1>
+      <nav class="tab-menu">
+        <ul>
+          <li><a href="#none" class="home-tab">홈</a></li>
+          <li><a href="#none" class="chat-tab">채팅</a></li>
+          <li><a href="#none" class="post-tab">게시물 작성</a></li>
+          <li><a href="profile_detail.html" class="profile-tab on" `>프로필</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="pf-main" role="main">
+      <section class="pf-section">
+        <!--되돌아가기/햄버거메뉴-->
+        <h2 class="hidden">유저 프로필 상세</h2>
+        <header>
+          <nav class="top-basic-nav">
+            <button type="button" class="prev-btn" alt="뒤로가기"></button>
+            <button type="button" class="more-btn" alt="더보기"></button>
+          </nav>
+          <!--설정, 로그아웃 모달 start-->
+          <article class="pf-modal">
+            <p class="modal-line"><span></span></p>
+            <ul class="pf-modal-btn">
+              <li>설정 및 개인정보</li>
+              <li class="logout-btn">로그아웃</li>
+            </ul>
+          </article>
+          <!--설정, 로그아웃 모달 end-->
+        </header>
+
+        <!--유저프로필 start-->
+        <article class="pf-userprofile">
+          <div>
+            <!-- <ul>
+              <li class="pf-followes">
+                <p>2950</p>
+                <p>followers</p>
+              </li>
+              <li class="pf-img">
+                <img src="/images/basic-profile-img-.png" alt="프로필이미지">
+              </li>
+              <li class="pf-followings">
+                <p>128</p>
+                <p>followings</p>
+              </li>
+            </ul> -->
+            <h3>애월읍 위니브 감귤농장</h3>
+            <p class="pf-id">@ weniv_Mandarin</p>
+            <p class="pf-description">애월읍 감귤 전국 배송, 귤따기 체험, 감귤 농장</p>
+          </div>
+          <div>
+            <ul class="pf-sns off">
+              <li class="pf-icon"><img src="/icon/icon-message-circle.png" alt="채팅아이콘"></li>
+              <li class="pf-btn">
+                <button type="button" class="m-button">팔로우</button>
+              </li>
+              <li class="pf-icon"><img src="../../icon/icon-share.png" alt="공유아이콘"></li>
+            </ul>
+            <ul class="pf-modify off">
+              <li class="pf-btn">
+                <button type="button" class="m-activ-button on">프로필 수정</button>
+              </li>
+              <li>
+                <button type="button" class="m-activ-button on">상품 등록</button>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
+      <!--유저프로필 end-->
+
+      <!--판매중인 상품 start-->
+      <section class="pf-product">
+        <h3>판매중인 상품</h3>
+        <ul></ul>
+      </section>
+      <!--판매중인 상품 end-->
+
+      <!--홈포스트 start-->
+      <section class="pf-home-post">
+        <header>
+          <h3 class="hidden">유저 포스트</h3>
+          <nav class="home-post-nav">
+            <button type="button" class="list-btn on"></button>
+            <button type="button" class="album-btn"></button>
+          </nav>
+        </header>
+
+        <ul class="list-post on"></ul>
+        <ul class="album-post off"></ul>
+
+        <article class="pf-modify-modal">
+          <p class="modal-line"><span></span></p>
+          <ul class="pf-modal-btn">
+            <li>삭제</li>
+            <li class="modify-btn">수정</li>
+          </ul>
+        </article>
+      </section>
+      <!--포스트 end-->
+
+      <!--팔로워 리스트 start-->
+      <section id="pf-follow">
+        <article class="pf-followers-list">
+          <h3 class="hidden">팔로워 리스트</h3>
+          <nav class="top-basic-nav">
+            <button type="button" class="prev-btn"></button>
+            <p>Followers</p>
+          </nav>
+          <ul></ul>
+        </article>
+        <article class="pf-following-list">
+          <h3 class="hidden">팔로잉 리스트</h3>
+          <nav class="top-basic-nav">
+            <button type="button" class="prev-btn"></button>
+            <p>Followings</p>
+          </nav>
+          <ul>
+
+          </ul>
+        </article>
+
+      </section>
+      <!--팔로워 리스트 end-->
+
+      <!--로그아웃 팝업 모달 start-->
+      <section class="modal-logout">
+        <h3 class="hidden">로그아웃 버튼페이지</h3>
+        <div class="logout-popup">
+          <h4>로그아웃하시겠어요?</h4>
+          <ul>
+            <li class="logout-cancle">취소</li>
+            <li class="logout-agree">로그아웃</li>
+          </ul>
+        </div>
+      </section>
+      <!--로그아웃 팝업 모달 end-->
+
+    </main>
+  </div>
+
+  <script src="/js/profile_detail.js"></script>
+</body>
+
+</html>
