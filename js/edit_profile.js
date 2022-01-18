@@ -40,6 +40,8 @@ async function imageUpload(file){
   return profileImgName; 
 }
 
+
+function updateProfile() {
   // 프로필 이미지 프리뷰
   uploadProfileImage.addEventListener("change", async function(event) {
     const file = uploadProfileImage.files;   
@@ -48,9 +50,11 @@ async function imageUpload(file){
     imageUrls.push(url+"/"+imgurl);  
     profileImage.src = imageUrls; 
   }); 
-  
+
+  let nameFlag = true; 
   // 유저 이름 validation (2~10자)
   userName.addEventListener("change", function(event) { 
+    nameFlag = false; 
     if (userName.value.length === 0) {
       userName.value = ""; 
       document.querySelector(".input-error.name").classList.add("on"); 
@@ -65,28 +69,34 @@ async function imageUpload(file){
       throw "글자수가 10보다 큽니다";
     } else {
       document.querySelector(".input-error.name").classList.remove("on");
+      nameFlag = true; 
     }
   })
-
+  
+  let idFlag = true;  
   // 유저 ID validation (영문, 숫자, 특수문자(.,_)만 사용 가능) 
   const IdRegEx = /[0-9a-zA-Z,._]/gm; 
   userId.addEventListener("change", function(event) {  
     let Id = userId.value;  
     let found = Id.match(IdRegEx); 
     Id = found.join("");  
-
-    if (userId.value === Id) {
-      document.querySelector(".input-error.id").classList.remove("on");
-    } else if (userId.value !== Id) { 
+    idFlag = false; 
+  
+    if (userId.value !== Id) {
       document.querySelector(".input-error.id").classList.add("on");
       userId.value = ""; 
       throw "아이디가 유효하지 않습니다";
+    } else if (userId.value === Id) { 
+      document.querySelector(".input-error.id").classList.remove("on"); 
+      idFlag = true; 
     }  
   })
 
-// 프로필 수정내용 전달
-async function updateProfile() {
+  // 프로필 수정내용 전달
   submitButton.addEventListener("click", async (event) => {
+    if (!nameFlag || !idFlag) {
+      return 
+    }
     const res = await fetch(url+"/user", {
       method:"PUT", 
       headers:{
@@ -105,6 +115,6 @@ async function updateProfile() {
     const json = await res.json(); 
     console.log(json);  
     // location.href = "/views/index.html";
-  }
-)};
-updateProfile(); 
+  });
+} 
+updateProfile();
