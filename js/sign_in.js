@@ -6,7 +6,7 @@ const loginForm = document.querySelector("#login-form");
 const loginInputList = loginForm.querySelectorAll("input");
 const loginButton = loginForm.querySelector("button");
 
-function able() {
+function enable() {
   let check = 0;
   for (let i = 0; i < loginInputList.length; i++) {
     if (loginInputList[i].value !== "") {
@@ -15,13 +15,13 @@ function able() {
   }
   if (check === loginInputList.length) {
     loginButton.disabled = false;
-    loginButton.classList.add("able");
+    loginButton.classList.add("enable");
   } else {
     loginButton.disabled = true;
   }
 }
 
-loginForm.addEventListener("keyup", able);
+loginForm.addEventListener("keyup", enable);
 
 
 // 로그인 API START
