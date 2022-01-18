@@ -7,63 +7,55 @@ html {
   display: none;
 }
 
-.container {
+#login-form .container {
   width: 100%;
   height: 100vh;
   margin: 0 auto;
   padding: 24px 34px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
-.container h1 {
+#login-form .container.hidden {
+  display: none;
+}
+#login-form .container h1 {
   font-size: 2.4rem;
   color: #111;
   margin-bottom: 40px;
 }
-.container #login-form,
-.container #profile-form {
-  display: flex;
-  flex-direction: column;
-}
-.container #login-form label,
-.container #profile-form label {
+#login-form .container label {
   font-size: 1.2rem;
   text-align: left;
 }
-.container #login-form input,
-.container #profile-form input {
+#login-form .container input {
   font-size: 1.4rem;
   border: none;
   border-bottom: 1px solid #c4c4c4;
-  height: 48px;
+  height: 36px;
 }
-.container #login-form input::placeholder,
-.container #profile-form input::placeholder {
+#login-form .container input::placeholder {
   color: #dbdbdb;
 }
-.container #login-form input:focus,
-.container #profile-form input:focus {
+#login-form .container input:focus {
   border: 2px solid #FFABA2;
   border-radius: 4px;
   outline: none;
 }
-.container #login-form .password,
-.container #profile-form .password {
+#login-form .container .password {
   margin-top: 16px;
 }
-.container #login-form .error,
-.container #profile-form .error {
+#login-form .container .error {
   font-size: 1.2rem;
   text-align: start;
   color: #EB5757;
   line-height: 1.4rem;
   margin-top: 5px;
 }
-.container #login-form .hidden,
-.container #profile-form .hidden {
+#login-form .container .error.hidden {
   display: none;
 }
-.container #login-form button,
-.container #profile-form button {
+#login-form .container button {
   margin: 30px 0 20px 0;
   height: 48px;
   background-color: #ffd2cc;
@@ -71,31 +63,30 @@ html {
   font-size: 1.4rem;
   height: 4.4rem;
   width: 100%;
-  border-radius: 4px;
+  border-radius: 25px;
 }
-.container #login-form button.able,
-.container #profile-form button.able {
+#login-form .container button.enable {
   background-color: #ffaba2;
 }
-.container a {
+#login-form .container a {
   font-size: 1.2rem;
   color: #767676;
 }
-.container .set-photo p {
+#login-form .container .set-photo p {
   font-size: 1.4rem;
   margin-bottom: 30px;
 }
-.container .set-photo .img-label {
+#login-form .container .set-photo .img-label {
   cursor: pointer;
   position: relative;
 }
-.container .set-photo .img-label img {
+#login-form .container .set-photo .img-label img {
   border-radius: 50%;
   overflow: hidden;
   width: 110px;
   height: 110px;
 }
-.container .set-photo .img-label::after {
+#login-form .container .set-photo .img-label::after {
   display: inline-block;
   content: "";
   width: 36px;
@@ -106,7 +97,11 @@ html {
   top: -20px;
   right: 0;
 }
-.container form label {
+#login-form .container .account,
+#login-form .container .intro {
+  margin-top: 16px;
+}
+#login-form form label {
   margin-top: 16px;
 }
 

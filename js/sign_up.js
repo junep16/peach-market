@@ -1,8 +1,9 @@
 const url = "http://146.56.183.55:5050";
 
 const signUp = document.querySelector(".sign-up");
-const loginInputList = signUp.querySelectorAll("input");
-const loginButton = signUp.querySelector("button");
+const emailPw = document.querySelector("#email-pw");
+const emailPwInputs = emailPw.querySelectorAll("input");
+const emailPwBtn = emailPw.querySelector("button");
 const emailError = document.querySelector("#email-error");
 const passwordInput = signUp.querySelector("#password");
 const emailInput = document.querySelector("#email");
@@ -12,26 +13,25 @@ const accountInput = document.querySelector("#account");
 const introInput = document.querySelector("#intro");
 
 const previewImg = document.querySelector(".img-label img");
-const emailPw = document.querySelector(".email-pw");
-const profile = document.querySelector(".profile");
+const profile = document.querySelector("#profile");
 
-//로그인 버튼 활성화 START
-//이메일, 패스워드의 인풋태그의 값이 모두 들어와 있으면 버튼활성화
+
+//이메일, 패스워드의 인풋 값이 모두 들어와 있으면 다음 버튼활성화
 function able() {
   let check = 0;
-  for (let i = 0; i < loginInputList.length; i++) {
-    if (loginInputList[i].value !== "") {
+  for (let i = 0; i < emailPwInputs.length; i++) {
+    if (emailPwInputs[i].value !== "") {
       check += 1;
     }
   }
-  if (check === loginInputList.length) {
-    loginButton.disabled = false;
-    loginButton.classList.add("able");
+  if (check === emailPwInputs.length) {
+    emailPwBtn.disabled = false;
+    emailPwBtn.classList.add("enable");
   } else {
-    loginButton.disabled = true;
+    emailPwBtn.disabled = true;
   }
 }
-signUp.addEventListener("keyup", able);
+emailPw.addEventListener("keyup", able);
 
 //이메일로 회원가입
 async function checkEmailValid(emailInputValue) {
@@ -47,15 +47,12 @@ async function checkEmailValid(emailInputValue) {
     }),
   });
 
-  console.log(res);
   const json = await res.json();
-  console.log(json);
-  console.log(json.message);
   if (json.message !== "사용 가능한 이메일 입니다.") {
     emailError.textContent = json.message;
     emailError.classList.remove("hidden");
     emailInput.value = "";
-    loginButton.disabled = true;
+    emailPwBtn.disabled = true;
   }
 }
 
@@ -110,8 +107,6 @@ imageInput.addEventListener("change", async () => {
   });
   const json = await res.json();
   previewImg.src = `http://146.56.183.55:5050/${json.filename}`;
-  console.log(res);
-  console.log(json);
 });
 
 // 프로필설정 계정 ID 정규표현식
@@ -129,7 +124,7 @@ accountInput.addEventListener("change", () => {
   }
 });
 
-//프로필계정 3개의 input요소 채워지면 버튼 활성화 (querySelectorAll)
+//프로필계정 4개의 input요소 채워지면 버튼 활성화 (querySelectorAll)
 
 const setInputList = profile.querySelectorAll("input");
 const startBtn = profile.querySelector("button");
@@ -143,7 +138,7 @@ function profileBtnEnable() {
   }
   if (checkThis === setInputList.length) {
     startBtn.disabled = false;
-    startBtn.classList.add("able");
+    startBtn.classList.add("enable");
   } else {
     startBtn.disabled = true;
   }
@@ -172,6 +167,13 @@ submitForm.addEventListener("submit", async (event) => {
     }),
   });
   const json = await res.json();
-  console.log(res);
-  console.log(json);
+  const accOnly = document.querySelector("#acc_only");
+  //로그인 성공시
+  if (json.status === 422) {
+    accOnly.textContent = json.message;
+    accOnly.classList.remove("hidden");
+  //로그인 실패시
+  } else { 
+    location.href="/sign_in.html";
+  }
 });
