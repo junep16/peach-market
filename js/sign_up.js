@@ -174,6 +174,6 @@ submitForm.addEventListener("submit", async (event) => {
     accOnly.classList.remove("hidden");
   //로그인 실패시
   } else { 
-    location.href="/sign_in.html";
+    location.href="/views/sign_in.html";
   }
 });

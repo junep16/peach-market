@@ -60,7 +60,9 @@ async function login() {
   } else {
     console.log(json.user.token);
     localStorage.setItem("token", json.user.token);
+    localStorage.setItem("accountname", json.user.accountname); 
     location.href="/index.html";
+    
   }
 }
 loginButton.addEventListener("click", login);

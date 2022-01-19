@@ -1,4 +1,4 @@
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxY2E2MzhhYjVjNmNkMTgwODRlNDQ3ZCIsImV4cCI6MTY0NzE0MzQ1MCwiaWF0IjoxNjQxOTU5NDUwfQ.MPLwiebPtzC4JjWF3UqCT01v-IeUhNtT8JQ05Kp3gXA"; 
+const token = localStorage.getItem("token"); 
 const url = "http://146.56.183.55:5050"; 
 const uploadProfileImage = document.querySelector("#upload-image");
 const selectedImage = uploadProfileImage.files; 
@@ -9,7 +9,8 @@ const userIntro = document.querySelector("#user-introduction");
 const submitButton = document.querySelector(".ms-button");  
 
 async function getUserProfile() {
-  const res= await fetch (url + "/profile/hey_binky", {
+  const accountname = localStorage.getItem("accountname"); 
+  const res= await fetch (url + `/profile/${accountname}`, {
     method: "GET", 
     headers: {
       "Authorization" : `Bearer ${token}`,
@@ -106,7 +107,7 @@ function updateProfile() {
       body:JSON.stringify({
         "user": {
           "username": userName.value,
-          "accountname": userId,
+          "accountname": userId.value,
           "intro": userIntro.value,
           "image": profileImage.src
           }
@@ -114,7 +115,8 @@ function updateProfile() {
     })
     const json = await res.json(); 
     console.log(json);  
-    // location.href = "/views/index.html";
+    localStorage.setItem("accountname", userId.value); 
+    location.href = "/views/profile_detail.html";
   });
 } 
 updateProfile();

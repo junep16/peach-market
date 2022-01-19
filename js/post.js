@@ -1,11 +1,14 @@
-const TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxY2E2MzhhYjVjNmNkMTgwODRlNDQ3ZCIsImV4cCI6MTY0NzE4MzkyNCwiaWF0IjoxNjQxOTk5OTI0fQ.gGHALhJfzegmSJafhze2TIeds_De5h1k4mE4gB3czEo";
+const TOKEN = localStorage.getItem("token"); 
 const ENDPOINT = "http://146.56.183.55:5050";
 const HEADERS = {
   "Authorization" : `Bearer ${TOKEN}`,
   "Content-type" : "application/json"
 }
-// 차후 수정 예정 
-const postId = "61e067737f959cdb66eb296d";
+// 차후 수정 예정  
+function searchParam(key) {
+  return new URLSearchParams(location.search).get(key); 
+}
+const postId = searchParam("id"); 
 
 const commentForm = document.querySelector("form");
 const commentInput = document.querySelector("form #commentInput");
@@ -24,13 +27,14 @@ function stateHandle() {
 };
 
 // 댓글 작성 함수
-async function uploadComment() {
+async function uploadComment(event) { 
   const comment = { content: commentInput.value }
-  await fetch(`${ENDPOINT}/post/${postId}/comments`, {
+  const res = await fetch(`${ENDPOINT}/post/${postId}/comments`, {
     method: "POST",
     headers: HEADERS,
     body: JSON.stringify({comment})
   });
+  location.href = `/views/post.html?id=${postId}`; 
 };
 
 // 댓글 작성하기
