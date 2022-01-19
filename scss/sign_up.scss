@@ -1,0 +1,128 @@
+@charset "utf-8";
+@import "variables";
+
+html {
+  color: $gray-color;
+}
+
+.hidden {
+  display: none;
+}
+
+#login-form {
+  .container {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 24px 34px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    &.hidden {
+      display: none;
+    }
+    h1 {
+      font-size: 2.4rem;
+      color: #111;
+      margin-bottom: 40px;
+    }
+
+    label {
+      font-size: 1.2rem;
+      text-align: left;
+    }
+
+    input {
+      font-size: 1.4rem;
+      border: none;
+      border-bottom: 1px solid #c4c4c4;
+      height: 36px;
+
+      &::placeholder {
+        color: #dbdbdb;
+      }
+
+      &:focus {
+        border: 2px solid $base-color;
+        border-radius: 4px;
+        outline: none;
+      }
+    }
+
+    .password {
+      margin-top: 16px;
+    }
+
+    .error {
+      font-size: 1.2rem;
+      text-align: start;
+      color: $red-color;
+      line-height: 1.4rem;
+      margin-top: 5px;
+      &.hidden {
+        display: none;
+      }
+    }
+
+    button {
+      margin: 30px 0 20px 0;
+      height: 48px;
+      background-color: #ffd2cc;
+      color: #fff;
+      font-size: 1.4rem;
+      height: 4.4rem;
+      width: 100%;
+      border-radius: 25px;
+
+      &.enable {
+        background-color: #ffaba2;
+      }
+    }
+
+    a {
+      font-size: 1.2rem;
+      color: $gray-color;
+    }
+
+    .set-photo {
+      p {
+        font-size: 1.4rem;
+        margin-bottom: 30px;
+      }
+
+      .img-label {
+        cursor: pointer;
+        position: relative;
+
+        img {
+          border-radius: 50%;
+          overflow: hidden;
+          width: 110px;
+          height: 110px;
+        }
+
+        &::after {
+          display: inline-block;
+          content: "";
+          width: 36px;
+          height: 36px;
+          background-image: url("/images/upload-file.png");
+          background-size: contain;
+          position: absolute;
+          top: -20px;
+          right: 0;
+        }
+      }
+    }
+    .account,
+    .intro {
+      margin-top: 16px;
+    }
+  }
+
+  form {
+    label {
+      margin-top: 16px;
+    }
+  }
+}

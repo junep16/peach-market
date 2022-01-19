@@ -1,12 +1,4 @@
 /* variables */
-html {
-  color: #767676;
-}
-
-.hidden {
-  display: none;
-}
-
 .container {
   width: 100%;
   height: 100vh;
@@ -31,7 +23,7 @@ html {
   font-size: 1.4rem;
   border: none;
   border-bottom: 1px solid #c4c4c4;
-  height: 48px;
+  height: 36px;
 }
 .container #login-form input::placeholder {
   color: #dbdbdb;
@@ -51,51 +43,28 @@ html {
   line-height: 1.4rem;
   margin-top: 5px;
 }
-.container #login-form .hidden {
+.container #login-form .error.hidden {
   display: none;
 }
 .container #login-form button {
   margin: 30px 0 20px 0;
   height: 48px;
-  background-color: #FFD2CC;
+  background-color: #ffd2cc;
   color: #fff;
   font-size: 1.4rem;
   height: 4.4rem;
   width: 100%;
-  border-radius: 4px;
+  border-radius: 25px;
 }
-.container #login-form button.able {
-  background-color: #FFABA2;
+.container #login-form button.enable {
+  background-color: #ffaba2;
 }
 .container a {
   font-size: 1.2rem;
   color: #767676;
 }
-.container .setProfile p {
-  font-size: 1.4rem;
-  margin-bottom: 30px;
-}
-.container .setProfile button {
-  background-color: inherit;
-  width: 110px;
-  height: 110px;
-  padding: 0;
-  margin-bottom: 14px;
-  border-radius: 50%;
-  border: 1px solid #dbdbdb;
-  background: url(/images/avatar50.png);
-  background-size: contain;
-}
-.container .setProfile button img {
-  display: inline-block;
-  position: relative;
-  top: 38px;
-  left: 37px;
-  width: 36px;
-  height: 36px;
-}
 .container form label {
   margin-top: 16px;
 }
 
-/*# sourceMappingURL=sign.css.map */
+/*# sourceMappingURL=sign_in.css.map */

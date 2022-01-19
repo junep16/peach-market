@@ -77,12 +77,15 @@
         width: 7px; 
         height: 7px;
         border-radius: 7px;
-        background-color: #FFF;  
+        background-color: #ebebeb;  
       }
       button.on {
         background-color: $base-color;
       } 
     } 
+    .post-img-button-wrap.off{
+      display: none;
+    }
     // [1]이부분 까지 세부 사항 변경 // 
 
     @mixin post-icon-module($base-img-path, $active-img-path) {
