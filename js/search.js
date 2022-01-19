@@ -26,33 +26,35 @@ async function paintUserList(event) {
   const searchValue = event.target.value;
   const res = await fetch(`${SEARCH_API}${searchValue}`, reqOption);
   const json = await res.json();
-  
+
   if (json[0]) {
     const frag = document.createDocumentFragment("ul");
       json.forEach((user) => {
+        const { accountname, image, username, _id } = user;
+
         // 검색 키워드 하이라이트
-        const userName = user.username.replace(searchValue, `<span>${searchValue}</span>`);
+        const userName = username.replace(searchValue, `<span>${searchValue}</span>`);
+
         // 잘못된 이미지 경로 예외 처리
         const userImageUrl = 
-        (user.image.match(/http:\/\/[0-9].*:5050\//)
-          && !user.image.match(/undefined/))
-          ? user.image
-          : defaultImage;
+        (image.match(/http:\/\/[0-9].*:5050\//) && !image.match(/undefined/))
+        ? image
+        : defaultImage;
   
         const li = document.createElement("li");
         li.className = "user-search";
         li.innerHTML = `
-          <a href="#none">
+          <a href="/views/your_profile.html?id=${_id}">
             <img src=${userImageUrl} alt="프로필 사진" class="avatar-img">
             <p class="user-info">
               <strong class="market-name">${userName}</strong>
-              <span class="user-name">@ ${user.accountname}</span>
+              <span class="user-name">@ ${accountname}</span>
             </p>
           </a>
         `;
         frag.appendChild(li);
       });
-      userList.appendChild(frag);
+    userList.appendChild(frag);
   }
 };
 
