@@ -18,6 +18,7 @@ form {
   .profile-image {
     width: 11rem; 
     height: 11rem; 
+    border-radius: 11rem; 
   }
   .upload-button {
     background-image: url(/images/upload-file.png);
@@ -67,7 +68,8 @@ form {
     margin-top: 10px;
     color: $red-color;
   } 
-  .input-error.on {
+  .input-error.name.on, 
+  .input-error.id.on {
     display: block;
   }
 }
