@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/post_upload.css">
+  <title>피치마켓 | 포스트 작성 </title>
+</head>
+<body>
+  <Header>
+    <h1 class="text-hide">포스트 작성</h1>
+    <nav class="top-upload-nav">
+      <button type="button" class="prev-btn">
+        <span class="text-hide">이전으로 가기 버튼</span>
+      </button>
+      <button type="button" id="submit-button" class="ms-button">저장</button>
+    </nav>
+  </Header>
+  <main> 
+    <section>
+        <img src="/images/avatar.png" alt="프로필 사진" class="avatar-img">
+        <form class ="post-form" action="" method="post">
+          <label for="postInput" class="text-hide">상품 내용 입력창</label>
+          <textarea 
+            placeholder="게시글 입력하기..."
+            class="post-input" 
+            id="postInput"
+            minlength="1"
+            maxlength="500"
+            ></textarea>  
+              <label class="button-image-upload" for="image-upload">
+                이미지 업로드 버튼
+                <input 
+                  class=""
+                  type="file"
+                  name="image-upload"
+                  id="image-upload"
+                  accept="image/*" 
+                  multiple
+                  >
+              </label> 
+        </form> 
+    </section>
+    <article class="post-image-window">
+      <ul class="post-image-list"></ul> 
+    </article>
+  </main>
+  <script src="/js/post_upload.js"></script>
+</body>
+</html>

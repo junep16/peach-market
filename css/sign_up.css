@@ -1,0 +1,108 @@
+/* variables */
+html {
+  color: #767676;
+}
+
+.hidden {
+  display: none;
+}
+
+#login-form .container {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 24px 34px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+#login-form .container.hidden {
+  display: none;
+}
+#login-form .container h1 {
+  font-size: 2.4rem;
+  color: #111;
+  margin-bottom: 40px;
+}
+#login-form .container label {
+  font-size: 1.2rem;
+  text-align: left;
+}
+#login-form .container input {
+  font-size: 1.4rem;
+  border: none;
+  border-bottom: 1px solid #c4c4c4;
+  height: 36px;
+}
+#login-form .container input::placeholder {
+  color: #dbdbdb;
+}
+#login-form .container input:focus {
+  border: 2px solid #FFABA2;
+  border-radius: 4px;
+  outline: none;
+}
+#login-form .container .password {
+  margin-top: 16px;
+}
+#login-form .container .error {
+  font-size: 1.2rem;
+  text-align: start;
+  color: #EB5757;
+  line-height: 1.4rem;
+  margin-top: 5px;
+}
+#login-form .container .error.hidden {
+  display: none;
+}
+#login-form .container button {
+  margin: 30px 0 20px 0;
+  height: 48px;
+  background-color: #ffd2cc;
+  color: #fff;
+  font-size: 1.4rem;
+  height: 4.4rem;
+  width: 100%;
+  border-radius: 25px;
+}
+#login-form .container button.enable {
+  background-color: #ffaba2;
+}
+#login-form .container a {
+  font-size: 1.2rem;
+  color: #767676;
+}
+#login-form .container .set-photo p {
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+}
+#login-form .container .set-photo .img-label {
+  cursor: pointer;
+  position: relative;
+}
+#login-form .container .set-photo .img-label img {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 110px;
+  height: 110px;
+}
+#login-form .container .set-photo .img-label::after {
+  display: inline-block;
+  content: "";
+  width: 36px;
+  height: 36px;
+  background-image: url("/images/upload-file.png");
+  background-size: contain;
+  position: absolute;
+  top: -20px;
+  right: 0;
+}
+#login-form .container .account,
+#login-form .container .intro {
+  margin-top: 16px;
+}
+#login-form form label {
+  margin-top: 16px;
+}
+
+/*# sourceMappingURL=sign_up.css.map */

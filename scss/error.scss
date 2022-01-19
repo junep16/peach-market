@@ -1,0 +1,24 @@
+@charset "utf-8";
+@import "./reset.scss";
+@import "./variables";
+@import "./button-module.scss";
+
+section {
+  text-align: center;
+  margin-top: 200px;
+}
+section::before {
+  content: "";
+  display: inline-block;
+  background-image: url("/images/logo_error.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 158px;
+  height: 158px;
+}
+section p {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #767676;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,69 @@
+/* variables */
+/* button module */
+[class$=button] {
+  border: none;
+  border-radius: 30px;
+  color: #767676;
+  transition: 0.2s linear;
+}
+
+.l-button,
+.ml-button,
+.m-button,
+.ms-button,
+.s-button {
+  background-color: #FFABA2;
+  color: #fff;
+}
+.l-button:active,
+.ml-button:active,
+.m-button:active,
+.ms-button:active,
+.s-button:active {
+  background-color: #FFD2CC;
+}
+
+.l-disabled-button,
+.m-disabled-button,
+.ms-disabled-button {
+  background-color: #FFD2CC;
+  color: #fff;
+  pointer-events: none;
+}
+
+.m-activ-button,
+.s-activ-button {
+  border: 1px solid #DBDBDB;
+}
+
+[class^=l-] {
+  font-size: 1.4rem;
+  height: 4.4rem;
+  width: 100%;
+}
+
+[class^=ml-] {
+  font-size: 1.4rem;
+  height: 4.4rem;
+  width: 30.76%;
+}
+
+[class^=m-] {
+  font-size: 1.4rem;
+  height: 3.4rem;
+  width: 30.76%;
+}
+
+[class^=ms-] {
+  font-size: 1.4rem;
+  height: 3.2rem;
+  width: 23%;
+}
+
+[class^=s-] {
+  font-size: 1.2rem;
+  height: 2.8rem;
+  width: 14.4%;
+}
+
+/*# sourceMappingURL=button-module.css.map */

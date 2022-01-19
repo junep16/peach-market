@@ -3,10 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>피치마켓</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="/css/index.css">
+    <title>피치마켓 | 홈</title>
 </head>
 <body>
-    
+  <h1 class="text-hide">피치마켓</h1>
+  <header>
+    <nav class="top-main-nav">
+      <h2 class="top-nav-text">감귤마켓 피드</h2>
+      <a href="#none" class="search-btn">
+        <span class="text-hide">검색 버튼</span>
+      </a>
+    </nav>
+    <nav class="tab-menu">
+      <ul>
+        <li><a href="#none" class="home-tab on">홈</a></li>
+        <li><a href="#none" class="chat-tab">채팅</a></li>
+        <li><a href="#none" class="post-tab">게시물 작성</a></li>
+        <li><a href="#none" class="profile-tab">프로필</a></li>
+      </ul>
+    </nav>
+  </header>
+<main>
+  <h4 class="text-hide">피드 리스트</h4>
+  <ul class="post-lists"></ul>
+</main>
+  <div class="follow-modal">
+    <h5 class="text-hide">유저 팔로우</h5>
+    <div class="follow-wrapper">
+      <img src="/images/logo_gray.png" alt="회색 피치마켓 로고">
+      <p>유저를 검색해 팔로우 해보세요!</p>
+      <button type="button" class="ml-button">검색하기</button>
+    </div>
+  </div>
 </body>
+<script src="/js/index.js"></script>
 </html>

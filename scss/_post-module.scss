@@ -1,0 +1,184 @@
+@charset "utf-8";
+/* post module */
+
+// [1] 이부분 부터
+.home-post,
+.home-post-onlytext {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  .avatar-img {
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 4.2rem;
+    margin-right: 1.2rem;
+  }
+  div {  
+    .content-wrap {
+      display: flex;
+      justify-content: space-between;
+      margin: 4px 0 16px;
+      a {
+        display: flex;
+        flex-direction: column;
+        gap: .4rem;
+        strong {
+          font-size: 1.4rem;
+          font-weight: 500;
+          color: #000;
+        }
+        span {
+          font-size: 1.2rem;
+          font-weight: 400;
+          color: $gray-color;
+        }
+        &:active { color: $base-color; }
+        &:active strong { color: inherit; }
+      }
+    }
+    .post-content {
+      position: relative;
+      font-size: 1.4rem;
+      line-height: 17px;
+      margin-bottom: 1.6rem; 
+    }
+    .post-img-window {
+      position: relative;
+      width: 304px;  
+      height: 228px;
+      overflow: hidden;
+      .post-img-container{  
+        position: absolute;
+        left: 0; 
+        top: 0; 
+        transition: left 0.5s ease-out;
+        .post-img-wrap:not(:last-child){ 
+          float: left;
+          margin-right: 20px; 
+          .post-img {  
+            width: 304px; 
+            height: 228px;
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+    .post-img-button-wrap {
+      position: absolute; 
+      bottom: 1.5rem;
+      left: 50%; 
+      transform: translate(-50%, -50%);
+      display: flex; 
+      justify-content: center;
+      align-items: center;
+      .img-slide {
+        margin: 0 10px ;
+        border-style: none;
+        width: 7px; 
+        height: 7px;
+        border-radius: 7px;
+        background-color: #ebebeb;  
+      }
+      button.on {
+        background-color: $base-color;
+      } 
+    } 
+    .post-img-button-wrap.off{
+      display: none;
+    }
+    // [1]이부분 까지 세부 사항 변경 // 
+
+    @mixin post-icon-module($base-img-path, $active-img-path) {
+      font-size: 12px;
+      font-weight: 400px;
+      color: $gray-color;
+      margin-bottom: 2rem;
+      &::before {
+        content: "";
+        display: inline-block;
+        background-image: url($base-img-path);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 16px;
+        height: 16px;
+        vertical-align: sub;
+        margin-right: .6rem;
+      }
+      &.on::before {
+        background-image: url($active-img-path);
+      }
+    }
+  } 
+}
+
+// [2]이부분 세부 사항 변경 // 
+.post-button-wrap {
+  display: flex; 
+  justify-content: flex-start; 
+  margin: 3% 15% 0 15%;
+  .heart-btn{
+    @include font_module(1.2rem, 400);
+    color: $gray-color;
+    margin-bottom: 2rem;
+    &::before {
+      @include create_visual_class(
+        "/icon/icon-heart.svg",
+        19px, 17px, inline-block);
+      vertical-align: sub;
+      margin-right: 6px;
+    }
+    &.on:before { background-image: url("/icon/icon-heart-active.svg"); }
+  }
+  .comment-btn{
+    @include font_module(1.2rem, 400);
+    color: $gray-color;
+    margin-bottom: 2rem;
+    &::before {
+      @include create_visual_class(
+        "/icon/icon-message-circle.svg",
+        19px, 17px, inline-block);
+      vertical-align: sub;
+      margin-right: 6px;
+    }
+    &.on:before { background-image: url("/icon/icon-message-circle-fill.svg"); }
+  }
+  button + button {
+    margin-left: 1.8rem;
+  }
+}
+// [2]여기 까지 세부 사항 변경 // 
+
+
+.upload-date {
+  display: block;
+  font-size: 1rem;
+  color: $gray-color;
+  margin-bottom: .4rem;
+  margin-left: 15%; 
+}
+
+.product {
+  background-color: #fff;
+  width: fit-content;
+  a {
+    color: #000;
+    &:active {
+      color: $base-color;
+    }
+    img {
+      display: block;
+      border-radius: 5px;
+      margin-bottom: .6rem;
+    }
+    strong {
+      display: block;
+      font-size: 1.4rem;
+      margin-bottom: .4rem;
+    }
+    span {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: $base-color;
+    }
+  }
+}

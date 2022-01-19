@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="stylesheet" href="/css/post.css">
+    <title> 피치마켓 | 포스트 </title>
+</head>
+<body>
+  <h1 class="text-hide">유저 포스트</h1>
+  <header>
+    <nav class="top-basic-nav">
+      <button type="button" class="prev-btn">
+        <span class="text-hide">이전으로 가기 버튼</span>
+      </button>
+      <button type="button" class="more-btn">
+        <span class="text-hide">설정 더보기 버튼</span>
+      </button>
+    </nav>
+  </header>
+  <main> 
+    <h2 class="text-hide">포스트 내용</h2> 
+    <section class="post-lists"></section> 
+    <section>
+      <h2 class="text-hide">댓글 리스트</h2>
+      <ul class="comment-list">
+        <!-- 댓글 동적 생성 -->
+      </ul>
+    </section>
+  </main>
+  <section class="comment"> 
+    <img src="/images/avatar.png" alt="프로필 사진" class="avatar-img">
+    <form>
+      <label for="commentInput" class="text-hide">댓글 입력창</label>
+      <input
+        id="commentInput"
+        class="comment-input"
+        type="text"
+        placeholder="댓글 입력하기..."
+      >
+      <button type="submit" class="comment-submit-btn">게시</button>
+    </form>
+  </section>
+  <div class="more-modal">
+    <form>
+      <button class="toggle-button" type="button">
+        <span class="text-hide">댓글 설정 닫기</span>
+      </button>
+      <button type="submit" class="send-feedback-button">신고하기</button> 
+      <button type="submit" class="delete-button">삭제하기</button> 
+    </form>
+  </div>
+  <script src="/js/post.js"></script>
+</body>
+</html>

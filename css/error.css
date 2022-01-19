@@ -1,0 +1,167 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+* {
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+html {
+  font-size: 10px;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul, li {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+button {
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.text-hide {
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+}
+
+/*# sourceMappingURL=reset.css.map */
+/* variables */
+/* variables */
+/* button module */
+[class$=button] {
+  border: none;
+  border-radius: 30px;
+  color: #767676;
+  transition: 0.2s linear;
+}
+
+.l-button,
+.ml-button,
+.m-button,
+.ms-button,
+.s-button {
+  background-color: #FFABA2;
+  color: #fff;
+}
+.l-button:active,
+.ml-button:active,
+.m-button:active,
+.ms-button:active,
+.s-button:active {
+  background-color: #FFD2CC;
+}
+
+.l-disabled-button,
+.m-disabled-button,
+.ms-disabled-button {
+  background-color: #FFD2CC;
+  color: #fff;
+  pointer-events: none;
+}
+
+.m-activ-button,
+.s-activ-button {
+  border: 1px solid #DBDBDB;
+}
+
+[class^=l-] {
+  font-size: 1.4rem;
+  height: 4.4rem;
+  width: 100%;
+}
+
+[class^=ml-] {
+  font-size: 1.4rem;
+  height: 4.4rem;
+  width: 30.76%;
+}
+
+[class^=m-] {
+  font-size: 1.4rem;
+  height: 3.4rem;
+  width: 30.76%;
+}
+
+[class^=ms-] {
+  font-size: 1.4rem;
+  height: 3.2rem;
+  width: 23%;
+}
+
+[class^=s-] {
+  font-size: 1.2rem;
+  height: 2.8rem;
+  width: 14.4%;
+}
+
+section {
+  text-align: center;
+  margin-top: 200px;
+}
+
+section::before {
+  content: "";
+  display: inline-block;
+  background-image: url("/images/logo_error.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 158px;
+  height: 158px;
+}
+
+section p {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #767676;
+  margin-bottom: 20px;
+}
+
+/*# sourceMappingURL=error.css.map */
