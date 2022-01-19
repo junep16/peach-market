@@ -1,30 +1,20 @@
 @charset "utf-8";
 @import "variables";
 
-html {
-  color: $gray-color;
-}
-.hidden {
-  display: none;
-}
-
 .container {
   width: 100%;
   height: 100vh;
   margin: 0 auto;
   padding: 24px 34px;
   text-align: center;
-
   h1 {
     font-size: 2.4rem;
     color: #111;
     margin-bottom: 40px;
   }
-
   #login-form {
     display: flex;
     flex-direction: column;
-
     label {
       font-size: 1.2rem;
       text-align: left;
@@ -34,7 +24,7 @@ html {
       font-size: 1.4rem;
       border: none;
       border-bottom: 1px solid #c4c4c4;
-      height: 48px;
+      height: 36px;
 
       &::placeholder {
         color: #dbdbdb;
@@ -51,62 +41,37 @@ html {
       margin-top: 16px;
     }
 
-    & .error {
+    .error {
       font-size: 1.2rem;
       text-align: start;
       color: $red-color;
       line-height: 1.4rem;
       margin-top: 5px;
-    }
-
-    & .hidden {
-      display: none;
+      &.hidden {
+        display: none;
+      }
     }
 
     button {
       margin: 30px 0 20px 0;
       height: 48px;
-      background-color: #FFD2CC;
+      background-color: #ffd2cc;
       color: #fff;
       font-size: 1.4rem;
       height: 4.4rem;
       width: 100%;
-      border-radius: 4px;      
-      &.able {
-        background-color: #FFABA2;
-      }
-    }
-  }
+      border-radius: 25px;
 
-  a {
-    font-size: 1.2rem;
-    color: $gray-color;
-  }
-  .setProfile{
-    p {
-      font-size: 1.4rem;
-      margin-bottom: 30px;
-    }
-    button {
-      background-color: inherit;
-      width: 110px;
-      height: 110px;
-      padding: 0;
-      margin-bottom: 14px;
-      border-radius: 50%;
-      border: 1px solid #dbdbdb;
-      background: url(/images/basic-profile-img-.png);
-      background-size: contain;
-      img {
-        display: inline-block;
-        position: relative;
-        top: 38px;
-        left: 37px;
-        width: 36px;
-        height: 36px;
+      &.enable {
+        background-color: #ffaba2;
       }
     }
+    
   }
+    a {
+      font-size: 1.2rem;
+      color: #767676;
+    }
   form {
     label {
       margin-top: 16px;

@@ -1,14 +1,12 @@
-//로그인
+//로그인 페이지
 
-//로그인 버튼 활성화 START
+//로그인 버튼 활성화
 //이메일, 패스워드의 인풋태그의 값이 모두 들어와 있으면 버튼활성화
-
-//이건 querySelectorAll로 했을때
 const loginForm = document.querySelector("#login-form");
 const loginInputList = loginForm.querySelectorAll("input");
 const loginButton = loginForm.querySelector("button");
 
-function able() {
+function enable() {
   let check = 0;
   for (let i = 0; i < loginInputList.length; i++) {
     if (loginInputList[i].value !== "") {
@@ -17,15 +15,14 @@ function able() {
   }
   if (check === loginInputList.length) {
     loginButton.disabled = false;
-    loginButton.classList.add("able");
+    loginButton.classList.add("enable");
   } else {
     loginButton.disabled = true;
   }
 }
 
-loginForm.addEventListener("keyup", able);
+loginForm.addEventListener("keyup", enable);
 
-//로그인 버튼 활성화 END
 
 // 로그인 API START
 function getInput() {
@@ -57,10 +54,15 @@ async function login() {
     const errMsg = document.querySelector(".error");
     errMsg.textContent = json.message;
     errMsg.classList.remove("hidden");
+    console.log(res);
+    console.log(json);
   // 로그인 성공시
   } else {
+    console.log(json.user.token);
     localStorage.setItem("token", json.user.token);
-    location.href="/index.html"
+    location.href="/index.html";
   }
 }
 loginButton.addEventListener("click", login);
+
+
