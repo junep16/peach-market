@@ -1,6 +1,6 @@
 const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZGJmNmNmZWEwN2Q2MTY2NmNmMzc0MCIsImV4cCI6MTY0NzI2MjQ4NCwiaWF0IjoxNjQyMDc4NDg0fQ.wGrxyPvC84igCS8I9pfKMjvzSBMRlADRAYtonNJ0zUk";
 
-
+// 프로필 정보 가져오기
 async function getProfile() {
   const url = `http://146.56.183.55:5050/profile/${username}`;
   // const token = localStorage.getItem("Token")
@@ -35,6 +35,7 @@ async function getProfile() {
   followingList();
 }
 
+//팔로잉 정보 가져오기
 async function getFollowing() {
   const url = `http://146.56.183.55:5050/profile/${username}/following`;
   const res = await fetch(url, {
@@ -45,7 +46,9 @@ async function getFollowing() {
     }
   })
   const json = await res.json();
+  
   json.forEach(following => {
+    console.log(following)
     document.querySelector('.pf-following-list ul').innerHTML += `
     <li>
     <figure>
@@ -57,12 +60,13 @@ async function getFollowing() {
         </a>
       </figcaption>
     </figure>
-    <button type="button" class="s-button">팔로우</button>
+    <button type="button" class="s-activ-button">취소</button>
   </li>
     `
   });
 }
 
+//팔로워 정보 가져오기
 async function getFollowers() {
   const url = `http://146.56.183.55:5050/profile/${username}/follower`;
   const res = await fetch(url, {
@@ -86,14 +90,14 @@ async function getFollowers() {
           </a>
         </figcaption>
       </figure>
-      <button type="button" class="s-button">팔로우</button>
+      <button type="button" class="s-activ-button">팔로우</button>
     </li>
     `
   })
 }
 
+//팔로워 리스트 오픈 버튼
 function followerList() {
-  //팔로잉 리스트 버튼 
   const follwingListBtn = document.querySelector('.pf-followings p');
   const follwingPrevBtn = document.querySelector('.pf-following-list .prev-btn');
   follwingListBtn.addEventListener('click', function () {
@@ -104,9 +108,8 @@ function followerList() {
     document.querySelector('.pf-following-list').classList.remove('on');
   })
 }
-
+//팔로잉 리스트 오픈 버튼
 function followingList() {
-  //팔로워 리스트 버튼
   const follwerListBtn = document.querySelector('.pf-followes p:first-child');
   const follwerPrevBtn = document.querySelector('.pf-followers-list .prev-btn');
   follwerListBtn.addEventListener('click', function () {
@@ -117,6 +120,7 @@ function followingList() {
   })
 }
 
+//상품정보 가져오기
 async function getProduct() {
   const url = `http://146.56.183.55:5050/product/${username}`;
   const res = await fetch(url, {
@@ -142,17 +146,25 @@ async function getProduct() {
     `
     })
   } else {
-    document.querySelector('.pf-product').classList.add('off')
-  }
+    document.querySelector('.pf-product').classList.add('off');
 
+  }
+  // 내 프로필 페이지 상품 클릭
   document.querySelector('.atag').addEventListener('click', function (e) {
-    if(username == localStorage.keys){
-    e.preventDefault()
+    if (username == localStorage.keys) {
+      e.preventDefault();
+      document.querySelector('.pf-product-modal').classList.toggle('on');
+      document.querySelector('.pf-product-modal .pf-modal-btn').innerHTML = `
+      <li>삭제</li>
+      <li>수정</li>
+      <li><a href="${product.link}">웹사이트에서 상품보기</a></li>
+      ` 
     }
   })
 
 }
 
+//홈포스트 정보가져오기
 async function getPost() {
   const url = `http://146.56.183.55:5050/post/${username}/userpost`;
   const res = await fetch(url, {
@@ -164,7 +176,7 @@ async function getPost() {
   })
   const json = await res.json()
   const post = json.post;
-  console.dir(post.length)
+  console.dir(post)
   if (post.length) {
     post.forEach(post => {
       if (post.image) {
@@ -177,7 +189,7 @@ async function getPost() {
             <strong>${post.author.username}</strong>
             <span>@ ${post.author.accountname}</span>
           </a>
-          <button type="button" class="more-btn">
+          <button type="button" class="more-btn post-btn">
             <span class="text-hide">설정 더보기 버튼</span>
           </button>
         </p>
@@ -185,7 +197,7 @@ async function getPost() {
         <img src="${post.image}" alt="포스트 사진" class="post-img">
         <button type="button" class="heart-btn" data-count="58">${post.heartCount}</button>
         <button type="button" class="comment-btn" data-count="12">${post.commentCount}</button>
-        <span class="upload-date">${post.createdAt}</span>
+        <span class="upload-date">${post.createdAt.slice(0,4)}년 ${post.createdAt.slice(5,7)}월 ${post.createdAt.slice(8,10)}일</span>
       </div>
     </il>
     `
@@ -202,14 +214,14 @@ async function getPost() {
             <strong>${post.author.username}</strong>
             <span>@ ${post.author.accountname}</span>
           </a>
-          <button type="button" class="more-btn">
+          <button type="button" class="more-btn post-btn">
             <span class="text-hide">설정 더보기 버튼</span>
           </button>
         </p>
         <p class="post-content">${post.content}</p>
         <button type="button" class="heart-btn" data-count="58">${post.heartCount}</button>
         <button type="button" class="comment-btn" data-count="12">${post.commentCount}</button>
-        <span class="upload-date">${post.createdAt}</span>
+        <span class="upload-date">${post.createdAt.slice(0,4)}년 ${post.createdAt.slice(5,7)}월 ${post.createdAt.slice(8,10)}일</span>
       </div>
     </li>
     `
@@ -218,11 +230,9 @@ async function getPost() {
   } else {
     document.querySelector('.pf-home-post').classList.add('off');
   }
-  document.addEventListener('click', function (e) {
-    if (e.target.className === 'more-btn') {
-      document.querySelector('.pf-modify-modal').classList.toggle('on')
-    }
-  }, );
+
+  //홈포스트 우측상단 버튼 
+  homepostBtn()
 }
 
 //우측상단 버튼
@@ -245,10 +255,17 @@ logoutCancle.addEventListener('click', function () {
   modalLogout.classList.remove('on');
   pfModal.classList.remove('on');
 })
+//프로필 수정 상품등록 버튼 href
+document.querySelector('.pf-modify li:first-child').addEventListener('click', function(){
+  location.href = '/views/edit_profile.html'
+})
+document.querySelector('.pf-modify li:last-child').addEventListener('click', function(){
+  location.href = '/views/product_upload.html'
+})
 
+// 프로필페이지 팔로우 버튼 
 document.addEventListener('click', function (e) {
   if (e.target.className == 'm-button') {
-    console.log("hello")
     e.target.classList.remove('m-button');
     e.target.classList.add('m-activ-button');
     e.target.innerText = "언팔로우";
@@ -259,6 +276,7 @@ document.addEventListener('click', function (e) {
   }
 });
 
+// 팔로워 리스트 팔로우 버튼 
 document.addEventListener('click', function (e) {
   if (e.target.className === 's-button') {
     e.target.classList.remove('s-button');
@@ -269,9 +287,18 @@ document.addEventListener('click', function (e) {
     e.target.classList.add('s-button');
     e.target.innerText = "팔로우";
   }
+  // if (e.target.className === 's-button') {
+  //   e.target.classList.remove('s-button');
+  //   e.target.classList.add('s-activ-button');
+  //   e.target.innerText = "취소";
+  // } else if (e.target.className === 's-activ-button') {
+  //   e.target.classList.remove('s-activ-button');
+  //   e.target.classList.add('s-button');
+  //   e.target.innerText = "팔로우";
+  // }
 });
 
-//홈포스트 리스트 앨범 
+//홈포스트 리스트 앨범 뷰 
 const listBtn = document.querySelector('.list-btn');
 const albumBtn = document.querySelector('.album-btn');
 const listPost = document.querySelector(' ul.list-post');
@@ -298,11 +325,17 @@ albumBtn.addEventListener('click', function () {
   }
 });
 
+//홈포스트 우측상단 버튼 
+function homepostBtn() {
+  document.addEventListener('click', function (e) {
+    if (e.target.className == 'more-btn post-btn') {
+      document.querySelector('.pf-modify-modal').classList.toggle('on')
+    }
+  }, );
+}
 
-const myUserName = localStorage.keys;
+// 프로필 아이디 정보 
 let username = searchParam("id");
-console.log(myUserName);
-console.log(username);
 // 쿼리를 포함한 url에서 key 값을 통해 value를 가져옵니다.
 function searchParam(key) {
   return new URLSearchParams(location.search).get(key);
@@ -315,6 +348,9 @@ if (username) {
   getProduct();
   getPost();
   document.querySelector('.pf-sns').classList.remove('off');
+  document.querySelector('.pf-modify-modal .pf-modal-btn').innerHTML += `
+    <li>신고</li>
+  `;
 } else {
   username = localStorage.keys;
   getProfile();
@@ -323,4 +359,11 @@ if (username) {
   getProduct();
   getPost();
   document.querySelector('.pf-modify').classList.remove('off');
+  document.querySelector('.pf-modify-modal .pf-modal-btn').innerHTML = `
+    <li>삭제</li>
+    <li class="modify-btn">수정</li>
+  `;
 }
+
+
+

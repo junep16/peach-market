@@ -20,10 +20,10 @@
       <h1 class="hidden">유저 프로필 페이지</h1>
       <nav class="tab-menu">
         <ul>
-          <li><a href="#none" class="home-tab">홈</a></li>
-          <li><a href="#none" class="chat-tab">채팅</a></li>
-          <li><a href="#none" class="post-tab">게시물 작성</a></li>
-          <li><a href="profile_detail.html" class="profile-tab on" `>프로필</a></li>
+          <li><a href="/index.html" class="home-tab">홈</a></li>
+          <li><a href="/views/chat_list.html" class="chat-tab">채팅</a></li>
+          <li><a href="/views/post_upload.html" class="post-tab">게시물 작성</a></li>
+          <li><a href="/views/profile_detail.html" class="profile-tab on" `>프로필</a></li>
         </ul>
       </nav>
     </header>
@@ -92,7 +92,11 @@
       <!--판매중인 상품 start-->
       <section class="pf-product">
         <h3>판매중인 상품</h3>
-        <ul></ul>
+        <ul class="product-list"></ul>
+        <article class="pf-product-modal pf-modal">
+          <p class="modal-line"><span></span></p>
+          <ul class="pf-modal-btn"></ul>
+        </article>
       </section>
       <!--판매중인 상품 end-->
 
@@ -109,12 +113,9 @@
         <ul class="list-post on"></ul>
         <ul class="album-post off"></ul>
 
-        <article class="pf-modify-modal">
+        <article class="pf-modify-modal pf-modal">
           <p class="modal-line"><span></span></p>
-          <ul class="pf-modal-btn">
-            <li>삭제</li>
-            <li class="modify-btn">수정</li>
-          </ul>
+          <ul class="pf-modal-btn"></ul>
         </article>
       </section>
       <!--포스트 end-->
@@ -135,9 +136,7 @@
             <button type="button" class="prev-btn"></button>
             <p>Followings</p>
           </nav>
-          <ul>
-
-          </ul>
+          <ul></ul>
         </article>
 
       </section>

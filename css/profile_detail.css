@@ -569,7 +569,6 @@ a {
 
 #pf-container {
   margin: 0 auto;
-  width: 39rem;
   height: 100%;
   min-height: 100vh;
   position: relative;
@@ -577,7 +576,6 @@ a {
 }
 #pf-container header nav.tab-menu {
   width: 100%;
-  max-width: 39rem;
   position: fixed;
   bottom: 0;
   z-index: 3;
@@ -589,7 +587,7 @@ a {
   position: relative;
 }
 #pf-container #pf-main .top-basic-nav {
-  width: 39rem;
+  width: 100%;
   position: fixed;
   top: 0;
   z-index: 3;
@@ -598,7 +596,6 @@ a {
   position: fixed;
   bottom: 0px;
   width: 100%;
-  max-width: 39rem;
   z-index: 30;
   display: none;
   background-color: #fff;
@@ -621,6 +618,9 @@ a {
   height: 0.4rem;
   background-color: #dbdbdb;
 }
+#pf-container #pf-main .pf-modal .pf-modal-btn {
+  padding: 0;
+}
 #pf-container #pf-main .pf-modal .pf-modal-btn li {
   line-height: 46px;
   padding: 0 26px;
@@ -629,11 +629,12 @@ a {
   cursor: pointer;
 }
 #pf-container #pf-main .pf-userprofile {
+  margin: 0 auto;
+  width: 39rem;
   background-color: #fff;
   padding: 30px 34px;
   text-align: center;
   position: relative;
-  border-bottom: 1px solid #dbdbdb;
 }
 #pf-container #pf-main .pf-userprofile ul {
   display: flex;
@@ -715,24 +716,32 @@ a {
   min-width: 10rem;
 }
 #pf-container #pf-main section.pf-product {
-  padding: 20px 0 20px 21px;
+  padding: 20px 0;
   border-top: #E5E5E5 solid 6px;
   overflow-x: scroll;
 }
 #pf-container #pf-main section.pf-product h3 {
+  margin: 0 auto;
+  padding-left: 21px;
+  padding-bottom: 16px;
+  width: 39rem;
   font-size: 1.6rem;
   font-weight: 700;
-  margin: 0;
-  padding-bottom: 16px;
 }
-#pf-container #pf-main section.pf-product ul {
+#pf-container #pf-main section.pf-product .product-list {
+  margin: 0 auto;
+  padding-left: 21px;
+  width: 39rem;
   display: flex;
 }
-#pf-container #pf-main section.pf-product ul li {
+#pf-container #pf-main section.pf-product .product-list li {
   padding-right: 10px;
 }
 #pf-container #pf-main section.pf-product.off {
   display: none;
+}
+#pf-container #pf-main section.pf-product a {
+  color: black;
 }
 #pf-container #pf-main section.pf-home-post {
   position: relative;
@@ -741,12 +750,15 @@ a {
 #pf-container #pf-main section.pf-home-post.off {
   display: none;
 }
-#pf-container #pf-main section.pf-home-post nav {
+#pf-container #pf-main section.pf-home-post header {
+  border-bottom: 1px solid #DBDBDB;
+}
+#pf-container #pf-main section.pf-home-post header nav {
+  margin: 0 auto;
   padding: 1.2rem 1.2rem 1.2rem 1.6rem;
   width: 39rem;
   display: flex;
   justify-content: flex-end;
-  border-bottom: 1px solid #DBDBDB;
 }
 #pf-container #pf-main section.pf-home-post button {
   min-width: 2.8rem;
@@ -765,7 +777,9 @@ a {
   background-image: url(../../icon/icon-post-album-on.png);
 }
 #pf-container #pf-main section.pf-home-post ul {
+  margin: 0 auto;
   padding: 16px;
+  width: 39rem;
 }
 #pf-container #pf-main section.pf-home-post ul.list-post {
   display: none;
@@ -803,14 +817,6 @@ a {
   display: none;
 }
 #pf-container #pf-main section.pf-home-post .pf-modify-modal {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  max-width: 39rem;
-  z-index: 30;
-  background-color: #fff;
-  border: 1px solid #fff;
-  border-radius: 10px;
   display: none;
 }
 #pf-container #pf-main section.pf-home-post .pf-modify-modal.on {
@@ -839,7 +845,6 @@ a {
   display: none;
   width: 100%;
   height: auto;
-  max-width: 39rem;
   min-height: 100vh;
   background-color: #fff;
   z-index: 30;
