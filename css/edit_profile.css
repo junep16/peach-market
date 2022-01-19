@@ -108,6 +108,11 @@ a {
   pointer-events: none;
 }
 
+.m-activ-button,
+.s-activ-button {
+  border: 1px solid #DBDBDB;
+}
+
 [class^=l-] {
   font-size: 1.4rem;
   height: 4.4rem;
@@ -431,11 +436,15 @@ a {
   width: 7px;
   height: 7px;
   border-radius: 7px;
-  background-color: #FFF;
+  background-color: #ebebeb;
 }
 .home-post div .post-img-button-wrap button.on,
 .home-post-onlytext div .post-img-button-wrap button.on {
   background-color: #FFABA2;
+}
+.home-post div .post-img-button-wrap.off,
+.home-post-onlytext div .post-img-button-wrap.off {
+  display: none;
 }
 
 .post-button-wrap {
@@ -586,6 +595,7 @@ form {
 .profile-image-wrapper .profile-image {
   width: 11rem;
   height: 11rem;
+  border-radius: 11rem;
 }
 .profile-image-wrapper .upload-button {
   background-image: url(/images/upload-file.png);
@@ -634,7 +644,8 @@ form {
   margin-top: 10px;
   color: #EB5757;
 }
-.user-input .input-error.on {
+.user-input .input-error.name.on,
+.user-input .input-error.id.on {
   display: block;
 }
 

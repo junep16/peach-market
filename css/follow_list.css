@@ -436,15 +436,11 @@ a {
   width: 7px;
   height: 7px;
   border-radius: 7px;
-  background-color: #ebebeb;
+  background-color: #FFF;
 }
 .home-post div .post-img-button-wrap button.on,
 .home-post-onlytext div .post-img-button-wrap button.on {
   background-color: #FFABA2;
-}
-.home-post div .post-img-button-wrap.off,
-.home-post-onlytext div .post-img-button-wrap.off {
-  display: none;
 }
 
 .post-button-wrap {
@@ -576,98 +572,18 @@ a {
   align-items: center;
 }
 
-main {
-  width: 100%;
-  padding: 0 3%;
-  box-sizing: border-box;
-}
-
-section {
-  display: flex;
-  margin-top: 5%;
-}
-section img {
-  width: 42px;
-  height: 42px;
-}
-
-.post-form {
-  background-color: #fff;
-  display: flex;
-  padding: 1.3rem 2rem 1.2rem 1.6rem;
-  width: 100%;
-  height: 250px;
-}
-.post-form .post-input {
-  font-family: Arial, Helvetica, sans-serif;
-  width: 90%;
-  height: 100%;
-  font-size: 1.4rem;
-  border: none;
-  padding: 1rem 0;
-  resize: unset;
-}
-.post-form .post-input:focus {
-  outline: none;
-}
-.post-form .post-input::placeholder {
-  color: #C4C4C4;
-}
-.post-form .post-submit-btn {
-  color: #C4C4C4;
-}
-
-.button-image-upload {
+.tab-menu {
   position: fixed;
-  bottom: 5%;
-  right: 8%;
-  color: red;
-  background-image: url("/images/upload-file.png");
-  width: 50px;
-  height: 50px;
-  font-size: 0.01px;
-}
-.button-image-upload input {
-  width: 50px;
-  height: 50px;
-  background-color: red;
-  display: none;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
-.post-image-window {
-  box-sizing: border-box;
-  padding-left: 20%;
-  overflow-y: scroll;
+.follow-container {
+  padding: 24px 16px 81px;
 }
-.post-image-window .post-image-list {
-  width: 630px;
-  height: 150px;
-  display: flex;
-  align-items: center;
-}
-.post-image-window .post-image-list .post-image {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 200px;
-  height: 150px;
-  overflow: hidden;
-  border-radius: 10px;
-  margin-right: 10px;
-}
-.post-image-window .post-image-list .post-image img {
-  width: 100%;
-  height: 100%;
-}
-.post-image-window .post-image-list .post-image .image-delete {
-  position: absolute;
-  top: 5%;
-  right: 5%;
-  background-image: url("/icon/icon_delete.svg");
-  width: 20px;
-  height: 20px;
-  background-color: transparent;
+.follow-container li + li {
+  margin-top: 16px;
 }
 
-/*# sourceMappingURL=post_upload.css.map */
+/*# sourceMappingURL=follow_list.css.map */
