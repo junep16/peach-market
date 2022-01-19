@@ -1,5 +1,6 @@
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZGJmNmNmZWEwN2Q2MTY2NmNmMzc0MCIsImV4cCI6MTY0NzI2MjQ4NCwiaWF0IjoxNjQyMDc4NDg0fQ.wGrxyPvC84igCS8I9pfKMjvzSBMRlADRAYtonNJ0zUk";
+const token = localStorage.getItem("token"); 
 
+console.dir(localStorage.token);  
 // 프로필 정보 가져오기
 async function getProfile() {
   const url = `http://146.56.183.55:5050/profile/${username}`;
@@ -151,7 +152,7 @@ async function getProduct() {
   }
   // 내 프로필 페이지 상품 클릭
   document.querySelector('.atag').addEventListener('click', function (e) {
-    if (username == localStorage.keys) {
+    if (username == localStorage.accountname) {
       e.preventDefault();
       document.querySelector('.pf-product-modal').classList.toggle('on');
       document.querySelector('.pf-product-modal .pf-modal-btn').innerHTML = `
@@ -352,7 +353,7 @@ if (username) {
     <li>신고</li>
   `;
 } else {
-  username = localStorage.keys;
+  username = localStorage.accountname;
   getProfile();
   getFollowing();
   getFollowers();

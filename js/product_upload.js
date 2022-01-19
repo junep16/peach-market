@@ -1,4 +1,4 @@
-const TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxY2E2MzhhYjVjNmNkMTgwODRlNDQ3ZCIsImV4cCI6MTY0NzE4MzkyNCwiaWF0IjoxNjQxOTk5OTI0fQ.gGHALhJfzegmSJafhze2TIeds_De5h1k4mE4gB3czEo";
+const TOKEN = localStorage.getItem("token"); 
 const ENDPOINT = "http://146.56.183.55:5050";
 const HEADERS = {
   "Authorization" : `Bearer ${TOKEN}`,
@@ -74,11 +74,11 @@ async function uploadProduct() {
   }
   const res = await fetch(`${ENDPOINT}/product`, reqData);
   console.log(res);
-  // if (res.ok) {
-  //   location.href = "/views/your_profile";
-  // } else {
-  //   alert("파일전송에 실패했습니다..");
-  // }
+  if (res.ok) {
+    location.href = "/views/profile_detail.html";
+  } else {
+    alert("파일전송에 실패했습니다..");
+  }
 }
 
 
@@ -141,13 +141,12 @@ if (queryParam === "") {
       headers: HEADERS,
       body: JSON.stringify({ product }),
     }
-    const res = await fetch(`${ENDPOINT}/product/${productId}`, reqData);
-    console.log(res);
-    // if (res.ok) {
-    //   location.href = "/views/your_profile";
-    // } else {
-    //   alert("파일전송에 실패했습니다..");
-    // }
+    const res = await fetch(`${ENDPOINT}/product/${productId}`, reqData); 
+    if (res.ok) {
+      location.href = "/views/profile_detail.html";
+    } else {
+      alert("파일전송에 실패했습니다..");
+    }
   }
 
   // 상품 수정

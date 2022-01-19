@@ -1,4 +1,4 @@
-const TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxY2E2MzhhYjVjNmNkMTgwODRlNDQ3ZCIsImV4cCI6MTY0NzA2ODE2NywiaWF0IjoxNjQxODg0MTY3fQ.VIsQCW4nLbV-C1SzHK3FhNG3aVFUYUXefcpn-ffEmBA";
+const TOKEN = localStorage.getItem("token"); 
 const ENDPOINT = "http://146.56.183.55:5050";
 const SEARCH_API = ENDPOINT + "/user/searchuser/?keyword=";
 const defaultImage = "http://146.56.183.55:5050/Ellipse.png";
@@ -44,7 +44,7 @@ async function paintUserList(event) {
         const li = document.createElement("li");
         li.className = "user-search";
         li.innerHTML = `
-          <a href="/views/your_profile.html?id=${_id}">
+          <a href="/views/profile_detail.html?id=${accountname}">
             <img src=${userImageUrl} alt="프로필 사진" class="avatar-img">
             <p class="user-info">
               <strong class="market-name">${userName}</strong>

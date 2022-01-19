@@ -1,5 +1,4 @@
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxY2E2MzhhYjVjNmNkMTgwODRlNDQ3ZCIsImV4cCI6MTY0NzE0MzQ1MCwiaWF0IjoxNjQxOTU5NDUwfQ.MPLwiebPtzC4JjWF3UqCT01v-IeUhNtT8JQ05Kp3gXA"; 
-
+const token = localStorage.getItem("token"); 
 const postList = document.querySelector("main .post-lists"); 
 
 // 1. 유저 팔로워 피드 받아오기  
@@ -31,7 +30,7 @@ async function getPosts() {
         <img src= ${authorImage} alt="프로필 사진" class="avatar-img">
         <div>
           <div class="content-wrap">
-            <a href="#none">
+            <a href="/views/profile_detail.html?id=${authorAccount}">
               <strong>${authorName}</strong>
               <span>@ ${authorAccount}</span>
             </a>
@@ -164,7 +163,7 @@ async function init() {
   // 포스팅 데이터 먼저 렌더
   await getPosts(); 
   // 이후 이미지 슬라이더 작동
-  handleImageSlide(); 
+  // handleImageSlide(); 
 }
 init();
 
@@ -185,9 +184,9 @@ bottomNavBar.addEventListener("click", event => {
   } else if (event.target.className === "post-tab") { 
     location.href = "/views/post_upload.html";
   } else if (event.target.className === "profile-tab") { 
-    location.href = "/views/edit_profile.html";
+    location.href = "/views/profile_detail.html";
   } else if (event.target.className === "home-tab") { 
-    location.href = "/views/index.html";
+    location.href = "/index.html";
   }
 })
 

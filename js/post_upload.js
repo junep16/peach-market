@@ -1,4 +1,4 @@
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxY2E2MzhhYjVjNmNkMTgwODRlNDQ3ZCIsImV4cCI6MTY0NzE0MzQ1MCwiaWF0IjoxNjQxOTU5NDUwfQ.MPLwiebPtzC4JjWF3UqCT01v-IeUhNtT8JQ05Kp3gXA"; 
+const token = localStorage.getItem("token"); 
 const textContent = document.querySelector("textarea"); 
 const imageUploadButton = document.querySelector("#image-upload");
 const submitButton = document.querySelector("#submit-button"); 
@@ -105,7 +105,7 @@ async function createPost(event) {
   } else {
     alert("투마치"); 
   }; 
-  // location.href = "/views/index.html"; 
+  location.href = "/index.html"; 
 }
 submitButton.addEventListener("click",createPost);   
 
