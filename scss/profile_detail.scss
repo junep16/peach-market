@@ -2,7 +2,8 @@
 
 #pf-container {
   margin: 0 auto;
-  width: 39rem;
+  // width: 39rem;
+  height: 100%;
   min-height: 100vh;
   position: relative;
   border: none;
@@ -10,7 +11,7 @@
   //헤더 내비게이션
   header nav.tab-menu {
     width: 100%;
-    max-width: 39rem;
+    // max-width: 39rem;
     position: fixed;
     bottom: 0;
     z-index: 3;
@@ -23,28 +24,29 @@
     position: relative;
 
     .top-basic-nav {
-      width: 39rem;
+      width: 100%;
       position: fixed;
       top: 0;
       z-index: 3;
     }
 
-    //설정, 로그아웃 모달 
+    //bottom 모달 공통 
     .pf-modal {
       position: fixed;
       bottom: 0px;
       width: 100%;
-      max-width: 39rem;
-      z-index: 10;
+
+      z-index: 30;
       display: none;
       background-color: #fff;
       border: 1px solid #fff;
       border-radius: 10px;
       display: none;
-      transition: ease-in;
-      &.on{
+
+      &.on {
         display: block;
       }
+
       p.modal-line {
         height: 3.6rem;
         width: 100%;
@@ -60,6 +62,8 @@
       }
 
       .pf-modal-btn {
+        padding: 0;
+
         li {
           line-height: 46px;
           padding: 0 26px;
@@ -72,22 +76,24 @@
 
     // 유저프로필 
     .pf-userprofile {
+      margin: 0 auto;
+      width: 39rem;
       background-color: #fff;
-      padding: 20px 34px;
+      padding: 30px 34px;
       text-align: center;
       position: relative;
-      // border-top: 1px solid #dbdbdb;
-      border-bottom: 1px solid #dbdbdb;
 
       ul {
         display: flex;
         align-items: center;
         justify-content: space-evenly;
         color: #767676;
+
         li {
           p:first-child {
             font-size: 1.8rem;
             padding-bottom: 6px;
+            cursor: pointer;
           }
 
           p:last-child {
@@ -98,6 +104,7 @@
             width: 110px;
           }
         }
+
         .pf-followes p:first-child {
           color: #000;
           font-weight: 700;
@@ -114,7 +121,6 @@
         padding-top: 0.6rem;
         font-size: 1.2rem;
         color: $gray-color;
-
       }
 
       .pf-description {
@@ -123,11 +129,21 @@
         // color: $gray-color;
       }
 
-      .pf-sns {
+      .pf-sns,
+      .pf-modify {
         padding-top: 24px;
-        padding-bottom: 26px;
-        display: flex;
-        justify-content: space-evenly;
+
+        .m-activ-button {
+          border: solid #dbdbdb 1px;
+          border-radius: 30px;
+        }
+      }
+
+      //너의 프로필 상세 버튼
+      .pf-sns {
+        &.off {
+          display: none;
+        }
 
         li.pf-icon {
           height: 3.4rem;
@@ -143,49 +159,96 @@
 
         li:nth-child(2) {
           width: 12rem;
-          // border: solid #dbdbdb 1px;
-          // border-radius: 3.4rem;
 
           button {
             width: 100%;
+            border-radius: 30px;
+
+          }
+        }
+      }
+
+      //나의 프로필 상세 버튼
+      .pf-modify {
+        &.off {
+          display: none;
+        }
+
+        li button {
+          color: #767676;
+        }
+
+        li:first-child {
+          padding-right: 12px;
+
+          button {
+            min-width: 12rem;
           }
         }
 
+        li:last-child {
+          button {
+            min-width: 10rem;
+          }
+        }
       }
     }
 
     // 판매중인 상품
     section.pf-product {
-      padding: 20px 0 20px 21px;
+      padding: 20px 0;
       border-top: #E5E5E5 solid 6px;
-      overflow: hidden;
+      overflow-x: scroll;
 
       h3 {
+        margin: 0 auto;
+        padding-left: 21px;
+        padding-bottom: 16px;
+        width: 39rem;
         font-size: 1.6rem;
         font-weight: 700;
-        margin: 0;
-        padding-bottom: 16px;
       }
 
-      ul {
+      .product-list {
+        margin: 0 auto;
+        padding-left: 21px;
+        width: 39rem;
         display: flex;
 
         li {
           padding-right: 10px;
         }
       }
+
+      &.off {
+        display: none;
+      }
+
+      a {
+        color: black;
+      }
     }
 
     // 홈포스트
     section.pf-home-post {
+      position: relative;
       border-top: #E5E5E5 solid 6px;
 
-      nav {
-        padding: 1.2rem 1.2rem 1.2rem 1.6rem;
-        width: 39rem;
-        display: flex;
-        justify-content: flex-end;
+
+      &.off {
+        display: none;
+      }
+
+      header {
         border-bottom: 1px solid #DBDBDB;
+
+        nav {
+          margin: 0 auto;
+          padding: 1.2rem 1.2rem 1.2rem 1.6rem;
+          width: 39rem;
+          display: flex;
+          justify-content: flex-end;
+        }
       }
 
       button {
@@ -194,10 +257,10 @@
       }
 
       .list-btn {
-        background-image: url(../../icon/icon-post-list-on.png);
+        background-image: url(../../icon/icon-post-list-off.png);
 
-        &.off {
-          background-image: url(../../icon/icon-post-list-off.png);
+        &.on {
+          background-image: url(../../icon/icon-post-list-on.png);
         }
       }
 
@@ -210,12 +273,26 @@
       }
 
       ul {
+        margin:0 auto;
         padding: 16px;
+        width:39rem;
       }
 
       ul.list-post {
-        &.off {
-          display: none;
+        div {
+          min-width: 304px;
+
+          img {
+            width: 304px;
+            border: 1px solid #fff;
+            border-radius: 10px;
+          }
+        }
+
+        display: none;
+
+        &.on {
+          display: block;
         }
       }
 
@@ -223,41 +300,77 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        display: none;
 
         li {
           margin-bottom: 8px;
-          width: 29%;
+          width: 32%;
           min-width: 11.4rem;
           height: 29%;
           min-height: 11.4rem;
-          background: #dbdbdb;
+          // background: #dbdbdb;
+
+          img {
+            width: 29%;
+            min-width: 11.4rem;
+            height: 29%;
+            min-height: 11.4rem;
+          }
         }
+
+        &.off {
+          display: none;
+        }
+      }
+
+      .pf-modify-modal {
+        display: none;
 
         &.on {
           display: block;
         }
+
+        p.modal-line {
+          height: 3.6rem;
+          width: 100%;
+          line-height: 3.6rem;
+          text-align: center;
+
+          span {
+            display: inline-block;
+            width: 5rem;
+            height: 0.4rem;
+            background-color: #dbdbdb;
+          }
+        }
+
+        .pf-modal-btn {
+          li {
+            line-height: 46px;
+            padding: 0 26px;
+            font-size: 1.4rem;
+            text-align: left;
+            cursor: pointer;
+          }
+        }
       }
-
-
     }
 
-    .pf-followes-list {
+    //팔로워, 팔로잉 리스트 
+    #pf-follow article {
       display: none;
-      width:100%;
-      max-width: 39rem;
-      height: 100vh;
+      width: 100%;
+      height: auto;
+      min-height: 100vh;
       background-color: #fff;
       z-index: 30;
       position: fixed;
       top: 0;
-      &.on {
-        display: block
-      }
+      overflow-y: scroll;
 
       nav {
         display: flex;
         justify-content: flex-start;
+
         p {
           padding-left: 13px;
           font-size: 1.4rem;
@@ -267,36 +380,54 @@
       ul {
         margin-top: 47px;
         padding: 24px 16px;
-        li{
-        height: 50px;
-        margin-bottom: 16px;
-        display: flex;
-        align-items: center;  
-        figure {
-          flex-grow: 2;
-          overflow: hidden;
-         
-          img {
-            float: left;
-            display: inline-block;
+
+        li {
+          height: 50px;
+          margin-bottom: 16px;
+          display: flex;
+          align-items: center;
+
+          figure {
+            flex-grow: 2;
+            overflow: hidden;
+
+            img {
+              float: left;
+              display: inline-block;
+            }
+
+            figcaption {
+              padding: 9px 0 6px 62px;
+              height: 39px;
+
+              p {
+                vertical-align: middle;
+                font-size: 1.4rem;
+                font-weight: 500;
+                padding-bottom: 6px;
+              }
+
+              small {
+                font-size: 1.2rem;
+                color: #767676;
+              }
+            }
           }
-          figcaption{
-            padding: 9px 0 6px 62px;
-            height: 39px;
-            
-            p {
-              vertical-align: middle;
-              font-size: 1.4rem;
-              font-weight: 500;
-              padding-bottom: 6px;
-            }
-            small {
-              font-size: 1.2rem;
-              color: #767676;
-            }
+
+          .s-button {
+            width: 5.6rem;
+          }
+
+          .s-activ-button {
+            width: 5.6rem;
+            border: 1px solid #dbdbdb;
+            border-radius: 30px;
           }
         }
-        }
+      }
+
+      &.on {
+        display: block
       }
     }
 
@@ -310,9 +441,11 @@
       background-color: rgba($color: #000000, $alpha: 0.3);
       z-index: 10;
       display: none;
-      &.on{
+
+      &.on {
         display: block;
       }
+
       .logout-popup {
         margin: 0 auto;
         margin-top: 50%;
@@ -358,4 +491,3 @@
   width: 1px;
   height: 1px;
 }
-
