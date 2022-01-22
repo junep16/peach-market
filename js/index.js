@@ -20,7 +20,7 @@ async function getPosts() {
     const authorName = post.author.username;  
     const postContent = post.content;  
     const postImage = post.image.split(","); 
-    const postDate = post.createdAt.split('T')[0]; 
+    const postDate = post.createdAt; 
     const commentCount = post.commentCount; 
     const heartCount = post.heartCount;
     const hearted = post.hearted;   
@@ -59,7 +59,7 @@ async function getPosts() {
           ${commentCount}
         </button>
       </div>
-      <span class="upload-date">${postDate}</span> 
+      <span class="upload-date">${postDate.slice(0,4)}년 ${postDate.slice(5,7)}월 ${postDate.slice(8,10)}일</span> 
     </li> 
   `   
     console.log(postImage);
