@@ -5,6 +5,7 @@ const imageUploadButton = document.querySelector("#image-upload");
 const submitButton = document.querySelector("#submit-button"); 
 const uploadImageList = document.querySelector(".post-image-list");
 const profileImage = document.querySelector(".avatar-img");  
+const prevButton = document.querySelector(".prev-btn"); 
 
 
 // 유저 프로필사진 가져오기
@@ -127,3 +128,7 @@ async function createPost(event) {
 }
 submitButton.addEventListener("click",createPost);   
 
+// 상단 버튼 컨트롤
+prevButton.addEventListener("click", () => {
+  location.href = "/index.html"; 
+})

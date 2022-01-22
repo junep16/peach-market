@@ -61,8 +61,7 @@ async function getPosts() {
       </div>
       <span class="upload-date">${postDate.slice(0,4)}년 ${postDate.slice(5,7)}월 ${postDate.slice(8,10)}일</span> 
     </li> 
-  `   
-    console.log(postImage);
+  `    
     addPostImages(postImage, i); 
   });  
   }
@@ -89,8 +88,7 @@ function addPostImages(eachpost, i) {
   } //이미지 여러개일 경우
     else if (eachpost.length > 1) {
     for(let j = 0; j <= eachpost.length - 1 ; j++) {  
-      const imgs = document.createElement("img");
-      console.log(imgs); 
+      const imgs = document.createElement("img"); 
       imgs.classList.add("post-img"); 
       li.appendChild(imgs); 
       slides.appendChild(li);  
@@ -104,8 +102,7 @@ function addPostImages(eachpost, i) {
     }  
   } else {
     console.log("이미지 없음"); 
-  } 
-  console.log(slides); 
+  }  
 }
 
 // 3. 이미지 슬라이드  
