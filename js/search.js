@@ -1,7 +1,7 @@
 const TOKEN = localStorage.getItem("token"); 
-const ENDPOINT = "http://146.56.183.55:5050";
+const ENDPOINT = "https://146.56.183.55:5050";
 const SEARCH_API = ENDPOINT + "/user/searchuser/?keyword=";
-const defaultImage = "http://146.56.183.55:5050/Ellipse.png";
+const defaultImage = "https://146.56.183.55:5050/Ellipse.png";
 
 const HEADERS = {
   "Authorization": `Bearer ${TOKEN}`,
@@ -54,7 +54,7 @@ async function paintUserList(event) {
 
         // 잘못된 이미지 경로 예외 처리
         const userImageUrl = 
-        (image.match(/http:\/\/[0-9].*:5050\//) && !image.match(/undefined/))
+        (image.match(/https:\/\/[0-9].*:5050\//) && !image.match(/undefined/))
         ? image
         : defaultImage;
   

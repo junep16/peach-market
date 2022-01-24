@@ -1,5 +1,5 @@
 const TOKEN = localStorage.getItem("token"); 
-const ENDPOINT = "http://146.56.183.55:5050";
+const ENDPOINT = "https://146.56.183.55:5050";
 const HEADERS = {
   "Authorization" : `Bearer ${TOKEN}`,
   "Content-type" : "application/json"

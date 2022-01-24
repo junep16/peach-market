@@ -1,5 +1,5 @@
 const token = localStorage.getItem("token"); 
-const url = "http://146.56.183.55:5050"; 
+const url = "https://146.56.183.55:5050"; 
 const uploadProfileImage = document.querySelector("#upload-image");
 const selectedImage = uploadProfileImage.files; 
 const profileImage = document.querySelector(".profile-image"); 
@@ -52,7 +52,7 @@ async function imageUpload(file){
   const formData = new FormData();
   formData.append("image", file); 
 
-  const res = await fetch(`http://146.56.183.55:5050/image/uploadfile`, {
+  const res = await fetch(`https://146.56.183.55:5050/image/uploadfile`, {
     method: "POST",
     body : formData
   })
