@@ -409,16 +409,19 @@ a {
   top: 0;
   transition: left 0.5s ease-out;
 }
-.home-post div .post-img-window .post-img-container .post-img-wrap:not(:last-child),
-.home-post-onlytext div .post-img-window .post-img-container .post-img-wrap:not(:last-child) {
+.home-post div .post-img-window .post-img-container .post-img-wrap,
+.home-post-onlytext div .post-img-window .post-img-container .post-img-wrap {
   float: left;
-  margin-right: 20px;
 }
-.home-post div .post-img-window .post-img-container .post-img-wrap:not(:last-child) .post-img,
-.home-post-onlytext div .post-img-window .post-img-container .post-img-wrap:not(:last-child) .post-img {
+.home-post div .post-img-window .post-img-container .post-img-wrap .post-img,
+.home-post-onlytext div .post-img-window .post-img-container .post-img-wrap .post-img {
   width: 304px;
   height: 228px;
   border-radius: 10px;
+}
+.home-post div .post-img-window .post-img-container .post-img-wrap:not(:last-child),
+.home-post-onlytext div .post-img-window .post-img-container .post-img-wrap:not(:last-child) {
+  margin-right: 20px;
 }
 .home-post div .post-img-button-wrap,
 .home-post-onlytext div .post-img-button-wrap {

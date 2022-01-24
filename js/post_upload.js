@@ -1,11 +1,30 @@
 const token = localStorage.getItem("token"); 
+const url = "http://146.56.183.55:5050"; 
 const textContent = document.querySelector("textarea"); 
 const imageUploadButton = document.querySelector("#image-upload");
 const submitButton = document.querySelector("#submit-button"); 
-const uploadImageList = document.querySelector(".post-image-list"); 
+const uploadImageList = document.querySelector(".post-image-list");
+const profileImage = document.querySelector(".avatar-img");  
+const prevButton = document.querySelector(".prev-btn"); 
 
 
 // 유저 프로필사진 가져오기
+async function getUserProfile() {
+  const accountname = localStorage.getItem("accountname"); 
+  const res= await fetch (url + `/profile/${accountname}`, {
+    method: "GET", 
+    headers: {
+      "Authorization" : `Bearer ${token}`,
+	    "Content-type" : "application/json"
+    }
+  }) 
+  const json = await res.json();  
+  const profile = json.profile;   
+
+  profileImage.src = profile.image;  
+}
+getUserProfile(); 
+
 
 // 이미지 업로드시 프리뷰 및 삭제
 function handleUploadImages() {
@@ -109,3 +128,7 @@ async function createPost(event) {
 }
 submitButton.addEventListener("click",createPost);   
 
+// 상단 버튼 컨트롤
+prevButton.addEventListener("click", () => {
+  location.href = "/index.html"; 
+})
