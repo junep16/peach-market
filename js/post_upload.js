@@ -7,6 +7,25 @@ const uploadImageList = document.querySelector(".post-image-list");
 const profileImage = document.querySelector(".avatar-img");  
 const prevButton = document.querySelector(".prev-btn"); 
 
+const HEADERS = {
+  "Authorization": `Bearer ${token}`,
+  "Content-type": "application/json",
+};
+
+// access check function
+async function accessCheck() {
+  const URL = `${url}/user/checktoken`;
+  const reqOption = {
+    method: "GET",
+    headers: HEADERS
+  };
+  const res = await fetch(URL, reqOption);
+  const json = await res.json();
+  // 접근 금지!
+  if (!json.isValid) { location.href = "/views/sign_in.html" }
+}
+accessCheck();
+
 
 // 유저 프로필사진 가져오기
 async function getUserProfile() {

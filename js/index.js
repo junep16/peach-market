@@ -1,5 +1,26 @@
 const token = localStorage.getItem("token"); 
 const postList = document.querySelector("main .post-lists"); 
+const ENDPOINT = "http://146.56.183.55:5050";
+
+const HEADERS = {
+  "Authorization": `Bearer ${token}`,
+  "Content-type": "application/json",
+};
+
+// access check function
+async function accessCheck() {
+  const URL = `${ENDPOINT}/user/checktoken`;
+  const reqOption = {
+    method: "GET",
+    headers: HEADERS
+  };
+  const res = await fetch(URL, reqOption);
+  const json = await res.json();
+  // 접근 금지!
+  if (!json.isValid) { location.href = "/views/sign_in.html" }
+}
+accessCheck();
+
 
 let slideWidth = 304; 
 let slideMargin = 20;

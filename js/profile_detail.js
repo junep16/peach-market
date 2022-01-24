@@ -1,6 +1,26 @@
 const token = localStorage.getItem("token"); 
+const ENDPOINT = "http://146.56.183.55:5050";
 
-console.dir(localStorage.token);  
+const HEADERS = {
+  "Authorization": `Bearer ${token}`,
+  "Content-type": "application/json",
+};
+
+// access check function
+async function accessCheck() {
+  const URL = `${ENDPOINT}/user/checktoken`;
+  const reqOption = {
+    method: "GET",
+    headers: HEADERS
+  };
+  const res = await fetch(URL, reqOption);
+  const json = await res.json();
+  // 접근 금지!
+  if (!json.isValid) { location.href = "/views/sign_in.html" }
+}
+accessCheck();
+
+
 // 프로필 정보 가져오기
 async function getProfile() {
   const url = `http://146.56.183.55:5050/profile/${username}`;

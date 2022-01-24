@@ -15,6 +15,26 @@ const commentInput = document.querySelector("form #commentInput");
 const commentBtn = document.querySelector("form .comment-submit-btn");
 
 
+const HEADERS = {
+  "Authorization": `Bearer ${TOKEN}`,
+  "Content-type": "application/json",
+};
+
+// access check function
+async function accessCheck() {
+  const URL = `${ENDPOINT}/user/checktoken`;
+  const reqOption = {
+    method: "GET",
+    headers: HEADERS
+  };
+  const res = await fetch(URL, reqOption);
+  const json = await res.json();
+  // 접근 금지!
+  if (!json.isValid) { location.href = "/views/sign_in.html" }
+}
+accessCheck();
+
+
 // 댓글 게시 버튼 활성화
 function stateHandle() {
   if (commentInput.value === "") {
