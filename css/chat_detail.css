@@ -688,8 +688,10 @@ main .chatting-cont .sended-img {
   color: #C4C4C4;
   font-size: 1.4rem;
   width: 32px;
+  cursor: unset;
 }
 .chating-text form .chat-submit-btn.on {
+  cursor: pointer;
   color: #FFABA2;
 }
 

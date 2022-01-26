@@ -102,7 +102,9 @@ main {
       color: $light-gray-color;
       font-size: 1.4rem;
       width: 32px;
+      cursor: unset;
       &.on {
+        cursor: pointer;
         color: $base-color;
       }
     }
