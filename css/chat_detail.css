@@ -694,6 +694,15 @@ main .chatting-cont .sended-img {
 }
 
 .modal {
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  animation: show-modal 0.8s ease-out;
+}
+.modal nav {
   font-size: 1.4rem;
   font-weight: 500;
   position: absolute;
@@ -706,29 +715,36 @@ main .chatting-cont .sended-img {
   border-radius: 10px;
   padding: 1.6em 0;
 }
-.modal .close-modal-btn {
+.modal nav::after {
+  content: "";
   position: absolute;
   left: 50%;
+  top: 10%;
   transform: translateX(-50%);
   width: 50px;
   height: 4px;
   border-radius: 10px;
   background-color: #DBDBDB;
 }
-.modal .close-modal-btn:hover {
-  background-color: #FFABA2;
-}
-.modal li {
+.modal nav li {
   margin-top: 3.6em;
   padding: 1.4em 2.6em;
 }
-.modal li .chat-out-btn {
+.modal nav li .chat-out-btn {
   color: #000;
 }
-.modal li .chat-out-btn:hover {
+.modal nav li .chat-out-btn:hover {
   color: #FFABA2;
 }
 
+@keyframes show-modal {
+  0% {
+    bottom: -400px;
+  }
+  100% {
+    bottom: 0px;
+  }
+}
 .hidden {
   display: none;
 }
