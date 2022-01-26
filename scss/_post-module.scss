@@ -52,14 +52,16 @@
         left: 0; 
         top: 0; 
         transition: left 0.5s ease-out;
-        .post-img-wrap:not(:last-child){ 
-          float: left;
-          margin-right: 20px; 
+        .post-img-wrap {
+          float:left; 
           .post-img {  
             width: 304px; 
             height: 228px;
             border-radius: 10px;
           }
+        }
+        .post-img-wrap:not(:last-child){ 
+          margin-right: 20px; 
         }
       }
     }

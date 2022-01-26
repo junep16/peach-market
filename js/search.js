@@ -1,14 +1,31 @@
 const TOKEN = localStorage.getItem("token"); 
-const ENDPOINT = "http://146.56.183.55:5050";
+const ENDPOINT = "https://146.56.183.55:5050";
 const SEARCH_API = ENDPOINT + "/user/searchuser/?keyword=";
-const defaultImage = "http://146.56.183.55:5050/Ellipse.png";
+const defaultImage = "https://146.56.183.55:5050/Ellipse.png";
+
+const HEADERS = {
+  "Authorization": `Bearer ${TOKEN}`,
+  "Content-type": "application/json",
+};
+
+// access check function
+async function accessCheck() {
+  const URL = `${ENDPOINT}/user/checktoken`;
+  const reqOption = {
+    method: "GET",
+    headers: HEADERS
+  };
+  const res = await fetch(URL, reqOption);
+  const json = await res.json();
+  // 접근 금지!
+  if (!json.isValid) { location.href = "/views/sign_in.html" }
+}
+accessCheck();
+
 
 const reqOption = {
   method: "get",
-  headers: {
-    "Authorization" : `Bearer ${TOKEN}`,
-    "Content-type" : "application/json"
-  }
+  headers: HEADERS
 };
 
 // 기존에 있던 목록 지우기
@@ -37,7 +54,7 @@ async function paintUserList(event) {
 
         // 잘못된 이미지 경로 예외 처리
         const userImageUrl = 
-        (image.match(/http:\/\/[0-9].*:5050\//) && !image.match(/undefined/))
+        (image.match(/https:\/\/[0-9].*:5050\//) && !image.match(/undefined/))
         ? image
         : defaultImage;
   
