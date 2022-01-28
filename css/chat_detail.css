@@ -680,6 +680,7 @@ main .chatting-cont .sended-img {
   font-size: 1.4rem;
   border: none;
   padding: 1rem 1.8rem;
+  resize: none;
 }
 .chating-text form .chat-text-input:focus {
   outline: none;

@@ -95,6 +95,7 @@ main {
       font-size: 1.4rem;
       border: none;
       padding: 1rem 1.8rem;
+      resize: none; 
       &:focus { outline: none; }
       &::placeholder { color: $light-gray-color; }
     }
