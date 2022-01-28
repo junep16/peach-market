@@ -1,9 +1,29 @@
 const token = localStorage.getItem("token"); 
+const ENDPOINT = "https://146.56.183.55:5050";
 
-console.dir(localStorage.token);  
+const HEADERS = {
+  "Authorization": `Bearer ${token}`,
+  "Content-type": "application/json",
+};
+
+// access check function
+async function accessCheck() {
+  const URL = `${ENDPOINT}/user/checktoken`;
+  const reqOption = {
+    method: "GET",
+    headers: HEADERS
+  };
+  const res = await fetch(URL, reqOption);
+  const json = await res.json();
+  // 접근 금지!
+  if (!json.isValid) { location.href = "/views/sign_in.html" }
+}
+accessCheck();
+
+
 // 프로필 정보 가져오기
 async function getProfile() {
-  const url = `http://146.56.183.55:5050/profile/${username}`;
+  const url = `https://146.56.183.55:5050/profile/${username}`;
   // const token = localStorage.getItem("Token")
   const res = await fetch(url, {
     method: "GET",
@@ -38,7 +58,7 @@ async function getProfile() {
 
 //팔로잉 정보 가져오기
 async function getFollowing() {
-  const url = `http://146.56.183.55:5050/profile/${username}/following`;
+  const url = `https://146.56.183.55:5050/profile/${username}/following`;
   const res = await fetch(url, {
     method: "GET",
     headers: {
@@ -69,7 +89,7 @@ async function getFollowing() {
 
 //팔로워 정보 가져오기
 async function getFollowers() {
-  const url = `http://146.56.183.55:5050/profile/${username}/follower`;
+  const url = `https://146.56.183.55:5050/profile/${username}/follower`;
   const res = await fetch(url, {
     method: "GET",
     headers: {
@@ -123,7 +143,7 @@ function followingList() {
 
 //상품정보 가져오기
 async function getProduct() {
-  const url = `http://146.56.183.55:5050/product/${username}`;
+  const url = `https://146.56.183.55:5050/product/${username}`;
   const res = await fetch(url, {
     method: "GET",
     headers: {
@@ -167,7 +187,7 @@ async function getProduct() {
 
 //홈포스트 정보가져오기
 async function getPost() {
-  const url = `http://146.56.183.55:5050/post/${username}/userpost`;
+  const url = `https://146.56.183.55:5050/post/${username}/userpost`;
   const res = await fetch(url, {
     method: "GET",
     headers: {

@@ -1,17 +1,55 @@
 const token = localStorage.getItem("token"); 
+const url = "https://146.56.183.55:5050"; 
 const textContent = document.querySelector("textarea"); 
 const imageUploadButton = document.querySelector("#image-upload");
 const submitButton = document.querySelector("#submit-button"); 
-const uploadImageList = document.querySelector(".post-image-list"); 
+const uploadImageList = document.querySelector(".post-image-list");
+const profileImage = document.querySelector(".avatar-img");  
+const prevButton = document.querySelector(".prev-btn"); 
+
+const HEADERS = {
+  "Authorization": `Bearer ${token}`,
+  "Content-type": "application/json",
+};
+
+// access check function
+async function accessCheck() {
+  const URL = `${url}/user/checktoken`;
+  const reqOption = {
+    method: "GET",
+    headers: HEADERS
+  };
+  const res = await fetch(URL, reqOption);
+  const json = await res.json();
+  // 접근 금지!
+  if (!json.isValid) { location.href = "/views/sign_in.html" }
+}
+accessCheck();
 
 
 // 유저 프로필사진 가져오기
+async function getUserProfile() {
+  const accountname = localStorage.getItem("accountname"); 
+  const res= await fetch (url + `/profile/${accountname}`, {
+    method: "GET", 
+    headers: {
+      "Authorization" : `Bearer ${token}`,
+	    "Content-type" : "application/json"
+    }
+  }) 
+  const json = await res.json();  
+  const profile = json.profile;   
+
+  profileImage.src = profile.image;  
+}
+getUserProfile(); 
+
 
 // 이미지 업로드시 프리뷰 및 삭제
 function handleUploadImages() {
   imageUploadButton.addEventListener("change", async function(event) {
     const file = imageUploadButton.files; 
-    const url = "http://146.56.183.55:5050"; 
+    const url = "https://146.56.183.55:5050"; 
     console.log(file); 
     const imageUrls = []; 
     if (file.length <= 3) {
@@ -59,7 +97,7 @@ async function imageUpload(files,index){
   const formData = new FormData();
   formData.append("image", files[index]); 
 
-  const res = await fetch(`http://146.56.183.55:5050/image/uploadfile`, {
+  const res = await fetch(`https://146.56.183.55:5050/image/uploadfile`, {
     method: "POST",
     body : formData
   })
@@ -70,7 +108,7 @@ async function imageUpload(files,index){
 
 // 피드 작성 및 전송 
 async function createPost(event) {
-  const url = "http://146.56.183.55:5050"; 
+  const url = "https://146.56.183.55:5050"; 
   const content = textContent.value;  
   const selectedImages = document.querySelectorAll(".selected-image"); 
   const selectedImageUrls = [];
@@ -109,3 +147,7 @@ async function createPost(event) {
 }
 submitButton.addEventListener("click",createPost);   
 
+// 상단 버튼 컨트롤
+prevButton.addEventListener("click", () => {
+  location.href = "/index.html"; 
+})

@@ -1,4 +1,4 @@
-const url = "http://146.56.183.55:5050";
+const url = "https://146.56.183.55:5050";
 
 const signUp = document.querySelector(".sign-up");
 const emailPw = document.querySelector("#email-pw");
@@ -106,7 +106,7 @@ imageInput.addEventListener("change", async () => {
     body: dataForm,
   });
   const json = await res.json();
-  previewImg.src = `http://146.56.183.55:5050/${json.filename}`;
+  previewImg.src = `https://146.56.183.55:5050/${json.filename}`;
 });
 
 // 프로필설정 계정 ID 정규표현식

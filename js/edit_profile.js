@@ -1,5 +1,5 @@
 const token = localStorage.getItem("token"); 
-const url = "http://146.56.183.55:5050"; 
+const url = "https://146.56.183.55:5050"; 
 const uploadProfileImage = document.querySelector("#upload-image");
 const selectedImage = uploadProfileImage.files; 
 const profileImage = document.querySelector(".profile-image"); 
@@ -7,6 +7,26 @@ const userName = document.querySelector(".user-name");
 const userId = document.querySelector(".input-id"); 
 const userIntro = document.querySelector("#user-introduction"); 
 const submitButton = document.querySelector(".ms-button");  
+
+const HEADERS = {
+  "Authorization": `Bearer ${token}`,
+  "Content-type": "application/json",
+};
+
+// access check function
+async function accessCheck() {
+  const URL = `${url}/user/checktoken`;
+  const reqOption = {
+    method: "GET",
+    headers: HEADERS
+  };
+  const res = await fetch(URL, reqOption);
+  const json = await res.json();
+  // 접근 금지!
+  if (!json.isValid) { location.href = "/views/sign_in.html" }
+}
+accessCheck();
+
 
 async function getUserProfile() {
   const accountname = localStorage.getItem("accountname"); 
@@ -32,7 +52,7 @@ async function imageUpload(file){
   const formData = new FormData();
   formData.append("image", file); 
 
-  const res = await fetch(`http://146.56.183.55:5050/image/uploadfile`, {
+  const res = await fetch(`https://146.56.183.55:5050/image/uploadfile`, {
     method: "POST",
     body : formData
   })

@@ -1,5 +1,5 @@
 const TOKEN = localStorage.getItem("token"); 
-const ENDPOINT = "http://146.56.183.55:5050";
+const ENDPOINT = "https://146.56.183.55:5050";
 const HEADERS = {
   "Authorization" : `Bearer ${TOKEN}`,
   "Content-type" : "application/json"
@@ -10,6 +10,25 @@ const $submitBtn = document.querySelector("#submitBtn");
 const $previewImage = document.querySelector(".preview-image");
 const $ProductApp = document.querySelector(".product-app");
 const $imageInput = document.querySelector("#imageInput");
+
+const HEADERS = {
+  "Authorization": `Bearer ${TOKEN}`,
+  "Content-type": "application/json",
+};
+
+// access check function
+async function accessCheck() {
+  const URL = `${ENDPOINT}/user/checktoken`;
+  const reqOption = {
+    method: "GET",
+    headers: HEADERS
+  };
+  const res = await fetch(URL, reqOption);
+  const json = await res.json();
+  // 접근 금지!
+  if (!json.isValid) { location.href = "/views/sign_in.html" }
+}
+accessCheck();
 
 
 function searchParam(key) {

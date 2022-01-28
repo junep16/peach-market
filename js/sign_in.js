@@ -34,7 +34,7 @@ function getInput() {
 async function login() {
   const email = document.querySelector("#email").value;
   const pw = document.querySelector("#password").value;
-  const url = "http://146.56.183.55:5050";
+  const url = "https://146.56.183.55:5050";
   const loginData = {
     user: {
       email: email,
