@@ -1,6 +1,6 @@
 const token = localStorage.getItem("token"); 
 const postList = document.querySelector("main .post-lists"); 
-const ENDPOINT = "https://146.56.183.55:5050";
+const ENDPOINT = "https://api.mandarin.cf";
 
 const HEADERS = {
   "Authorization": `Bearer ${token}`,
@@ -27,7 +27,7 @@ let slideMargin = 20;
 
 // 1. 유저 팔로워 피드 받아오기  
 async function getPosts() { 
-  const url = "https://146.56.183.55:5050"
+  const url = "https://api.mandarin.cf";
   const response = await fetch(url+"/post/feed", {
     method: "GET", 
     headers: {
