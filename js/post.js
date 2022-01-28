@@ -1,5 +1,5 @@
 const TOKEN = localStorage.getItem("token"); 
-const ENDPOINT = "https://146.56.183.55:5050";
+const ENDPOINT = "https://api.mandarin.cf";
 const HEADERS = {
   "Authorization" : `Bearer ${TOKEN}`,
   "Content-type" : "application/json"
@@ -178,7 +178,7 @@ commentList.addEventListener("click", (event) => {
 const postList = document.querySelector("main .post-lists"); 
 
 async function getPost() { 
-  const url = "https://146.56.183.55:5050"
+  const url = "https://api.mandarin.cf/";
   const response = await fetch(url+"/post/"+postId, {
     method: "GET", 
     headers: HEADERS, 

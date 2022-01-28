@@ -1,5 +1,5 @@
 const TOKEN = localStorage.getItem("token"); 
-const ENDPOINT = "https://146.56.183.55:5050";
+const ENDPOINT = "https://api.mandarin.cf";
 const HEADERS = {
   "Authorization" : `Bearer ${TOKEN}`,
   "Content-type" : "application/json"

@@ -1,5 +1,5 @@
 const token = localStorage.getItem("token"); 
-const url = "https://146.56.183.55:5050"; 
+const url = "https://api.mandarin.cf"; 
 const textContent = document.querySelector("textarea"); 
 const imageUploadButton = document.querySelector("#image-upload");
 const submitButton = document.querySelector("#submit-button"); 
@@ -49,7 +49,7 @@ getUserProfile();
 function handleUploadImages() {
   imageUploadButton.addEventListener("change", async function(event) {
     const file = imageUploadButton.files; 
-    const url = "https://146.56.183.55:5050"; 
+    const url = "https://api.mandarin.cf"; 
     console.log(file); 
     const imageUrls = []; 
     if (file.length <= 3) {
@@ -97,7 +97,7 @@ async function imageUpload(files,index){
   const formData = new FormData();
   formData.append("image", files[index]); 
 
-  const res = await fetch(`https://146.56.183.55:5050/image/uploadfile`, {
+  const res = await fetch(`https://api.mandarin.cf/image/uploadfile`, {
     method: "POST",
     body : formData
   })
@@ -108,7 +108,7 @@ async function imageUpload(files,index){
 
 // 피드 작성 및 전송 
 async function createPost(event) {
-  const url = "https://146.56.183.55:5050"; 
+  const url = "https://api.mandarin.cf"; 
   const content = textContent.value;  
   const selectedImages = document.querySelectorAll(".selected-image"); 
   const selectedImageUrls = [];
