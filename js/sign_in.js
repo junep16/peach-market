@@ -28,7 +28,7 @@ loginForm.addEventListener("keyup", enable);
 async function login() {
   const email = document.querySelector("#email").value;
   const pw = document.querySelector("#password").value;
-  const url = "https://146.56.183.55:5050";
+  const url = "https://api.mandarin.cf";
   const loginData = {
     user: {
       email: email,

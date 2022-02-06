@@ -1,6 +1,6 @@
 const token = localStorage.getItem("token"); 
 const postList = document.querySelector("main .post-lists"); 
-const ENDPOINT = "https://146.56.183.55:5050";
+const ENDPOINT = "https://api.mandarin.cf";
 
 const HEADERS = {
   "Authorization": `Bearer ${token}`,
@@ -27,7 +27,7 @@ let slideMargin = 20;
 
 // 1. 유저 팔로워 피드 받아오기  
 async function getPosts() { 
-  const url = "https://146.56.183.55:5050"
+  const url = "https://api.mandarin.cf";
   const response = await fetch(url+"/post/feed", {
     method: "GET", 
     headers: {
@@ -39,17 +39,20 @@ async function getPosts() {
   const posts = json.posts;  
 
   posts.forEach( (post, i) => {
+    const postId = post.id; 
     const authorImage = post.author.image;   
     const authorAccount = post.author.accountname; 
     const authorName = post.author.username;  
     const postContent = post.content;  
-    const postImage = post.image.split(","); 
+    const postImage = (post.image) 
+      ? post.image.split(",")
+      : false; 
     const postDate = post.createdAt; 
     const commentCount = post.commentCount; 
     const heartCount = post.heartCount;
     const hearted = post.hearted;   
     postList.innerHTML+=`
-    <li>
+    <li id="feed-${postId}">
       <div class="home-post">
         <img src= ${authorImage} alt="프로필 사진" class="avatar-img">
         <div>
@@ -65,11 +68,7 @@ async function getPosts() {
           <p class="post-content">${postContent}</p>
           <div class="post-img-window">
             <ul id="post${i}" class="post-img-container"></ul>
-            <div class="post-img-button-wrap">
-              <button class="img-slide one on" type="button"></button>
-              <button class="img-slide two" type="button"></button>
-              <button class="img-slide three" type="button"></button>
-            </div>
+            <div class="post-img-button-wrap"></div>
           </div>
         </div>
       </div>
@@ -88,21 +87,22 @@ async function getPosts() {
   ` 
     if(post.image) {
       addPostImages(postImage, i); 
-      if (i === 3) {
-        console.log(postImage); 
-      }
+      renderButton (postImage.length, postId);  
+    } else {
+      console.log(post.image);  
+      const imageWindow = document.querySelector(`#feed-${postId} .post-img-window`);
+      imageWindow.style.height = "0px"; 
     }
-
   });  
   }
 
-// 2. 이미지 렌더링 하는 함수 (위 68번째 줄에서 실행)
+// 2. 이미지 렌더링 하는 함수 
 function addPostImages(eachpost, i) {  
   const slides = document.querySelector(`#post${i}`);  //ul
 
   // 이미지가 하나일 경우
   if (eachpost.length === 1) {
-
+    console.log("url",eachpost); 
     const li = document.createElement("li"); 
     const img = document.createElement("img"); 
     li.classList.add("post-img-wrap"); 
@@ -115,8 +115,6 @@ function addPostImages(eachpost, i) {
     postImage.style.width = "304px"; 
     postImage.style.height = "228px"; 
     postImage.style.borderRadius = "15px"; 
-    const buttonController = document.querySelector(".post-img-button-wrap");
-    buttonController.classList.add("off");  
 
   } //이미지 여러개일 경우
     else if (eachpost.length > 1) {
@@ -146,6 +144,19 @@ function addPostImages(eachpost, i) {
 function moveSlide(num, slides) {
   slides.style.left = -num * 324 + "px";  
 } 
+
+function renderButton(imagelength, postId) { 
+  let buttonList = ["one", "two", "three"]; 
+  const buttonController = document.querySelector(`#feed-${postId} .post-img-button-wrap`); 
+  if(imagelength > 1) {
+    for(let i = 0; i < imagelength; i++ ){
+      const button = document.createElement("button");
+      button.className = `img-slide ${buttonList[i]}`;  
+      if (i == 0) { button.classList.add("on"); }
+      buttonController.appendChild(button);  
+    } 
+  }
+}
 
 function imageSlideControl() {
   postList.addEventListener("click", (event) => {

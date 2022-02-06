@@ -1,5 +1,5 @@
 const token = localStorage.getItem("token"); 
-const ENDPOINT = "https://146.56.183.55:5050";
+const ENDPOINT = "https://api.mandarin.cf";
 
 const HEADERS = {
   "Authorization": `Bearer ${token}`,
@@ -23,7 +23,7 @@ accessCheck();
 
 // 프로필 정보 가져오기
 async function getProfile() {
-  const url = `https://146.56.183.55:5050/profile/${username}`;
+  const url = `https://api.mandarin.cf/profile/${username}`;
   // const token = localStorage.getItem("Token")
   const res = await fetch(url, {
     method: "GET",
@@ -58,7 +58,7 @@ async function getProfile() {
 
 //팔로잉 정보 가져오기
 async function getFollowing() {
-  const url = `https://146.56.183.55:5050/profile/${username}/following`;
+  const url = `https://api.mandarin.cf/profile/${username}/following`;
   const res = await fetch(url, {
     method: "GET",
     headers: {
@@ -89,7 +89,7 @@ async function getFollowing() {
 
 //팔로워 정보 가져오기
 async function getFollowers() {
-  const url = `https://146.56.183.55:5050/profile/${username}/follower`;
+  const url = `https://api.mandarin.cf/profile/${username}/follower`;
   const res = await fetch(url, {
     method: "GET",
     headers: {
@@ -143,7 +143,7 @@ function followingList() {
 
 //상품정보 가져오기
 async function getProduct() {
-  const url = `https://146.56.183.55:5050/product/${username}`;
+  const url = `https://api.mandarin.cf/product/${username}`;
   const res = await fetch(url, {
     method: "GET",
     headers: {
@@ -187,7 +187,7 @@ async function getProduct() {
 
 //홈포스트 정보가져오기
 async function getPost() {
-  const url = `https://146.56.183.55:5050/post/${username}/userpost`;
+  const url = `https://api.mandarin.cf/post/${username}/userpost`;
   const res = await fetch(url, {
     method: "GET",
     headers: {

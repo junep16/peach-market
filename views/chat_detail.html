@@ -62,7 +62,7 @@
     </main>
     <div class="chating-text">
       <h2 class="text-hide">채팅 보내기 영역</h2>
-      <form action="" method="post">
+      <form>
         <label class="text-hide" for="chatImgIput">사진 첨부 버튼</label>
         <input
           type="file"
@@ -73,27 +73,26 @@
           multiple
         >
         <label for="chatTextInput" class="text-hide">댓글 입력창</label>
-        <input
+        <textarea
           type="text"
           id="chatTextInput"
           class="chat-text-input"
           name="send-chat-text"
           placeholder="댓글 입력하기..."
-        >
-        <button type="submit" class="chat-submit-btn">전송</button>
+        ></textarea>
+        <button type="submit" class="chat-submit-btn" disabled>전송</button>
       </form>
     </div>
   </div>
-  <nav class="modal hidden">
-    <button type="button" class="close-modal-btn">
-      <span class="text-hide">모달창 닫기</span>
-    </button>
-    <ul>
-      <li>
-        <button type="button" class="chat-out-btn">채팅방 나가기</button>
-      </li>
-    </ul>
-  </nav>
+  <section class="modal hidden">
+    <nav>
+      <ul>
+        <li>
+          <button type="button" class="chat-out-btn">채팅방 나가기</button>
+        </li>
+      </ul>
+    </nav>
+  </section>
   <script src="/js/chat_detail.js"></script>
 </body>
 </html>

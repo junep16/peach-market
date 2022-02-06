@@ -95,6 +95,7 @@ main {
       font-size: 1.4rem;
       border: none;
       padding: 1rem 1.8rem;
+      resize: none; 
       &:focus { outline: none; }
       &::placeholder { color: $light-gray-color; }
     }
@@ -102,7 +103,9 @@ main {
       color: $light-gray-color;
       font-size: 1.4rem;
       width: 32px;
+      cursor: unset;
       &.on {
+        cursor: pointer;
         color: $base-color;
       }
     }
@@ -110,32 +113,48 @@ main {
 }
 
 .modal {
-  @include font-module(1.4rem);
-  position: absolute;
-  bottom: 0;
+  position: fixed;
+  bottom: 0; top: 0;
   right: 0; left: 0;
-  background-color: #fff;
-  height: 200px;
-  border: 1px solid $light-gray-color;
-  border-radius: 10px;
-  padding: 1.6em 0;
-  .close-modal-btn {
+  background-color: rgba(0,0,0,0.2);
+  animation: show-modal .8s ease-out;
+  nav {
+    @include font-module(1.4rem);
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 4px;
+    bottom: 0;
+    right: 0; left: 0;
+    background-color: #fff;
+    height: 200px;
+    border: 1px solid $light-gray-color;
     border-radius: 10px;
-    background-color: $line-color;
-    &:hover { background-color: $base-color; }
-  }
-  li {
-    margin-top: 3.6em;
-    padding: 1.4em 2.6em;
-    .chat-out-btn {
-      color: #000;
-      &:hover { color: $base-color; }
+    padding: 1.6em 0;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%; top: 10%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 4px;
+      border-radius: 10px;
+      background-color: $line-color;
     }
+    li {
+      margin-top: 3.6em;
+      padding: 1.4em 2.6em;
+      .chat-out-btn {
+        color: #000;
+        &:hover { color: $base-color; }
+      }
+    }
+  }
+}
+
+@keyframes show-modal {
+  0% {
+    bottom: -400px;
+  }
+  100% {
+    bottom: 0px;
   }
 }
 
