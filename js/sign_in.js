@@ -24,12 +24,6 @@ function enable() {
 loginForm.addEventListener("keyup", enable);
 
 
-// 로그인 API START
-function getInput() {
-  console.log(document.querySelector("#email").value);
-  console.log(document.querySelector("#password").value);
-}
-
 //  로그인 함수
 async function login() {
   const email = document.querySelector("#email").value;
@@ -56,15 +50,12 @@ async function login() {
     errMsg.classList.remove("hidden");
     console.log(res);
     console.log(json);
-  // 로그인 성공시
+    // 로그인 성공시
   } else {
     console.log(json.user.token);
     localStorage.setItem("token", json.user.token);
-    localStorage.setItem("accountname", json.user.accountname); 
-    location.href="/index.html";
-    
+    localStorage.setItem("accountname", json.user.accountname);
+    location.href = "/index.html";
   }
 }
 loginButton.addEventListener("click", login);
-
-
